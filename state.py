@@ -11,3 +11,5 @@ class ResearchState(TypedDict):
     approval_status: Literal["approved", "redo_search", "redo_directions"]
     final_report: str
     iteration_count: int
+    citation_retry_count: int
+    citation_check: Literal["passed", "failed"]

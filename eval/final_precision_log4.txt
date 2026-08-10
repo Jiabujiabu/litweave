@@ -1,0 +1,283 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+=== Retrieval-augmented generation for reducing LLM hallucination ===
+Analyzing topic and classifying research domain...
+Searching arXiv...
+  -> [arXiv] direction 1/5: RAG hallucination reduction retrieval quality
+  -> [arXiv] direction 2/5: RAG hallucination detection self-consistency
+  -> [arXiv] direction 3/5: RAG hallucination knowledge graph grounding
+  -> [arXiv] direction 4/5: RAG hallucination fine-tuning feedback
+  -> [arXiv] direction 5/5: RAG hallucination evaluation benchmark
+  found 30 paper(s) on arXiv
+Searching CrossRef...
+  -> [CrossRef] direction 1/5: RAG hallucination reduction retrieval quality
+  -> [CrossRef] direction 2/5: RAG hallucination detection self-consistency
+  -> [CrossRef] direction 3/5: RAG hallucination knowledge graph grounding
+  -> [CrossRef] direction 4/5: RAG hallucination fine-tuning feedback
+  -> [CrossRef] direction 5/5: RAG hallucination evaluation benchmark
+  found 30 paper(s) on CrossRef
+Deduplicating and ranking retrieved papers by relevance...
+  deduplicated 60 -> 43 papers
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10454.63it/s]
+  embedding shortlist: 20 candidates for LLM relevance filtering
+  LLM filter kept 10/20 papers as directly relevant
+Generating literature summary...
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  found 8 unverifiable citation(s), regenerating report (attempt 1)
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  found 10 unverifiable citation(s), regenerating report (attempt 2)
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  still 2 unverifiable citation(s) after max retries -- flagging in the report instead
+  domain=cs  papers=10  relevant=9/10  citation_retries=2
+
+=== Parameter-efficient fine-tuning of large language models (LoRA and variants) ===
+Analyzing topic and classifying research domain...
+Searching arXiv...
+  -> [arXiv] direction 1/5: LoRA low-rank adaptation large language models
+  -> [arXiv] direction 2/5: QLoRA quantized low-rank adaptation LLM fine-tuning
+  -> [arXiv] direction 3/5: AdaLoRA adaptive budget allocation parameter-efficient fine-tuning
+  -> [arXiv] direction 4/5: DoRA weight-decomposed low-rank adaptation LLM
+  -> [arXiv] direction 5/5: LoRA vs full fine-tuning catastrophic forgetting LLM
+  found 30 paper(s) on arXiv
+Searching CrossRef...
+  -> [CrossRef] direction 1/5: LoRA low-rank adaptation large language models
+  -> [CrossRef] direction 2/5: QLoRA quantized low-rank adaptation LLM fine-tuning
+  -> [CrossRef] direction 3/5: AdaLoRA adaptive budget allocation parameter-efficient fine-tuning
+  -> [CrossRef] direction 4/5: DoRA weight-decomposed low-rank adaptation LLM
+  -> [CrossRef] direction 5/5: LoRA vs full fine-tuning catastrophic forgetting LLM
+  found 30 paper(s) on CrossRef
+Deduplicating and ranking retrieved papers by relevance...
+  deduplicated 60 -> 57 papers
+  embedding shortlist: 20 candidates for LLM relevance filtering
+  LLM filter kept 10/20 papers as directly relevant
+Generating literature summary...
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  citation check passed -- all citations trace back to retrieved papers
+  domain=cs  papers=10  relevant=10/10  citation_retries=0
+
+=== Reinforcement learning from human feedback for LLM alignment ===
+Analyzing topic and classifying research domain...
+Searching arXiv...
+  -> [arXiv] direction 1/5: RLHF reward hacking LLM alignment
+  -> [arXiv] direction 2/5: DPO direct preference optimization LLM alignment
+  -> [arXiv] direction 3/5: constitutional AI LLM alignment
+  -> [arXiv] direction 4/5: RLHF LLM alignment human values
+  -> [arXiv] direction 5/5: RLHF LLM alignment bias fairness
+  found 30 paper(s) on arXiv
+Searching CrossRef...
+  -> [CrossRef] direction 1/5: RLHF reward hacking LLM alignment
+  -> [CrossRef] direction 2/5: DPO direct preference optimization LLM alignment
+  -> [CrossRef] direction 3/5: constitutional AI LLM alignment
+  -> [CrossRef] direction 4/5: RLHF LLM alignment human values
+  -> [CrossRef] direction 5/5: RLHF LLM alignment bias fairness
+  found 30 paper(s) on CrossRef
+Deduplicating and ranking retrieved papers by relevance...
+  deduplicated 60 -> 53 papers
+  embedding shortlist: 20 candidates for LLM relevance filtering
+  LLM filter kept 10/20 papers as directly relevant
+Generating literature summary...
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  citation check passed -- all citations trace back to retrieved papers
+  domain=interdisciplinary  papers=10  relevant=8/10  citation_retries=0
+
+=== Adversarial robustness of deep neural networks ===
+Analyzing topic and classifying research domain...
+Searching arXiv...
+  -> [arXiv] direction 1/5: adversarial robustness deep neural networks adversarial training
+  -> [arXiv] direction 2/5: adversarial robustness deep neural networks certified defenses
+  -> [arXiv] direction 3/5: adversarial robustness deep neural networks randomized smoothing
+  -> [arXiv] direction 4/5: adversarial robustness deep neural networks gradient masking
+  -> [arXiv] direction 5/5: adversarial robustness deep neural networks robust optimization
+  found 30 paper(s) on arXiv
+Searching CrossRef...
+  -> [CrossRef] direction 1/5: adversarial robustness deep neural networks adversarial training
+  -> [CrossRef] direction 2/5: adversarial robustness deep neural networks certified defenses
+  -> [CrossRef] direction 3/5: adversarial robustness deep neural networks randomized smoothing
+  -> [CrossRef] direction 4/5: adversarial robustness deep neural networks gradient masking
+  -> [CrossRef] direction 5/5: adversarial robustness deep neural networks robust optimization
+  found 30 paper(s) on CrossRef
+Deduplicating and ranking retrieved papers by relevance...
+  deduplicated 60 -> 22 papers
+  embedding shortlist: 20 candidates for LLM relevance filtering
+  LLM filter kept 10/20 papers as directly relevant
+Generating literature summary...
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  found 2 unverifiable citation(s), regenerating report (attempt 1)
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  citation check passed -- all citations trace back to retrieved papers
+  domain=cs  papers=10  relevant=8/10  citation_retries=1
+
+=== Federated learning for privacy-preserving machine learning ===
+Analyzing topic and classifying research domain...
+Searching arXiv...
+  -> [arXiv] direction 1/5: federated learning differential privacy gradient compression
+  -> [arXiv] direction 2/5: federated learning secure aggregation homomorphic encryption
+  -> [arXiv] direction 3/5: federated learning local differential privacy client-level
+  -> [arXiv] direction 4/5: federated learning adversarial attacks privacy leakage
+  -> [arXiv] direction 5/5: federated learning privacy utility tradeoff optimization
+  found 30 paper(s) on arXiv
+Searching CrossRef...
+  -> [CrossRef] direction 1/5: federated learning differential privacy gradient compression
+  -> [CrossRef] direction 2/5: federated learning secure aggregation homomorphic encryption
+  -> [CrossRef] direction 3/5: federated learning local differential privacy client-level
+  -> [CrossRef] direction 4/5: federated learning adversarial attacks privacy leakage
+  -> [CrossRef] direction 5/5: federated learning privacy utility tradeoff optimization
+  found 30 paper(s) on CrossRef
+Deduplicating and ranking retrieved papers by relevance...
+  deduplicated 60 -> 48 papers
+  embedding shortlist: 20 candidates for LLM relevance filtering
+  LLM filter kept 10/20 papers as directly relevant
+Generating literature summary...
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  citation check passed -- all citations trace back to retrieved papers
+  domain=cs  papers=10  relevant=10/10  citation_retries=0
+
+=== Medieval European trade networks and urbanization ===
+Analyzing topic and classifying research domain...
+Searching CrossRef...
+  -> [CrossRef] direction 1/5: Hanseatic League trade routes medieval urbanization
+  -> [CrossRef] direction 2/5: Flanders cloth trade medieval urban growth
+  -> [CrossRef] direction 3/5: Venetian maritime trade networks medieval cities
+  -> [CrossRef] direction 4/5: Champagne fairs medieval trade urban development
+  -> [CrossRef] direction 5/5: archaeological evidence medieval trade urbanism
+  found 30 paper(s) on CrossRef
+Deduplicating and ranking retrieved papers by relevance...
+  deduplicated 30 -> 30 papers
+  embedding shortlist: 20 candidates for LLM relevance filtering
+  LLM filter kept 10/20 papers as directly relevant
+Generating literature summary...
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  found 5 unverifiable citation(s), regenerating report (attempt 1)
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  citation check passed -- all citations trace back to retrieved papers
+  domain=humanities  papers=10  relevant=10/10  citation_retries=1
+
+=== Identity construction in postcolonial literature ===
+Analyzing topic and classifying research domain...
+Searching CrossRef...
+  -> [CrossRef] direction 1/5: postcolonial identity hybridity Homi Bhabha
+  -> [CrossRef] direction 2/5: postcolonial identity mimicry Gayatri Spivak
+  -> [CrossRef] direction 3/5: postcolonial identity diaspora literature
+  -> [CrossRef] direction 4/5: postcolonial identity language and identity
+  -> [CrossRef] direction 5/5: postcolonial identity gender and nation
+  found 30 paper(s) on CrossRef
+Deduplicating and ranking retrieved papers by relevance...
+  deduplicated 30 -> 30 papers
+  embedding shortlist: 20 candidates for LLM relevance filtering
+  LLM filter kept 10/20 papers as directly relevant
+Generating literature summary...
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  found 6 unverifiable citation(s), regenerating report (attempt 1)
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  found 4 unverifiable citation(s), regenerating report (attempt 2)
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  still 1 unverifiable citation(s) after max retries -- flagging in the report instead
+  domain=humanities  papers=10  relevant=3/10  citation_retries=2
+
+=== Social media use and adolescent mental health ===
+Analyzing topic and classifying research domain...
+Searching arXiv...
+  -> [arXiv] direction 1/5: adolescent mental health social media longitudinal panel study
+  [arXiv] request failed (Page request resulted in HTTP 503 (https://export.arxiv.org/api/query?search_query=adolescent+mental+health+social+media+longitudinal+panel+study&id_list=&sortBy=relevance&sortOrder=descending&start=0&max_results=100)), retrying in 15s...
+  -> [arXiv] direction 2/5: adolescent depression social media passive use experience sampling
+  -> [arXiv] direction 3/5: adolescent social media use digital wellbeing intervention randomized trial
+  -> [arXiv] direction 4/5: adolescent mental health social media computational text analysis
+  -> [arXiv] direction 5/5: adolescent social media use sleep deprivation mental health
+  found 30 paper(s) on arXiv
+Searching CrossRef...
+  -> [CrossRef] direction 1/5: adolescent mental health social media longitudinal panel study
+  -> [CrossRef] direction 2/5: adolescent depression social media passive use experience sampling
+  -> [CrossRef] direction 3/5: adolescent social media use digital wellbeing intervention randomized trial
+  -> [CrossRef] direction 4/5: adolescent mental health social media computational text analysis
+  -> [CrossRef] direction 5/5: adolescent social media use sleep deprivation mental health
+  found 29 paper(s) on CrossRef
+Deduplicating and ranking retrieved papers by relevance...
+  deduplicated 59 -> 36 papers
+  embedding shortlist: 20 candidates for LLM relevance filtering
+  LLM filter kept 10/20 papers as directly relevant
+Generating literature summary...
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  found 2 unverifiable citation(s), regenerating report (attempt 1)
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  found 4 unverifiable citation(s), regenerating report (attempt 2)
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  still 3 unverifiable citation(s) after max retries -- flagging in the report instead
+  domain=interdisciplinary  papers=10  relevant=8/10  citation_retries=2
+
+=== The concept of autonomy in Kantian ethics ===
+Analyzing topic and classifying research domain...
+Searching CrossRef...
+  -> [CrossRef] direction 1/5: Kant autonomy categorical imperative Groundwork
+  -> [CrossRef] direction 2/5: Kant autonomy heteronomy moral law distinction
+  -> [CrossRef] direction 3/5: Kant autonomy respect for persons formula
+  -> [CrossRef] direction 4/5: Kant autonomy rational will self-legislation
+  -> [CrossRef] direction 5/5: Kant autonomy critique practical reason
+  found 30 paper(s) on CrossRef
+Deduplicating and ranking retrieved papers by relevance...
+  deduplicated 30 -> 29 papers
+  embedding shortlist: 20 candidates for LLM relevance filtering
+  LLM filter kept 10/20 papers as directly relevant
+Generating literature summary...
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  citation check passed -- all citations trace back to retrieved papers
+  domain=humanities  papers=10  relevant=8/10  citation_retries=0
+
+=== Electoral system design and political polarization ===
+Analyzing topic and classifying research domain...
+Searching arXiv...
+  -> [arXiv] direction 1/5: electoral system design polarization Duverger's law
+  -> [arXiv] direction 2/5: electoral system design polarization comparative political science
+  -> [arXiv] direction 3/5: electoral system design polarization agent-based model
+  -> [arXiv] direction 4/5: electoral system design polarization formal theory
+  -> [arXiv] direction 5/5: electoral system design polarization empirical cross-national
+  found 30 paper(s) on arXiv
+Searching CrossRef...
+  -> [CrossRef] direction 1/5: electoral system design polarization Duverger's law
+  -> [CrossRef] direction 2/5: electoral system design polarization comparative political science
+  -> [CrossRef] direction 3/5: electoral system design polarization agent-based model
+  -> [CrossRef] direction 4/5: electoral system design polarization formal theory
+  -> [CrossRef] direction 5/5: electoral system design polarization empirical cross-national
+  found 30 paper(s) on CrossRef
+Deduplicating and ranking retrieved papers by relevance...
+  deduplicated 60 -> 52 papers
+  embedding shortlist: 20 candidates for LLM relevance filtering
+  LLM filter kept 2/20 papers as directly relevant
+Generating literature summary...
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  citation check passed -- all citations trace back to retrieved papers
+  domain=interdisciplinary  papers=2  relevant=2/2  citation_retries=0
+
+==============================================================================
+topic                                              domain            precision
+==============================================================================
+Retrieval-augmented generation for reducing LLM h  cs                    0.90  (9/10)
+Parameter-efficient fine-tuning of large language  cs                    1.00  (10/10)
+Reinforcement learning from human feedback for LL  interdisciplinary      0.80  (8/10)
+Adversarial robustness of deep neural networks     cs                    0.80  (8/10)
+Federated learning for privacy-preserving machine  cs                    1.00  (10/10)
+Medieval European trade networks and urbanization  humanities            1.00  (10/10)
+Identity construction in postcolonial literature   humanities            0.30  (3/10)
+Social media use and adolescent mental health      interdisciplinary      0.80  (8/10)
+The concept of autonomy in Kantian ethics          humanities            0.80  (8/10)
+Electoral system design and political polarizatio  interdisciplinary      1.00  (2/2)
+==============================================================================
+Overall final-report precision: 76/92 = 82.61%
+==============================================================================

@@ -1,0 +1,122 @@
+[
+  {
+    "topic": "Retrieval-augmented generation for reducing LLM hallucination",
+    "domain": "cs",
+    "domain_hint": "cs",
+    "retrieved_count": 10,
+    "gold_count": 3,
+    "hits": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "hit_sources": {},
+    "citation_retry_count": 0
+  },
+  {
+    "topic": "Parameter-efficient fine-tuning of large language models (LoRA and variants)",
+    "domain": "cs",
+    "domain_hint": "cs",
+    "retrieved_count": 10,
+    "gold_count": 2,
+    "hits": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "hit_sources": {},
+    "citation_retry_count": 0
+  },
+  {
+    "topic": "Reinforcement learning from human feedback for LLM alignment",
+    "domain": "cs",
+    "domain_hint": "cs",
+    "retrieved_count": 10,
+    "gold_count": 2,
+    "hits": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "hit_sources": {},
+    "citation_retry_count": 2
+  },
+  {
+    "topic": "Adversarial robustness of deep neural networks",
+    "domain": "cs",
+    "domain_hint": "cs",
+    "retrieved_count": 10,
+    "gold_count": 2,
+    "hits": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "hit_sources": {},
+    "citation_retry_count": 0
+  },
+  {
+    "topic": "Federated learning for privacy-preserving machine learning",
+    "domain": "cs",
+    "domain_hint": "cs",
+    "retrieved_count": 10,
+    "gold_count": 2,
+    "hits": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "hit_sources": {},
+    "citation_retry_count": 1
+  },
+  {
+    "topic": "Medieval European trade networks and urbanization",
+    "domain": "humanities",
+    "domain_hint": "humanities",
+    "retrieved_count": 10,
+    "gold_count": 2,
+    "hits": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "hit_sources": {},
+    "citation_retry_count": 2
+  },
+  {
+    "topic": "Identity construction in postcolonial literature",
+    "domain": "humanities",
+    "domain_hint": "humanities",
+    "retrieved_count": 10,
+    "gold_count": 2,
+    "hits": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "hit_sources": {},
+    "citation_retry_count": 2
+  },
+  {
+    "topic": "Social media use and adolescent mental health",
+    "domain": "interdisciplinary",
+    "domain_hint": "humanities",
+    "retrieved_count": 10,
+    "gold_count": 2,
+    "hits": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "hit_sources": {},
+    "citation_retry_count": 0
+  },
+  {
+    "topic": "The concept of autonomy in Kantian ethics",
+    "domain": "humanities",
+    "domain_hint": "humanities",
+    "retrieved_count": 10,
+    "gold_count": 2,
+    "hits": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "hit_sources": {},
+    "citation_retry_count": 2
+  },
+  {
+    "topic": "Electoral system design and political polarization",
+    "domain": "humanities",
+    "domain_hint": "humanities",
+    "retrieved_count": 10,
+    "gold_count": 2,
+    "hits": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "hit_sources": {},
+    "citation_retry_count": 2
+  }
+]

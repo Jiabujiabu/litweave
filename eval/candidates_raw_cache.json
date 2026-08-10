@@ -1,0 +1,1718 @@
+[
+  {
+    "topic": "Retrieval-augmented generation for reducing LLM hallucination",
+    "domain": "cs",
+    "papers": [
+      {
+        "title": "RAG System for Supporting Japanese Litigation Procedures: Faithful Response Generation Complying with Legal Norms",
+        "summary": "This study discusses the essential components that a Retrieval-Augmented Generation (RAG)-based LLM system should possess in order to support Japanese medical litigation procedures complying with legal norms. In litigation, expert commissioners, such as physicians, architects, accountants, and engineers, provide specialized knowledge to help judges clarify points of dispute. When considering the substitution of these expert roles with a RAG-based LLM system, the constraint of strict adherence to",
+        "url": "http://arxiv.org/abs/2511.22858v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Engineering the RAG Stack: A Comprehensive Review of the Architecture and Trust Frameworks for Retrieval-Augmented Generation Systems",
+        "summary": "This article provides a comprehensive systematic literature review of academic studies, industrial applications, and real-world deployments from 2018 to 2025, providing a practical guide and detailed overview of modern Retrieval-Augmented Generation (RAG) architectures. RAG offers a modular approach for integrating external knowledge without increasing the capacity of the model as LLM systems expand. Research and engineering practices have been fragmented as a result of the increasing diversity ",
+        "url": "http://arxiv.org/abs/2601.05264v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Evaluating Factual Density in Multi-Source RAG: A Study in Medical AI Accuracy",
+        "summary": "Retrieval-Augmented Generation (RAG) is the current industry standard for grounding AI in real-world facts. Traditional retrieval methods rely on keyword matching and topic proximity, ranking content based on how closely it sounds like the user's query. What they do not measure is how many verified facts the content actually contains. This structural gap, termed the Expert Blindness Effect, causes standard RAG pipelines to consistently bury high-density factual evidence in favor of lexically dom",
+        "url": "http://arxiv.org/abs/2605.31506v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "MultiRAG: A Knowledge-guided Framework for Mitigating Hallucination in Multi-source Retrieval Augmented Generation",
+        "summary": "Retrieval Augmented Generation (RAG) has emerged as a promising solution to address hallucination issues in Large Language Models (LLMs). However, the integration of multiple retrieval sources, while potentially more informative, introduces new challenges that can paradoxically exacerbate hallucination problems. These challenges manifest primarily in two aspects: the sparse distribution of multi-source data that hinders the capture of logical relationships and the inherent inconsistencies among ",
+        "url": "http://arxiv.org/abs/2508.03553v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "How important is Recall for Measuring Retrieval Quality?",
+        "summary": "In realistic retrieval settings with large and evolving knowledge bases, the total number of documents relevant to a query is typically unknown, and recall cannot be computed. In this paper, we evaluate several established strategies for handling this limitation by measuring the correlation between retrieval quality metrics and LLM-based judgments of response quality, where responses are generated from the retrieved documents. We conduct experiments across multiple datasets with a relatively low",
+        "url": "http://arxiv.org/abs/2512.20854v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Overcoming low-utility facets for complex answer retrieval",
+        "summary": "Many questions cannot be answered simply; their answers must include numerous nuanced details and additional context. Complex Answer Retrieval (CAR) is the retrieval of answers to such questions. In their simplest form, these questions are constructed from a topic entity (e.g., `cheese') and a facet (e.g., `health effects'). While topic matching has been thoroughly explored, we observe that some facets use general language that is unlikely to appear verbatim in answers. We call these low-utility",
+        "url": "http://arxiv.org/abs/1811.08772v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "AMREx: AMR for Explainable Fact Verification",
+        "summary": "With the advent of social media networks and the vast amount of information circulating through them, automatic fact verification is an essential component to prevent the spread of misinformation. It is even more useful to have fact verification systems that provide explanations along with their classifications to ensure accurate predictions. To address both of these requirements, we implement AMREx, an Abstract Meaning Representation (AMR)-based veracity prediction and explanation system for fa",
+        "url": "http://arxiv.org/abs/2411.01343v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "RAG-Star: Enhancing Deliberative Reasoning with Retrieval Augmented Verification and Refinement",
+        "summary": "Existing large language models (LLMs) show exceptional problem-solving capabilities but might struggle with complex reasoning tasks. Despite the successes of chain-of-thought and tree-based search methods, they mainly depend on the internal knowledge of LLMs to search over intermediate reasoning steps, limited to dealing with simple tasks involving fewer reasoning steps. In this paper, we propose \\textbf{RAG-Star}, a novel RAG approach that integrates the retrieved information to guide the tree-",
+        "url": "http://arxiv.org/abs/2412.12881v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "PersonaMatrix: A Recipe for Persona-Aware Evaluation of Legal Summarization",
+        "summary": "Legal documents are often long, dense, and difficult to comprehend, not only for laypeople but also for legal experts. While automated document summarization has great potential to improve access to legal knowledge, prevailing task-based evaluators overlook divergent user and stakeholder needs. Tool development is needed to encompass the technicality of a case summary for a litigator yet be accessible for a self-help public researching for their lawsuit. We introduce PersonaMatrix, a persona-by-",
+        "url": "http://arxiv.org/abs/2509.16449v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Towards Reliable Retrieval in RAG Systems for Large Legal Datasets",
+        "summary": "Retrieval-Augmented Generation (RAG) is a promising approach to mitigate hallucinations in Large Language Models (LLMs) for legal applications, but its reliability is critically dependent on the accuracy of the retrieval step. This is particularly challenging in the legal domain, where large databases of structurally similar documents often cause retrieval systems to fail. In this paper, we address this challenge by first identifying and quantifying a critical failure mode we term Document-Level",
+        "url": "http://arxiv.org/abs/2510.06999v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "PlainQAFact: Retrieval-augmented Factual Consistency Evaluation Metric for Biomedical Plain Language Summarization",
+        "summary": "N/A",
+        "url": "https://doi.org/10.2139/ssrn.5463190",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Evaluation Framework for Hallucination and Factual Consistency in Arabic Voice Agents",
+        "summary": "N/A",
+        "url": "https://doi.org/10.2139/ssrn.5441054",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Review for \"Large Language Models in Materials Science: Assessing RAG Evaluation Frameworks through graphene synthesis\"",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1039/d5ra09726f/v1/review1",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Hallucination Reduction in Large Language Models with Retrieval-Augmented Generation Using Wikipedia Knowledge",
+        "summary": "<p>Natural language understanding and generation have seen great progress, yet the persistent issue of hallucination undermines the reliability of model outputs. Introducing retrieval-augmented generation (RAG) with external knowledge sources, such as Wikipedia, presents a novel and significant approach to enhancing factual accuracy and coherence in generated content. By dynamically integrating relevant information, the Mistral model demonstrates substantial improvements in precision, recall, an",
+        "url": "https://doi.org/10.31219/osf.io/pv7r5",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Not Hallucination but Granularity: Error Taxonomy and Quality Audit of LLM-Based Legal Information Extraction",
+        "summary": "<jats:p>The dominant concern in LLM-based information extraction is hallucination-the fabrication of content not present in the source text. We present an end-to-end expert audit of a production multi-stage legal extraction pipeline, evaluating 1,042 items across 100 Brazilian court decisions from four tribunals. With its production model configuration (Grok-3-mini, Claude Sonnet 4.6, GPT-5-4), the pipeline achieves 96.0% precision with zero hallucinations. The dominant error is not fabrication ",
+        "url": "https://doi.org/10.2139/ssrn.6496861",
+        "source": "CrossRef"
+      },
+      {
+        "title": "MultiRAG: A Knowledge-Guided Framework for Mitigating Hallucination in Multi-Source Retrieval Augmented Generation",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1109/icde65448.2025.00230",
+        "source": "CrossRef"
+      },
+      {
+        "title": "RAG-Fusion Based Information Retrieval for Fact-Checking",
+        "summary": "N/A",
+        "url": "https://doi.org/10.18653/v1/2024.fever-1.4",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Fathom: A Fast and Modular RAG Pipeline for Fact-Checking",
+        "summary": "N/A",
+        "url": "https://doi.org/10.18653/v1/2025.fever-1.20",
+        "source": "CrossRef"
+      },
+      {
+        "title": "AIC CTU@AVerImaTeC: dual-retriever RAG for image-text fact checking",
+        "summary": "N/A",
+        "url": "https://doi.org/10.18653/v1/2026.fever-1.11",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Reducing Hallucinations in Medical AI Through Citation Enforced Prompting in RAG Systems",
+        "summary": "<jats:p>The safe integration of Large Language Models in clinical environments requires strict adherence to verified medical evidence. As part of the PARROT AI project, this study provides a systematic evaluation of how prompting strategies affect the reliability of Retrieval-Augmented Generation (RAG) pipelines using the MedQA USMLE benchmark (N=500). Four prompting strategies were examined: Baseline (zero-shot), Neutral, Expert Chain-of-Thought (Expert-CoT) with structured clinical reasoning, ",
+        "url": "https://doi.org/10.3390/app16063013",
+        "source": "CrossRef"
+      },
+      {
+        "title": "LOOM-RAG",
+        "summary": "N/A",
+        "url": "https://doi.org/10.31979/etd.hn7u-hp8x",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Domain-Specific Legal AI Assistant with Retrieval-Augmented Generation (RAG)",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1109/icaiset66439.2026.11541312",
+        "source": "CrossRef"
+      }
+    ]
+  },
+  {
+    "topic": "Parameter-efficient fine-tuning of large language models (LoRA and variants)",
+    "domain": "cs",
+    "papers": [
+      {
+        "title": "Federated Sketching LoRA: A Flexible Framework for Heterogeneous Collaborative Fine-Tuning of LLMs",
+        "summary": "Fine-tuning large language models (LLMs) on resource-constrained clients remains a challenging problem. Recent works have fused low-rank adaptation (LoRA) techniques with federated fine-tuning to mitigate challenges associated with client model sizes and data scarcity. Still, the heterogeneity of resources remains a critical bottleneck: while higher-rank modules generally enhance performance, varying client capabilities constrain LoRA's feasible rank range. Existing approaches attempting to reso",
+        "url": "http://arxiv.org/abs/2501.19389v4",
+        "source": "arXiv"
+      },
+      {
+        "title": "LoRA-FAIR: Federated LoRA Fine-Tuning with Aggregation and Initialization Refinement",
+        "summary": "Foundation models (FMs) achieve strong performance across diverse tasks with task-specific fine-tuning, yet full parameter fine-tuning is often computationally prohibitive for large models. Parameter-efficient fine-tuning (PEFT) methods like Low-Rank Adaptation (LoRA) reduce this cost by introducing low-rank matrices for tuning fewer parameters. While LoRA allows for efficient fine-tuning, it requires significant data for adaptation, making Federated Learning (FL) an appealing solution due to it",
+        "url": "http://arxiv.org/abs/2411.14961v3",
+        "source": "arXiv"
+      },
+      {
+        "title": "Targeted Lexical Injection: Unlocking Latent Cross-Lingual Alignment in Lugha-Llama via Early-Layer LoRA Fine-Tuning",
+        "summary": "Large Language Models (LLMs) have demonstrated remarkable capabilities, yet their performance in low-resource languages (LRLs), such as Swahili, often lags due to data scarcity and underrepresentation in pre-training. A key challenge is achieving robust cross-lingual lexical alignment, crucial for tasks like translation and cross-lingual information retrieval. This paper introduces Targeted Lexical Injection (TLI), a novel and efficient fine-tuning approach. We first demonstrate that Lugha-Llama",
+        "url": "http://arxiv.org/abs/2506.15415v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Parameter-Efficient Fine-Tuning of Large Pretrained Models for Instance Segmentation Tasks",
+        "summary": "Research and applications in artificial intelligence have recently shifted with the rise of large pretrained models, which deliver state-of-the-art results across numerous tasks. However, the substantial increase in parameters introduces a need for parameter-efficient training strategies. Despite significant advancements, limited research has explored parameter-efficient fine-tuning (PEFT) methods in the context of transformer-based models for instance segmentation. Addressing this gap, this stu",
+        "url": "http://arxiv.org/abs/2606.01947v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "LLM-Adapters: An Adapter Family for Parameter-Efficient Fine-Tuning of Large Language Models",
+        "summary": "The success of large language models (LLMs), like GPT-4 and ChatGPT, has led to the development of numerous cost-effective and accessible alternatives that are created by finetuning open-access LLMs with task-specific data (e.g., ChatDoctor) or instruction data (e.g., Alpaca). Among the various fine-tuning methods, adapter-based parameter-efficient fine-tuning (PEFT) is undoubtedly one of the most attractive topics, as it only requires fine-tuning a few external parameters instead of the entire ",
+        "url": "http://arxiv.org/abs/2304.01933v3",
+        "source": "arXiv"
+      },
+      {
+        "title": "Fine-tuning and Utilization Methods of Domain-specific LLMs",
+        "summary": "Recent releases of pre-trained Large Language Models (LLMs) have gained considerable traction, yet research on fine-tuning and employing domain-specific LLMs remains scarce. This study investigates approaches for fine-tuning and leveraging domain-specific LLMs, highlighting trends in LLMs, foundational models, and methods for domain-specific pre-training. Focusing on the financial sector, it details dataset selection, preprocessing, model choice, and considerations crucial for LLM fine-tuning in",
+        "url": "http://arxiv.org/abs/2401.02981v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "On Robust Prefix-Tuning for Text Classification",
+        "summary": "Recently, prefix-tuning has gained increasing attention as a parameter-efficient finetuning method for large-scale pretrained language models. The method keeps the pretrained models fixed and only updates the prefix token parameters for each downstream task. Despite being lightweight and modular, prefix-tuning still lacks robustness to textual adversarial attacks. However, most currently developed defense techniques necessitate auxiliary model update and storage, which inevitably hamper the modu",
+        "url": "http://arxiv.org/abs/2203.10378v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Revisiting the Power of Prompt for Visual Tuning",
+        "summary": "Visual prompt tuning (VPT) is a promising solution incorporating learnable prompt tokens to customize pre-trained models for downstream tasks. However, VPT and its variants often encounter challenges like prompt initialization, prompt length, and subpar performance in self-supervised pretraining, hindering successful contextual adaptation. This study commences by exploring the correlation evolvement between prompts and patch tokens during proficient training. Inspired by the observation that the",
+        "url": "http://arxiv.org/abs/2402.02382v3",
+        "source": "arXiv"
+      },
+      {
+        "title": "Point-PEFT: Parameter-Efficient Fine-Tuning for 3D Pre-trained Models",
+        "summary": "The popularity of pre-trained large models has revolutionized downstream tasks across diverse fields, such as language, vision, and multi-modality. To minimize the adaption cost for downstream tasks, many Parameter-Efficient Fine-Tuning (PEFT) techniques are proposed for language and 2D image pre-trained models. However, the specialized PEFT method for 3D pre-trained models is still under-explored. To this end, we introduce Point-PEFT, a novel framework for adapting point cloud pre-trained model",
+        "url": "http://arxiv.org/abs/2310.03059v8",
+        "source": "arXiv"
+      },
+      {
+        "title": "Overcoming Catastrophic Forgetting by XAI",
+        "summary": "Explaining the behaviors of deep neural networks, usually considered as black boxes, is critical especially when they are now being adopted over diverse aspects of human life. Taking the advantages of interpretable machine learning (interpretable ML), this work proposes a novel tool called Catastrophic Forgetting Dissector (or CFD) to explain catastrophic forgetting in continual learning settings. We also introduce a new method called Critical Freezing based on the observations of our tool. Expe",
+        "url": "http://arxiv.org/abs/2211.14177v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Does the Adam Optimizer Exacerbate Catastrophic Forgetting?",
+        "summary": "Catastrophic forgetting remains a severe hindrance to the broad application of artificial neural networks (ANNs), however, it continues to be a poorly understood phenomenon. Despite the extensive amount of work on catastrophic forgetting, we argue that it is still unclear how exactly the phenomenon should be quantified, and, moreover, to what degree all of the choices we make when designing learning systems affect the amount of catastrophic forgetting. We use various testbeds from the reinforcem",
+        "url": "http://arxiv.org/abs/2102.07686v4",
+        "source": "arXiv"
+      },
+      {
+        "title": "A Theoretical Analysis of Catastrophic Forgetting through the NTK Overlap Matrix",
+        "summary": "Continual learning (CL) is a setting in which an agent has to learn from an incoming stream of data during its entire lifetime. Although major advances have been made in the field, one recurring problem which remains unsolved is that of Catastrophic Forgetting (CF). While the issue has been extensively studied empirically, little attention has been paid from a theoretical angle. In this paper, we show that the impact of CF increases as two tasks increasingly align. We introduce a measure of task",
+        "url": "http://arxiv.org/abs/2010.04003v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Differentially Private Fine-tuning of Language Models",
+        "summary": "We give simpler, sparser, and faster algorithms for differentially private fine-tuning of large-scale pre-trained language models, which achieve the state-of-the-art privacy versus utility tradeoffs on many standard NLP tasks. We propose a meta-framework for this problem, inspired by the recent success of highly parameter-efficient methods for fine-tuning. Our experiments show that differentially private adaptations of these approaches outperform previous private algorithms in three important di",
+        "url": "http://arxiv.org/abs/2110.06500v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "LoRA-TTA: Efficient Test-Time Adaptation via Low-Rank Fine-Tuning with Theoretical Guarantees and Empirical Validation",
+        "summary": "<jats:p>Test-Time Adaptation (TTA) enables models to adapt to unseen target domains without access to source data. However, existing TTA methods update all model parameters during adaptation, incurring computational costs and memory overhead that preclude deployment on resource-constrained devices.We propose LoRA-TTA, a parameter-efficient TTA framework that applies Low-Rank Adaptation (LoRA) to parameterize model updates. Instead of optimizing millions of parameters, LoRA-TTA learns low-rank de",
+        "url": "https://doi.org/10.2139/ssrn.7087581",
+        "source": "CrossRef"
+      },
+      {
+        "title": "La-LoRA: Parameter-efficient fine-tuning with layer-wise adaptive low-rank adaptation",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1016/j.neunet.2025.108095",
+        "source": "CrossRef"
+      },
+      {
+        "title": "RB-LoRA: Rank-Balanced Aggregation for Low-Rank Adaptation with Federated Fine-Tuning",
+        "summary": "N/A",
+        "url": "https://doi.org/10.18653/v1/2026.findings-eacl.88",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Fine-Tuning Large Language Models with Domain-Specific Data: A Comprehensive Analysis of Parameter-Efficient Methods and Performance Optimization",
+        "summary": "N/A",
+        "url": "https://doi.org/10.21275/sr24228092614",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Algorithm 1: Fine-tuning process for FakeNews-TransAug with Arabic-specific preprocessing and parameter-efficient adaptation.",
+        "summary": "N/A",
+        "url": "https://doi.org/10.7717/peerj-cs.3654/table-101",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Modern Approaches to LLaMA Fine-Tuning: Parameter-Efficient Methods for Targeted Domain",
+        "summary": "<jats:p>The emergence of Large Language Models (LLMs) has revolutionized natural language processing across numerous domains. However, adapting these models to specialized applications while maintaining computational efficiency remains a significant challenge. This study presents a comprehensive analysis of parameter-efficient fine-tuning methods for LLaMA models, focusing on their application to novel domains including healthcare, government, ocean science, and financial services. We systematic",
+        "url": "https://doi.org/10.36227/techrxiv.176827298.88219560/v1",
+        "source": "CrossRef"
+      },
+      {
+        "title": "PARAMETER-EFFICIENT FINE-TUNING FOR MEDICAL TEXT SUMMARIZATION: A COMPARATIVE STUDY OF LORA, PROMPT TUNING, AND FULL FINE-TUNING",
+        "summary": "<jats:p>Fine-tuning large language models for domain-specific tasks such as medical text summarization demands substantial computational resources. Parameter-efficient fine-tuning (PEFT) methods offer promising alternatives by updating only a small fraction of parameters. This paper compares three adaptation approaches—Low-Rank Adaptation (LoRA), Prompt Tuning, and Full Fine-Tuning—across the Flan-T5 model family on the PubMed medical summarization dataset. Through experiments with multiple rand",
+        "url": "https://doi.org/10.5121/csit.2026.160601",
+        "source": "CrossRef"
+      },
+      {
+        "title": "PEFT Innovations in Text-to-SQL: Adapter and Prefix Tuning Methods with Structural Awareness",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1109/ijcnn64981.2025.11228968",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Inducer-tuning: Connecting Prefix-tuning and Adapter-tuning",
+        "summary": "N/A",
+        "url": "https://doi.org/10.18653/v1/2022.emnlp-main.50",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Locate-then-Merge: Neuron-Level Parameter Fusion for Mitigating Catastrophic Forgetting in Multimodal LLMs",
+        "summary": "N/A",
+        "url": "https://doi.org/10.18653/v1/2025.findings-emnlp.372",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Biological Continued Pretraining Reshapes the Capability Profile of a Foundation Model Without Catastrophic Forgetting",
+        "summary": "<jats:title>Abstract</jats:title>\n                <jats:p>\n                  It is widely assumed that continued pretraining (CPT) on a narrow, out-of-distribution corpus such as raw biological sequence must trade away a general-purpose model’s broad competence — the “alignment tax” or catastrophic-forgetting intuition. We test this directly, without any new training, by re-analyzing three checkpoints from a single lineage of a 26B-parameter Mixture-of-Experts model (Gemma-4-26B-A4B): the instru",
+        "url": "https://doi.org/10.64898/2026.07.06.736700",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Analysis of catastrophic forgetting",
+        "summary": "N/A",
+        "url": "https://doi.org/10.17760/d20731801",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Advances in Parameter Efficient Fine Tuning for Large Scale AI Models",
+        "summary": "N/A",
+        "url": "https://doi.org/10.2139/ssrn.5196071",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Parameter-Efficient Fine-Tuning (PEFT)",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1007/979-8-8688-2607-8_8",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Advances in Parameter-Efficient Fine-Tuning: Optimizing Foundation Models for Scalable AI",
+        "summary": "<jats:p>The unprecedented scale and capabilities of foundation models, such as large language models and vision transformers, have transformed artificial intelligence (AI) across diverse domains. However, fine-tuning these models for specific tasks remains computationally expensive and memory-intensive, posing challenges for practical deployment, especially in resource-constrained environments. Parameter-efficient fine-tuning (PEFT) methods have emerged as a promising solution, enabling efficien",
+        "url": "https://doi.org/10.20944/preprints202503.2048.v1",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Zero-Shot Cross-Lingual Transfer using Prefix-Based Adaptation",
+        "summary": "With the release of new large language models (LLMs) like Llama and Mistral, zero-shot cross-lingual transfer has become increasingly feasible due to their multilingual pretraining and strong generalization capabilities. However, adapting these decoder-only LLMs to new tasks across languages remains challenging. While parameter-efficient fine-tuning (PeFT) techniques like Low-Rank Adaptation (LoRA) are widely used, prefix-based techniques such as soft prompt tuning, prefix tuning, and Llama Adap",
+        "url": "https://www.semanticscholar.org/paper/63610e24a205c2531f69f2719482cee96865f8e1",
+        "source": "Semantic Scholar"
+      },
+      {
+        "title": "LowRA: Accurate and Efficient LoRA Fine-Tuning of LLMs under 2 Bits",
+        "summary": "Fine-tuning large language models (LLMs) is increasingly costly as models scale to hundreds of billions of parameters, and even parameter-efficient fine-tuning (PEFT) methods like LoRA remain resource-intensive. We introduce LowRA, the first framework to enable LoRA fine-tuning below 2 bits per parameter with minimal performance loss. LowRA optimizes fine-grained quantization - mapping, threshold selection, and precision assignment - while leveraging efficient CUDA kernels for scalable deploymen",
+        "url": "https://www.semanticscholar.org/paper/69a2d6f8173ebdf2da00449f89de0dae326976df",
+        "source": "Semantic Scholar"
+      },
+      {
+        "title": "A Survey on Federated Parameter-Efficient Fine-Tuning for Large Language Models",
+        "summary": "Large Language Models (LLMs) have demonstrated remarkable efficacy across diverse domains, yet their deployment in sensitive sectors is constrained by data privacy. Federated Learning (FL) offers a promising paradigm for collaborative model training without exposing raw data, while Parameter-Efficient Fine-Tuning (PEFT) techniques substantially reduce adaptation costs. This survey systematically reviews the integration of FL and PEFT for LLMs, elucidating foundational architectures, mainstream P",
+        "url": "https://www.semanticscholar.org/paper/927f9f0a67667b876588a0f00c23ee221a642990",
+        "source": "Semantic Scholar"
+      },
+      {
+        "title": "A SYSTEMATIC REVIEW OF PARAMETER-EFFICIENT FINE-TUNING (PEFT) IN SPEECH PROCESSING",
+        "summary": "Recent breakthroughs in large-scale speech models such as Whisper, Wav2Vec 2.0, and HuBERT have greatly enhanced speech processing tasks. Full fine-tuning comes at a prohibitive cost, though, which restricts their application to low- resource or real-time settings. The parameter-efficient fine-tuning (PEFT) approaches—e.g., LoRA, QLoRA, adapters, and prompt tuning—allow for compact adaptation by fine-tuning only a small subset of parameters. We review 33 studies (2021–2025) using PEFT for applic",
+        "url": "https://www.semanticscholar.org/paper/bfd151f1b8463959f834f6b5b0f4b828a762f188",
+        "source": "Semantic Scholar"
+      }
+    ]
+  },
+  {
+    "topic": "Reinforcement learning from human feedback for LLM alignment",
+    "domain": "interdisciplinary",
+    "papers": [
+      {
+        "title": "Improving Weak-to-Strong Generalization with Scalable Oversight and Ensemble Learning",
+        "summary": "This paper presents a follow-up study to OpenAI's recent superalignment work on Weak-to-Strong Generalization (W2SG). Superalignment focuses on ensuring that high-level AI systems remain consistent with human values and intentions when dealing with complex, high-risk tasks. The W2SG framework has opened new possibilities for empirical research in this evolving field. Our study simulates two phases of superalignment under the W2SG framework: the development of general superhuman models and the pr",
+        "url": "http://arxiv.org/abs/2402.00667v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Weak Critics Make Strong Learners: On-Policy Critique Distillation for Scalable Oversight",
+        "summary": "As large language models become stronger, weak supervisors may fail to provide reliable labels, preferences, or final judgments for complex outputs, limiting both weak-to-strong generalization and scalable oversight. We study a more tractable form of weak supervision: using a weak model as a critic rather than as a labeler or judge. Instead of solving the task or selecting the correct answer, the weak critic only needs to provide a non-misleading revision direction that helps the strong model be",
+        "url": "http://arxiv.org/abs/2606.00424v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "EnsemW2S: Enhancing Weak-to-Strong Generalization with Large Language Model Ensembles",
+        "summary": "With Large Language Models (LLMs) rapidly approaching and potentially surpassing human-level performance, it has become imperative to develop approaches capable of effectively supervising and enhancing these powerful models using smaller, human-level models exposed to only human-level data. We address this critical weak-to-strong (W2S) generalization challenge by proposing a novel method aimed at improving weak experts, by training on the same limited human-level data, enabling them to generaliz",
+        "url": "http://arxiv.org/abs/2410.04571v3",
+        "source": "arXiv"
+      },
+      {
+        "title": "Homological mirror symmetry for log Calabi-Yau surfaces",
+        "summary": "Given a log Calabi-Yau surface $Y$ with maximal boundary $D$ and distinguished complex structure, we explain how to construct a mirror Lefschetz fibration $w: M \\to \\mathbb{C}$, where $M$ is a Weinstein four-manifold, such that the directed Fukaya category of $w$ is isomorphic to $D^b \\text{Coh}(Y)$, and the wrapped Fukaya category $D^b\\mathcal{W} (M)$ is isomorphic to $D^b \\text{Coh}(Y \\backslash D)$. We construct an explicit isomorphism between $M$ and the total space of the almost-toric fibra",
+        "url": "http://arxiv.org/abs/2005.05010v3",
+        "source": "arXiv"
+      },
+      {
+        "title": "Reward Shaping to Mitigate Reward Hacking in RLHF",
+        "summary": "Reinforcement learning from human feedback (RLHF) is widely used to align large language models (LLMs) with human preferences. However, RLHF remains vulnerable to \\emph{reward hacking}, whereby a policy exploits imperfections in the reward function instead of learning the intended behavior, thereby undermining alignment. Although reward shaping can stabilize RLHF training and partially mitigate reward hacking, shaping methods and their underlying design principles have not been systematically in",
+        "url": "http://arxiv.org/abs/2502.18770v6",
+        "source": "arXiv"
+      },
+      {
+        "title": "When RLHF Fails: A Mechanistic Taxonomy of Reward Hacking, Collapse, and Evaluator Gaming",
+        "summary": "RLHF evaluation should track how failures emerge, where they localize, and which warning signals appear before external quality degrades. We study this problem with a compact RLHF pipeline built for this paper, including PPO, DPO, uncertainty-penalized PPO (UP-PPO), reward-model uncertainty, approximate policy drift, diversity and repetition diagnostics, and two external LLM judges. Rather than treating reward hacking as a single terminal event, we classify matched checkpoint and prompt-level tr",
+        "url": "http://arxiv.org/abs/2606.03238v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "On The Conceptualization and Societal Impact of Cross-Cultural Bias",
+        "summary": "Research has shown that while large language models (LLMs) can generate their responses based on cultural context, they are not perfect and tend to generalize across cultures. However, when evaluating the cultural bias of a language technology on any dataset, researchers may choose not to engage with stakeholders actually using that technology in real life, which evades the very fundamental problem they set out to address.\n  Inspired by the work done by arXiv:2005.14050v2, I set out to analyse r",
+        "url": "http://arxiv.org/abs/2512.21809v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Ethically Collecting Multi-Modal Spontaneous Conversations with People that have Cognitive Impairments",
+        "summary": "In order to make spoken dialogue systems (such as Amazon Alexa or Google Assistant) more accessible and naturally interactive for people with cognitive impairments, appropriate data must be obtainable. Recordings of multi-modal spontaneous conversations with vulnerable user groups are scarce however and this valuable data is challenging to collect. Researchers that call for this data are commonly inexperienced in ethical and legal issues around working with vulnerable participants. Additionally,",
+        "url": "http://arxiv.org/abs/2009.14361v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Navigating the Ethical and Societal Impacts of Generative AI in Higher Computing Education",
+        "summary": "Generative AI (GenAI) presents societal and ethical challenges related to equity, academic integrity, bias, and data provenance. In this paper, we outline the goals, methodology and deliverables of their collaborative research, considering the ethical and societal impacts of GenAI in higher computing education. A systematic literature review that addresses a wide set of issues and topics covering the rapidly emerging technology of GenAI from the perspective of its ethical and societal impacts is",
+        "url": "http://arxiv.org/abs/2511.15768v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Robust Multi-Objective Preference Alignment with Online DPO",
+        "summary": "Multi-objective preference alignment of large language models (LLMs) is critical for developing AI systems that are more configurable, personalizable, helpful, and safe. However, optimizing model outputs to satisfy diverse objectives with variable weights at inference time for truly personalized models presents a significant challenge. Existing approaches are either computationally expensive to train or do not sufficiently steer model behaviors. This paper introduces the Multi-Objective Online D",
+        "url": "http://arxiv.org/abs/2503.00295v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Faith in AI can narrow the futures individuals consider",
+        "summary": "Artificial intelligence (AI) predictions are increasingly used to inform human decisions. Here, using a behavioral implementation of the classic Newcomb's paradox in 1,305 participants, we show that AI predictions can also shape the reasoning people use to make a decision. In this paradigm, perceived predictive authority can alter how people reason about their future actions, leading them to forgo a guaranteed reward. Over 40% of participants treated AI as such a predictive authority about their",
+        "url": "http://arxiv.org/abs/2603.28944v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Foundations of GenIR",
+        "summary": "The chapter discusses the foundational impact of modern generative AI models on information access (IA) systems. In contrast to traditional AI, the large-scale training and superior data modeling of generative AI models enable them to produce high-quality, human-like responses, which brings brand new opportunities for the development of IA paradigms. In this chapter, we identify and introduce two of them in details, i.e., information generation and information synthesis. Information generation a",
+        "url": "http://arxiv.org/abs/2501.02842v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Online Iterative Reinforcement Learning from Human Feedback with General Preference Model",
+        "summary": "We investigate Reinforcement Learning from Human Feedback (RLHF) in the context of a general preference oracle. In particular, we do not assume the existence of a reward function and an oracle preference signal drawn from the Bradley-Terry model as most of the prior works do. We consider a standard mathematical formulation, the reverse-KL regularized minimax game between two LLMs for RLHF under general preference oracle. The learning objective of this formulation is to find a policy so that it i",
+        "url": "http://arxiv.org/abs/2402.07314v3",
+        "source": "arXiv"
+      },
+      {
+        "title": "RLHF-Blender: A Configurable Interactive Interface for Learning from Diverse Human Feedback",
+        "summary": "To use reinforcement learning from human feedback (RLHF) in practical applications, it is crucial to learn reward models from diverse sources of human feedback and to consider human factors involved in providing feedback of different types. However, the systematic study of learning from diverse types of feedback is held back by limited standardized tooling available to researchers. To bridge this gap, we propose RLHF-Blender, a configurable, interactive interface for learning from human feedback",
+        "url": "http://arxiv.org/abs/2308.04332v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Iterative Preference Learning from Human Feedback: Bridging Theory and Practice for RLHF under KL-Constraint",
+        "summary": "This paper studies the alignment process of generative models with Reinforcement Learning from Human Feedback (RLHF). We first identify the primary challenges of existing popular methods like offline PPO and offline DPO as lacking in strategical exploration of the environment. Then, to understand the mathematical principle of RLHF, we consider a standard mathematical formulation, the reverse-KL regularized contextual bandit for RLHF. Despite its widespread practical application, a rigorous theor",
+        "url": "http://arxiv.org/abs/2312.11456v4",
+        "source": "arXiv"
+      },
+      {
+        "title": "On scalable oversight with weak LLMs judging strong LLMs",
+        "summary": "N/A",
+        "url": "https://doi.org/10.52202/079017-2395",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Strong Empowered and Aligned Weak Mastered Annotation for Weak-to-Strong Generalization",
+        "summary": "<jats:p>The super-alignment problem of how humans can effectively supervise super-human AI has garnered increasing attention. Recent research has focused on investigating the weak-to-strong generalization (W2SG) scenario as an analogy for super-alignment. This scenario examines how a pre-trained strong model, supervised by an aligned weak model, can outperform its weak supervisor. Despite good progress, current W2SG methods face two main issues: 1) The annotation quality is limited by the knowle",
+        "url": "https://doi.org/10.1609/aaai.v39i26.34955",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Reward Hacking in Reinforcement Learning and RLHF: A Multidisciplinary Examination of Vulnerabilities, Mitigation Strategies, and Alignment Challenges",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1109/icsc65596.2025.11140447",
+        "source": "CrossRef"
+      },
+      {
+        "title": "InfoRM: Mitigating Reward Hacking in RLHF via Information-Theoretic Reward Modeling",
+        "summary": "N/A",
+        "url": "https://doi.org/10.52202/079017-4270",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Predicting the Inevitability of AI Alignment Failure: A System-Ontological Analysis and Mechanistic Framework.&amp;nbsp;A Unified Ontological Framework for \"Goal Distortion\", \"Reward Hacking\", and \"Deceptive Alignment\"",
+        "summary": "N/A",
+        "url": "https://doi.org/10.2139/ssrn.5849902",
+        "source": "CrossRef"
+      },
+      {
+        "title": "RLHF-Aligned Open LLMs: A Comparative Survey",
+        "summary": "<jats:p>We survey recent open-weight large language models (LLMs) fine-tuned via Reinforcement Learning from Human Feedback (RLHF) and related AI-assisted methods, focusing on LLaMA 2 (7B/13B chat variants), LLaMA 3 (8B, 70B), Mistral 7B, Mixtral 8×7B (Sparse-MoE), Falcon 7B-Instruct, OpenAssistant-based models, Alpaca 7B, and Zephyr 7B. Closed models (GPT-4, Claude 3) are included for reference. For each model, we describe its alignment strategy (PPO, rejection sampling, DPO, RLAIF), reward mod",
+        "url": "https://doi.org/10.20944/preprints202506.2381.v1",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Alignment of Generative Models (LLMs): Impacts of RLHF on Security, Governance, and Corporate Innovation",
+        "summary": "<jats:p>&lt;p&gt;&lt;span&gt;This document, &lt;/span&gt;&lt;strong&gt;“Alignment of Generative Models (LLMs): Impacts of RLHF on Security, Governance, and Corporate Innovation,”&lt;/strong&gt;&lt;span&gt; examines the shift from analytical AI to &lt;/span&gt;&lt;strong&gt;generative AI based on Large Language Models (LLMs)&lt;/strong&gt;&lt;span&gt;. Its central argument is that raw statistical power alone is not enough to guarantee safety, reliability, or corporate usefulness. The core issue e",
+        "url": "https://doi.org/10.2139/ssrn.6591478",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Societal impacts of artificial intelligence: Ethical, legal, and governance issues",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1016/j.socimp.2024.100040",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Purchased Epistemic Erasure: AI Alignment, RLHF, and the Exploitation of Global Preference Labor",
+        "summary": "<jats:p>The alignment of artificial intelligence, operationalized through reinforcement learning from human feedback (RLHF), is marketed as a mechanism for teaching models global human preference. This paper argues that the underlying geographic arbitrage of preference labor achieves the exact opposite: the extraction of strict conformity to a WEIRD (Western, Educated, Industrialized, Rich, Democratic) demographic standard. By outsourcing annotation to the Global South at a fraction of the cost,",
+        "url": "https://doi.org/10.2139/ssrn.7118021",
+        "source": "CrossRef"
+      },
+      {
+        "title": "The Legible Safe: Corpus Priors, RLHF Amplification, and the Grounding Gap in AI Safety Alignment",
+        "summary": "<jats:p>Current AI safety methodology operates at the output layer, asking whether model responses appear aligned to human evaluators. This paper argues that this question, however carefully operationalized, is asked at the wrong layer, and that the resulting structural risk compounds as capability scales. We develop three connected arguments. First, drawing on Dodds et al. (2026), we establish that human language carries a systematic safety bias at the token level, recoverable across diverse co",
+        "url": "https://doi.org/10.2139/ssrn.7095938",
+        "source": "CrossRef"
+      },
+      {
+        "title": "For objective, value-laden, contextualist pluralism",
+        "summary": "<p>Chapter 3 is a commentary on Chapter 2, and revisits the discussion on views on the nature of scientific change (continuous or discontinuous; cumulative or revolutionary) and about the role of external considerations in science (corruptive or necessary), and how they depend on prior views about the nature of scientific knowledge. It revisits the principal epistemological ideas of logical empiricism, holism, and contextualism and outlines the attitudes toward change and external influence each",
+        "url": "https://doi.org/10.1093/med/9780198725978.003.0003",
+        "source": "CrossRef"
+      },
+      {
+        "title": "The Role of Foundational Autoraters in Reinforcement Learning from Human Feedback (RLHF)&amp;nbsp;",
+        "summary": "<jats:p>The advent of advanced artificial intelligence (AI) systems has fundamentally transformed diverse fields, including education, healthcare, and natural language processing. A particularly influential area within AI is Reinforcement Learning from Human Feedback (RLHF), which leverages human guidance to optimize learning processes and improve model performance. In this context, foundational autoraters serve as critical tools that automate the evaluation of written submissions, providing ess",
+        "url": "https://doi.org/10.2139/ssrn.6338238",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Reinforcement Learning with Human Feedback (RLHF): Shaping the Future of AI Alignment Roadmap 2025-2035",
+        "summary": "<jats:p>We present a comprehensive survey and roadmap for Reinforcement Learning with Human Feedback (RLHF) and closely related methods (DPO, RRHF, Constitutional AI). We unify practical training recipes (SFT → reward modeling → PPO-style optimization), discuss failure modes (reward hacking, KL instabilities), and evaluate data-efficiency trade-offs using reproducible synthetic experiments. We include a managerial roadmap (2025-2035) for scaling human and AI feedback, and cite key works with DOI",
+        "url": "https://doi.org/10.36227/techrxiv.175877749.95952584/v1",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Fairness-Aware Offline Reinforcement Learning with Human Feedback (Fair-RLHF): Mitigating Bias in Human Preferences",
+        "summary": "<jats:p>Offline Reinforcement Learning with Human Feedback aims to train AI agents using predefined human data, however human feedback can be biased which can lead to unfair or sub-optimal decision-making. In this paper, we propose Fairness-Aware Offline RLHF (Fair-RLHF), a framework designed to integrate fairness constraints into Offline Reinforcement Learning. We aim to detect and mitigate bias in Human Feedback. This is done using causal graphs (DAGs), which help in analyzing and identifying ",
+        "url": "https://doi.org/10.36227/techrxiv.175382817.74693578/v1",
+        "source": "CrossRef"
+      }
+    ]
+  },
+  {
+    "topic": "Adversarial robustness of deep neural networks",
+    "domain": "cs",
+    "papers": [
+      {
+        "title": "The Deep Arbitrary Polynomial Chaos Neural Network or how Deep Artificial Neural Networks could benefit from Data-Driven Homogeneous Chaos Theory",
+        "summary": "Artificial Intelligence and Machine learning have been widely used in various fields of mathematical computing, physical modeling, computational science, communication science, and stochastic analysis. Approaches based on Deep Artificial Neural Networks (DANN) are very popular in our days. Depending on the learning task, the exact form of DANNs is determined via their multi-layer architecture, activation functions and the so-called loss function. However, for a majority of deep learning approach",
+        "url": "http://arxiv.org/abs/2306.14753v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Learning Active Subspaces and Discovering Important Features with Gaussian Radial Basis Functions Neural Networks",
+        "summary": "Providing a model that achieves a strong predictive performance and is simultaneously interpretable by humans is one of the most difficult challenges in machine learning research due to the conflicting nature of these two objectives. To address this challenge, we propose a modification of the radial basis function neural network model by equipping its Gaussian kernel with a learnable precision matrix. We show that precious information is contained in the spectrum of the precision matrix that can",
+        "url": "http://arxiv.org/abs/2307.05639v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Hierarchical Attentional Hybrid Neural Networks for Document Classification",
+        "summary": "Document classification is a challenging task with important applications. The deep learning approaches to the problem have gained much attention recently. Despite the progress, the proposed models do not incorporate the knowledge of the document structure in the architecture efficiently and not take into account the contexting importance of words and sentences. In this paper, we propose a new approach based on a combination of convolutional neural networks, gated recurrent units, and attention ",
+        "url": "http://arxiv.org/abs/1901.06610v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Semi-supervised Semantics-guided Adversarial Training for Trajectory Prediction",
+        "summary": "Predicting the trajectories of surrounding objects is a critical task for self-driving vehicles and many other autonomous systems. Recent works demonstrate that adversarial attacks on trajectory prediction, where small crafted perturbations are introduced to history trajectories, may significantly mislead the prediction of future trajectories and induce unsafe planning. However, few works have addressed enhancing the robustness of this important safety-critical task.In this paper, we present a n",
+        "url": "http://arxiv.org/abs/2205.14230v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Smoothness Analysis of Adversarial Training",
+        "summary": "Deep neural networks are vulnerable to adversarial attacks. Recent studies about adversarial robustness focus on the loss landscape in the parameter space since it is related to optimization and generalization performance. These studies conclude that the difficulty of adversarial training is caused by the non-smoothness of the loss function: i.e., its gradient is not Lipschitz continuous. However, this analysis ignores the dependence of adversarial attacks on model parameters. Since adversarial ",
+        "url": "http://arxiv.org/abs/2103.01400v3",
+        "source": "arXiv"
+      },
+      {
+        "title": "Label Noise in Adversarial Training: A Novel Perspective to Study Robust Overfitting",
+        "summary": "We show that label noise exists in adversarial training. Such label noise is due to the mismatch between the true label distribution of adversarial examples and the label inherited from clean examples - the true label distribution is distorted by the adversarial perturbation, but is neglected by the common practice that inherits labels from clean examples. Recognizing label noise sheds insights on the prevalence of robust overfitting in adversarial training, and explains its intriguing dependenc",
+        "url": "http://arxiv.org/abs/2110.03135v4",
+        "source": "arXiv"
+      },
+      {
+        "title": "Attack-SAM: Towards Attacking Segment Anything Model With Adversarial Examples",
+        "summary": "Segment Anything Model (SAM) has attracted significant attention recently, due to its impressive performance on various downstream tasks in a zero-short manner. Computer vision (CV) area might follow the natural language processing (NLP) area to embark on a path from task-specific vision models toward foundation models. However, deep vision models are widely recognized as vulnerable to adversarial examples, which fool the model to make wrong predictions with imperceptible perturbation. Such vuln",
+        "url": "http://arxiv.org/abs/2305.00866v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Adversarial Examples: Attacks and Defenses for Deep Learning",
+        "summary": "With rapid progress and significant successes in a wide spectrum of applications, deep learning is being applied in many safety-critical environments. However, deep neural networks have been recently found vulnerable to well-designed input samples, called adversarial examples. Adversarial examples are imperceptible to human but can easily fool deep neural networks in the testing/deploying stage. The vulnerability to adversarial examples becomes one of the major risks for applying deep neural net",
+        "url": "http://arxiv.org/abs/1712.07107v3",
+        "source": "arXiv"
+      },
+      {
+        "title": "Adversarial Examples in the Physical World: A Survey",
+        "summary": "Deep neural networks (DNNs) have demonstrated high vulnerability to adversarial examples, raising broad security concerns about their applications. Besides the attacks in the digital world, the practical implications of adversarial examples in the physical world present significant challenges and safety concerns. However, current research on physical adversarial examples (PAEs) lacks a comprehensive understanding of their unique characteristics, leading to limited significance and understanding.",
+        "url": "http://arxiv.org/abs/2311.01473v3",
+        "source": "arXiv"
+      },
+      {
+        "title": "Robust Tabular Foundation Models",
+        "summary": "The development of tabular foundation models (TFMs) has accelerated in recent years, showing strong potential to outperform traditional ML methods for structured data. A key finding is that TFMs can be pretrained entirely on synthetic datasets, opening opportunities to design data generators that encourage desirable model properties. Prior work has mainly focused on crafting high-quality priors over generators to improve overall pretraining performance. Our insight is that parameterizing the gen",
+        "url": "http://arxiv.org/abs/2512.03307v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Vision Foundation Model Embedding-Based Semantic Anomaly Detection",
+        "summary": "Semantic anomalies are contextually invalid or unusual combinations of familiar visual elements that can cause undefined behavior and failures in system-level reasoning for autonomous systems. This work explores semantic anomaly detection by leveraging the semantic priors of state-of-the-art vision foundation models, operating directly on the image. We propose a framework that compares local vision embeddings from runtime images to a database of nominal scenarios in which the autonomous system i",
+        "url": "http://arxiv.org/abs/2505.07998v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "PG-Attack: A Precision-Guided Adversarial Attack Framework Against Vision Foundation Models for Autonomous Driving",
+        "summary": "Vision foundation models are increasingly employed in autonomous driving systems due to their advanced capabilities. However, these models are susceptible to adversarial attacks, posing significant risks to the reliability and safety of autonomous vehicles. Adversaries can exploit these vulnerabilities to manipulate the vehicle's perception of its surroundings, leading to erroneous decisions and potentially catastrophic consequences. To address this challenge, we propose a novel Precision-Guided",
+        "url": "http://arxiv.org/abs/2407.13111v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "A Deep Dive into Adversarial Robustness in Zero-Shot Learning",
+        "summary": "Machine learning (ML) systems have introduced significant advances in various fields, due to the introduction of highly complex models. Despite their success, it has been shown multiple times that machine learning models are prone to imperceptible perturbations that can severely degrade their accuracy. So far, existing studies have primarily focused on models where supervision across all classes were available. In constrast, Zero-shot Learning (ZSL) and Generalized Zero-shot Learning (GZSL) task",
+        "url": "http://arxiv.org/abs/2008.07651v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Benchmarking Adversarial Robustness to Bias Elicitation in Large Language Models: Scalable Automated Assessment with LLM-as-a-Judge",
+        "summary": "The growing integration of Large Language Models (LLMs) into critical societal domains has raised concerns about embedded biases that can perpetuate stereotypes and undermine fairness. Such biases may stem from historical inequalities in training data, linguistic imbalances, or adversarial manipulation. Despite mitigation efforts, recent studies show that LLMs remain vulnerable to adversarial attacks that elicit biased outputs. This work proposes a scalable benchmarking framework to assess LLM r",
+        "url": "http://arxiv.org/abs/2504.07887v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "On Adversarial Robustness: A Neural Architecture Search perspective",
+        "summary": "Adversarial robustness of deep learning models has gained much traction in the last few years. Various attacks and defenses are proposed to improve the adversarial robustness of modern-day deep learning architectures. While all these approaches help improve the robustness, one promising direction for improving adversarial robustness is unexplored, i.e., the complex topology of the neural network architecture. In this work, we address the following question: Can the complex topology of a neural n",
+        "url": "http://arxiv.org/abs/2007.08428v4",
+        "source": "arXiv"
+      },
+      {
+        "title": "Exploring and Improving Robustness of Multi Task Deep Neural Networks via Domain Agnostic Defenses",
+        "summary": "<p>In this paper I explore the robustness of the Multi-Task Deep Neural Networks (MT-DNN) againstnon-targeted adversarial attacks across Natural Language Understanding (NLU) tasks as well assome possible ways to defend against them. Liu et al., have shown that the Multi-Task Deep NeuralNetwork, due to the regularization effect produced when training as a result of it’s cross task data, ismore robust than a vanilla BERT model trained only on one task (1.1%-1.5% absolute difference).I then show th",
+        "url": "https://doi.org/10.31224/osf.io/du2vs",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Asymmetric Certified Robustness via Feature-Convex Neural Networks",
+        "summary": "N/A",
+        "url": "https://doi.org/10.52202/075280-2280",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Rethinking Lipschitz Neural Networks and Certified Robustness: A Boolean Function Perspective",
+        "summary": "N/A",
+        "url": "https://doi.org/10.52202/068431-1410",
+        "source": "CrossRef"
+      },
+      {
+        "title": "GNN-based Deep Reinforcement Learning with Adversarial Training for Robust Optimization of Modern Tactical Communication Systems",
+        "summary": "<jats:p>This paper investigates the feasibility of a Graph Neural Network\n(GNN)-based Deep Reinforcement Learning (DRL) for tackling complex\noptimization problems in modern communication systems deployed to\ntactical networks. Our methodology consists of three interacting agents:\nan environment builder agent responsible for generating complex network\ngraph environments, a DRL agent situated within the control plane that\npossesses a global view of the current network state and makes decisions\nbase",
+        "url": "https://doi.org/10.36227/techrxiv.23476058.v1",
+        "source": "CrossRef"
+      },
+      {
+        "title": "GNN-based Deep Reinforcement Learning with Adversarial Training for Robust Optimization of Modern Tactical Communication Systems",
+        "summary": "<jats:p>&lt;p&gt;This paper investigates the feasibility of a Graph Neural Network (GNN)-based Deep Reinforcement Learning (DRL) for tackling complex optimization problems in modern communication systems deployed to tactical networks. Our methodology consists of three interacting agents: an environment builder agent responsible for generating complex network graph environments, a DRL agent situated within the control plane that possesses a global view of the current network state and makes decis",
+        "url": "https://doi.org/10.36227/techrxiv.23476058",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Adversarial Instance Generation and Robust Training for Neural Combinatorial Optimization with Multiple Objectives",
+        "summary": "<title>Abstract</title>\n                <p>Deep reinforcement learning (DRL) has shown great promise in addressing multi-objective combinatorial optimization problems (MOCOPs). Nevertheless, the robustness of these learning-based solvers has remained insufficiently explored, especially across diverse and complex problem distributions. In this paper, we propose a unified robustness-oriented framework for preference-conditioned DRL solvers for MOCOPs. Within this framework, we develop a preference",
+        "url": "https://doi.org/10.21203/rs.3.rs-9899562/v1",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Evaluating Transferability of Adversarial Attacks Across Machine Learning Models",
+        "summary": "<jats:p>Adversarial attacks against machine learning models can significantly degrade model performance by adding imperceptible perturbations to inputs. A major challenge is the transferability of such attacks: adversarial examples crafted to deceive one model may also succeed in misleading other models. This study evaluates the feasibility of adversarial attacks across different convolutional neural network architectures. We generate adversarial examples on a source model and test them against ",
+        "url": "https://doi.org/10.36227/techrxiv.175373917.78419469/v1",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Transferability of Adversarial Examples Across Speaker Embedding Models for Voice Privacy Protection",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1109/apsipaasc65261.2025.11249369",
+        "source": "CrossRef"
+      },
+      {
+        "title": "On the Transferability of Adversarial Examples between Encrypted Models",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1109/ispacs57703.2022.10082844",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Enhancing the Adversarial Robustness in Medical Image Classification: Exploring Adversarial Machine Learning with Vision Transformers-Based Models",
+        "summary": "N/A",
+        "url": "https://doi.org/10.2139/ssrn.4605358",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Foundation Models, Vision Transformers, and Multimodal AI for Next-Generation Precision Healthcare",
+        "summary": "<jats:p>Abstract\nThis manuscript presents a comprehensive academic framework for understanding how foundation models, vision transformers, and multimodal artificial intelligence are transforming predictive diagnostics and biomedical discovery in next-generation precision healthcare. The text is organized as a monograph that moves from conceptual foundations and uncertainty-aware research design to statistical explanation, causal reasoning, trustworthy machine learning, reproducible analytics eng",
+        "url": "https://doi.org/10.62311/nesx/rb-978-81-685658-2-1",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Why Do Vision Transformers Have Better Adversarial Robustness than Cnns?",
+        "summary": "N/A",
+        "url": "https://doi.org/10.2139/ssrn.4396485",
+        "source": "CrossRef"
+      },
+      {
+        "title": "x-Vectors Meet Adversarial Attacks: Benchmarking Adversarial Robustness in Speaker Verification",
+        "summary": "N/A",
+        "url": "https://doi.org/10.21437/interspeech.2020-2458",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Benchmarking Adversarial Robustness of Deep Learning Models for Perturbation Response Prediction (e.g., scGen, CellOT)",
+        "summary": "<jats:p>The ability to predict single-cell perturbation responses—how individual cells transcriptionally react to drugs, genetic edits, or environmental changes—is a critical frontier in computational biology. Deep learning models such as scGen and CellOT have emerged as promising frameworks for this task, leveraging latent space mappings and optimal transport to model counterfactual cellular states. However, the practical utility of these models in high-stakes applications (e.g., drug discovery",
+        "url": "https://doi.org/10.14293/pr2199.003579.v2",
+        "source": "CrossRef"
+      }
+    ]
+  },
+  {
+    "topic": "Federated learning for privacy-preserving machine learning",
+    "domain": "cs",
+    "papers": [
+      {
+        "title": "Federated and Transfer Learning: A Survey on Adversaries and Defense Mechanisms",
+        "summary": "The advent of federated learning has facilitated large-scale data exchange amongst machine learning models while maintaining privacy. Despite its brief history, federated learning is rapidly evolving to make wider use more practical. One of the most significant advancements in this domain is the incorporation of transfer learning into federated learning, which overcomes fundamental constraints of primary federated learning, particularly in terms of security. This chapter performs a comprehensive",
+        "url": "http://arxiv.org/abs/2207.02337v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "VAFL: a Method of Vertical Asynchronous Federated Learning",
+        "summary": "Horizontal Federated learning (FL) handles multi-client data that share the same set of features, and vertical FL trains a better predictor that combine all the features from different clients. This paper targets solving vertical FL in an asynchronous fashion, and develops a simple FL method. The new method allows each client to run stochastic gradient algorithms without coordination with other clients, so it is suitable for intermittent connectivity of clients. This method further uses a new te",
+        "url": "http://arxiv.org/abs/2007.06081v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Visualizing Privacy-Utility Trade-Offs in Differentially Private Data Releases",
+        "summary": "Organizations often collect private data and release aggregate statistics for the public's benefit. If no steps toward preserving privacy are taken, adversaries may use released statistics to deduce unauthorized information about the individuals described in the private dataset. Differentially private algorithms address this challenge by slightly perturbing underlying statistics with noise, thereby mathematically limiting the amount of information that may be deduced from each data release. Prop",
+        "url": "http://arxiv.org/abs/2201.05964v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Federated Learning by Utility-Constrained Stochastic Aggregation for Improving Rational Participation",
+        "summary": "Federated Learning (FL) algorithms implicitly assume that clients passively comply with server-side orchestration by sharing local model updates upon server request. However, this overlooks an important aspect in real-world cross-silo environments: clients are often rational agents who may prioritize their utilities such as local model performance over that of the global model. In settings with significant statistical heterogeneity, rational clients may opt out of the federation if the perceived",
+        "url": "http://arxiv.org/abs/2605.18020v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Efficient Vertical Federated Learning with Secure Aggregation",
+        "summary": "The majority of work in privacy-preserving federated learning (FL) has been focusing on horizontally partitioned datasets where clients share the same sets of features and can train complete models independently. However, in many interesting problems, such as financial fraud detection and disease detection, individual data points are scattered across different clients/organizations in vertical federated learning. Solutions for this type of FL require the exchange of gradients between participant",
+        "url": "http://arxiv.org/abs/2305.11236v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Data Poisoning and Leakage Analysis in Federated Learning",
+        "summary": "Data poisoning and leakage risks impede the massive deployment of federated learning in the real world. This chapter reveals the truths and pitfalls of understanding two dominating threats: {\\em training data privacy intrusion} and {\\em training data poisoning}. We first investigate training data privacy threat and present our observations on when and how training data may be leaked during the course of federated training. One promising defense strategy is to perturb the raw gradient update by a",
+        "url": "http://arxiv.org/abs/2409.13004v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Influence Based Defense Against Data Poisoning Attacks in Online Learning",
+        "summary": "Data poisoning is a type of adversarial attack on training data where an attacker manipulates a fraction of data to degrade the performance of machine learning model. Therefore, applications that rely on external data-sources for training data are at a significantly higher risk. There are several known defensive mechanisms that can help in mitigating the threat from such attacks. For example, data sanitization is a popular defensive mechanism wherein the learner rejects those data points that ar",
+        "url": "http://arxiv.org/abs/2104.13230v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Asynchronous Federated Learning with Bidirectional Quantized Communications and Buffered Aggregation",
+        "summary": "Asynchronous Federated Learning with Buffered Aggregation (FedBuff) is a state-of-the-art algorithm known for its efficiency and high scalability. However, it has a high communication cost, which has not been examined with quantized communications. To tackle this problem, we present a new algorithm (QAFeL), with a quantization scheme that establishes a shared \"hidden\" state between the server and clients to avoid the error propagation caused by direct quantization. This approach allows for high ",
+        "url": "http://arxiv.org/abs/2308.00263v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "WAFFLE: Weighted Averaging for Personalized Federated Learning",
+        "summary": "In federated learning, model personalization can be a very effective strategy to deal with heterogeneous training data across clients. We introduce WAFFLE (Weighted Averaging For Federated LEarning), a personalized collaborative machine learning algorithm that leverages stochastic control variates for faster convergence. WAFFLE uses the Euclidean distance between clients' updates to weigh their individual contributions and thus minimize the personalized model loss on the specific agent of intere",
+        "url": "http://arxiv.org/abs/2110.06978v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Client Adaptation improves Federated Learning with Simulated Non-IID Clients",
+        "summary": "We present a federated learning approach for learning a client adaptable, robust model when data is non-identically and non-independently distributed (non-IID) across clients. By simulating heterogeneous clients, we show that adding learned client-specific conditioning improves model performance, and the approach is shown to work on balanced and imbalanced data set from both audio and image domains. The client adaptation is implemented by a conditional gated activation unit and is particularly b",
+        "url": "http://arxiv.org/abs/2007.04806v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Differential privacy mechanisms in federated learning: privacy-utility trade-offs and future directions",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1201/9781003770435-34",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Federated Learning with Local Differential Privacy: Trade-Offs Between Privacy, Utility, and Communication",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1109/icassp39728.2021.9413764",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Privacy-Utility Trade-offs in Federated Learning for 6G Networks: A Systematic Evaluation of Software-based Privacy Mechanisms",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1109/swc65939.2025.00296",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Privacy-Preserving EEG Data Generation: A Federated Split Learning Approach Using Privacy-Adaptive Autoencoders and Secure Aggregation with GFlowNet",
+        "summary": "N/A",
+        "url": "https://doi.org/10.5220/0013529100003979",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Lightweight Federated Learning Secure Aggregation Protocols",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1109/nana63151.2024.00079",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Secure embedding aggregation for cross-silo federated representation learning",
+        "summary": "N/A",
+        "url": "https://doi.org/10.14711/thesis-991013222941803412",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Adversarial Robustness of Federated Learning in Healthcare",
+        "summary": "<jats:p>The healthcare industry is rapidly embracing data-driven techniques for early diagnosis, health management and precision medicine. However, strict privacy regulations restrict centralized aggregation of sensitive patient data. These restrictions encouraging the adoption of Federated Learning (FL), a privacy-preserving technique that enables collaborative model training that allows hospitals, and research institutions to get benefit from shared intelligence. While Federated Learning prese",
+        "url": "https://doi.org/10.4018/979-8-3373-6224-3.ch007",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Re-examine Federated Rank Learning: Analyzing Its Robustness Against Poisoning Attacks",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1109/raid67961.2025.00019",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Analyzing the vulnerabilities in Split Federated Learning: assessing the robustness against data poisoning attacks",
+        "summary": "<jats:title>Abstract</jats:title>\n          <jats:p>Distributed Collaborative Machine Learning (DCML) offers a promising alternative to address privacy concerns in centralized machine learning. Split learning (SL) and Federated Learning (FL) are two effective learning approaches within DCML. Recently, there has been growing interest in Split Federated Learning (SFL), which combines elements of both FL and SL. This research provides a comprehensive study, analysis, and presentation of the impact ",
+        "url": "https://doi.org/10.1038/s41598-025-15993-8",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Adaptive Quantization of Model Updates for Communication-Efficient Federated Learning",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1109/icassp39728.2021.9413697",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Quantization for Federated Learning",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1007/978-3-031-51266-7_4",
+        "source": "CrossRef"
+      },
+      {
+        "title": "AQUILA: Communication Efficient Federated Learning With Adaptive Quantization in Device Selection Strategy_supp1-3332901.pdf",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1109/tmc.2023.3332901/mm1",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Client heterogeneity in federated learning systems",
+        "summary": "<jats:title>Hétérogénéité des clients dans les systèmes d'apprentissage fédérés</jats:title>\n                <jats:p xml:lang=\"fr\">L'apprentissage fédéré (FL) est un cadre collaboratif où les clients (dispositifs mobiles) entraînent un modèle d'apprentissage machine sous la coordination d'un serveur central en préservant la décentralisation des données. L'hétérogénéité de la participation des clients provient de la diversité des capacités des appareils en termes de spécifications matérielles, de",
+        "url": "https://doi.org/10.70675/1b5a2028z6e0bz4d02z8cabz881abebbbdab",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Client-Supervised Federated Learning: Towards One-Model-for-All Personalization",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1109/icme57554.2024.10688225",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Banking Malware Detection: Leveraging Federated Learning with Conditional Model Updates and Client Data Heterogeneity",
+        "summary": "N/A",
+        "url": "https://doi.org/10.5220/0012409700003648",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Neural Network Coding of Difference Updates for Efficient Distributed Learning Communication",
+        "summary": "Distributed learning requires a frequent communication of neural network update data. For this, we present a set of new compression tools, jointly called differential neural network coding (dNNC). dNNC is specifically tailored to efficiently code incremental neural network updates and includes tools for federated BatchNorm folding (FedBNF), structured and unstructured sparsification, tensor row skipping, quantization optimization and temporal adaptation for improved context-adaptive binary arith",
+        "url": "https://www.semanticscholar.org/paper/5dd52df18557b52662e4fa8cd3bd38f2141d2ac8",
+        "source": "Semantic Scholar"
+      },
+      {
+        "title": "FedBDQB: Communication Efficient Federated Learning via Bidirectional Dynamic Quantization and Bitmap",
+        "summary": "In this paper, we propose a novel framework for communication efficient federated learning, FedBDQB, by employing bidirectional dynamic quantization for model updates and bitmap-based lossless compression, and provide its descending analysis and convergence proof. The performance of FedBDQB is evaluated and compared against the classic FedAvg and a state-of-the-art method FedDQ across various experimental scenarios, including two widely-adopted datasets MNIST and CIFAR-10, as well as both IID an",
+        "url": "https://www.semanticscholar.org/paper/bfee5621804b74ccda9b11e60c6b1c58d7b447c7",
+        "source": "Semantic Scholar"
+      },
+      {
+        "title": "FedSD: A Communication-Efficient Federated Learning Method With Scaled Stochastic Quantization and Dynamic Caching Mechanism",
+        "summary": "Communication cost is a significant bottleneck in Federated Learning (FL). Integrating gradient quantization in FL is a favored approach to mitigate communication costs. However, these methods often tend to lose important information by converting many elements to zero. Moreover, they typically overlook the need to compress data sent back to devices and ignore the efficiency gains from reducing communication rounds and limiting device participation. To overcome these challenges, we introduce the",
+        "url": "https://www.semanticscholar.org/paper/c8850ec1dde8ad3b129318243c0f1828f6d0f4f3",
+        "source": "Semantic Scholar"
+      }
+    ]
+  },
+  {
+    "topic": "Medieval European trade networks and urbanization",
+    "domain": "humanities",
+    "papers": [
+      {
+        "title": "Urban Mobility",
+        "summary": "In this chapter, we discuss urban mobility from a complexity science perspective. First, we give an overview of the datasets that enable this approach, such as mobile phone records, location-based social network traces, or GPS trajectories from sensors installed on vehicles. We then review the empirical and theoretical understanding of the properties of human movements, including the distribution of travel distances and times, the entropy of trajectories, and the interplay between exploration an",
+        "url": "http://arxiv.org/abs/2211.00355v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Starlink in Northern Europe: A New Look at Stationary and In-motion Performance",
+        "summary": "Starlink has introduced the Flat High Performance (FHP) terminal, specifically designed to support the vehicles and the vessels in motion as well as the high-demand stationary users. The research on FHP terminal throughput analysis remains limited, only a few existing studies evaluate FHP, focusing on the limited parameters and scenarios. This paper evaluates the FHP terminal's performance in Finland, Northern Europe. We examine round-trip time (RTT), uplink, and downlink throughput for both sta",
+        "url": "http://arxiv.org/abs/2502.15552v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Mapping Urban Villages in China: Progress and Challenges",
+        "summary": "The shift toward high-quality urbanization has brought increased attention to the issue of \"urban villages\", which has become a prominent social problem in China. However, there is a lack of available geospatial data on urban villages, making it crucial to prioritize urban village mapping. In order to assess the current progress in urban village mapping and identify challenges and future directions, we have conducted a comprehensive review, which to the best of our knowledge is the first of its ",
+        "url": "http://arxiv.org/abs/2503.14195v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Health-promoting Potential of Parks in 35 Cities Worldwide",
+        "summary": "Urban parks are important for public health, but the role of specific spaces, such as playgrounds or lakes, and elements, such as benches or sports equipment, in supporting well-being is not well understood. Based on expert input and a review of the literature, we defined six types of health-related activities: physical, mindfulness, nature appreciation, environmental, social, and cultural. We built a lexicon that links each activity to specific elements and spaces within parks present in OpenSt",
+        "url": "http://arxiv.org/abs/2407.15770v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Spatiotemporal gender differences in urban vibrancy",
+        "summary": "Urban vibrancy is the dynamic activity of humans in urban locations. It can vary with urban features and the opportunities for human interactions, but it might also differ according to the underlying social conditions of city inhabitants across and within social surroundings. Such heterogeneity in how different demographic groups may experience cities has the potential to cause gender segregation because of differences in the preferences of inhabitants, their accessibility and opportunities, and",
+        "url": "http://arxiv.org/abs/2304.12840v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Multi-messenger Observations of a Binary Neutron Star Merger",
+        "summary": "On 2017 August 17 a binary neutron star coalescence candidate (later designated GW170817) with merger time 12:41:04 UTC was observed through gravitational waves by the Advanced LIGO and Advanced Virgo detectors. The Fermi Gamma-ray Burst Monitor independently detected a gamma-ray burst (GRB 170817A) with a time delay of $\\sim$1.7 s with respect to the merger time. From the gravitational-wave signal, the source was initially localized to a sky region of 31 deg$^2$ at a luminosity distance of $40^",
+        "url": "http://arxiv.org/abs/1710.05833v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "A multimodal Bayesian Network for symptom-level depression and anxiety prediction from voice and speech data",
+        "summary": "During psychiatric assessment, clinicians observe not only what patients report, but important nonverbal signs such as tone, speech rate, fluency, responsiveness, and body language. Weighing and integrating these different information sources is a challenging task and a good candidate for support by intelligence-driven tools - however this is yet to be realized in the clinic. Here, we argue that several important barriers to adoption can be addressed using Bayesian network modelling. To demonstr",
+        "url": "http://arxiv.org/abs/2512.07741v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "The Galactic Chemical Evolution of phosphorus observed with IGRINS",
+        "summary": "Phosphorus (P) is considered to be one of the key elements for life, making it an important element to look for in the abundance analysis of spectra of stellar systems. Yet, there exists only a handful of spectroscopic studies to estimate the P abundances and investigate its trend across a range of metallicities. We have observed full HK band spectra at a spectral resolving power of R=45,000 with IGRINS instrument. Abundances are determined using SME in combination with 1D MARCS stellar atmosphe",
+        "url": "http://arxiv.org/abs/2210.04940v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Mathematical modeling of urban sprawl",
+        "summary": "Urban land cover doubled between 1985 and 2015, yet the spatial dynamics of urban form remain under-quantified, despite its importance for sustainability, infrastructure planning, and climate risk. Urban expansion is a non-equilibrium process shaped by interactions between population growth, infrastructure, institutions, and market failures -- rendering static and equilibrium models inadequate. We review key challenges and modeling approaches, focusing on partial differential equation (PDE) fram",
+        "url": "http://arxiv.org/abs/2603.08338v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Mapping Socio-Economic Divides with Urban Mobility Data",
+        "summary": "The massive digital footprints generated by bike-sharing systems in megacities like Shanghai offer a novel perspective on the urban socio-economic fabric. This study investigates whether these daily mobility patterns can quantitatively map the city's underlying social stratification. To overcome the persistent challenge of acquiring fine-grained socio-economic data, we constructed a multi-layered analytical dataset. We annotated 2,000 raw bike trips with local economic attributes, derived from a",
+        "url": "http://arxiv.org/abs/2510.08598v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Reconstruction of interactions in the ProtoDUNE-SP detector with Pandora",
+        "summary": "The Pandora Software Development Kit and algorithm libraries provide pattern-recognition logic essential to the reconstruction of particle interactions in liquid argon time projection chamber detectors. Pandora is the primary event reconstruction software used at ProtoDUNE-SP, a prototype for the Deep Underground Neutrino Experiment far detector. ProtoDUNE-SP, located at CERN, is exposed to a charged-particle test beam. This paper gives an overview of the Pandora reconstruction algorithms and ho",
+        "url": "http://arxiv.org/abs/2206.14521v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "The Physics of the B Factories",
+        "summary": "This work is on the Physics of the B Factories. Part A of this book contains a brief description of the SLAC and KEK B Factories as well as their detectors, BaBar and Belle, and data taking related issues. Part B discusses tools and methods used by the experiments in order to obtain results. The results themselves can be found in Part C.\n  Please note that version 3 on the archive is the auxiliary version of the Physics of the B Factories book. This uses the notation alpha, beta, gamma for the a",
+        "url": "http://arxiv.org/abs/1406.6311v4",
+        "source": "arXiv"
+      },
+      {
+        "title": "Measurement of $Ξ_{c}^{+}$ production in $p$Pb collisions at $\\sqrt{s_{NN}}=8.16$ TeV at LHCb",
+        "summary": "A study of prompt $Ξ_{c}^{+}$ production in proton-lead collisions is performed with the LHCb experiment at a centre-of-mass energy per nucleon pair of 8.16 TeV in 2016 in $p$Pb and Pb$p$ collisions with an estimated integrated luminosity of approximately 12.5 and 17.4 nb$^{-1}$, respectively. The $Ξ_{c}^{+}$ production cross-section, as well as the $Ξ_{c}^{+}$ to $Λ_{c}^{+}$ production cross-section ratio, are measured as a function of the transverse momentum and rapidity and compared to latest",
+        "url": "http://arxiv.org/abs/2305.06711v4",
+        "source": "arXiv"
+      },
+      {
+        "title": "The Hanseatic League as an Economic and Social Phenomenon: Archaeo-ceramic Case Studies in Cultural Transfer and Resistance in Western and Northern Europe, circa 1250–1550",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1017/9781108340946.015",
+        "source": "CrossRef"
+      },
+      {
+        "title": "The Hanseatic League",
+        "summary": "N/A",
+        "url": "https://doi.org/10.4324/9780415791182-rmeo449-1",
+        "source": "CrossRef"
+      },
+      {
+        "title": "6 The Baltic Trade",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1163/9789004284760_008",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Long Distance Trade and Urban Sovereignty: The Competitive Model of the Mediterranean at the Time of the Repubbliche Marinare",
+        "summary": "N/A",
+        "url": "https://doi.org/10.4337/9780857934277.00010",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Trade, Migration and Urban Networks in Port Cities, c. 1640-1940",
+        "summary": "<p>This study offers an exploration of the role of merchants throughout maritime history through the analysis of maritime trade networks. It attempts to fill in the gaps in the historiography to determine the range of activities that maritime merchants undertook. It is comprised of nine chapters: one introductory, and eight exploring aspects of merchant history across Europe during the period 1640 to 1940. Several major themes recur throughout these studies: the necessity of port networks; the e",
+        "url": "https://doi.org/10.5949/liverpool/9780973893489.001.0001",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Constructing Ideals and Practices in Renaissance Port Cities",
+        "summary": "<jats:title>Abstract</jats:title>\n               <jats:p>This chapter situates Genoa and Venice against the backdrop of literature on the designs of ideal ports during the Renaissance. Using Renaissance architectural theory, in particular, the work of Antonio Averlino [c.1400–1469], known as Filarete, and his plans for Plusiopolis, it considers the influence of ideals on the form of major ports of the Italian peninsula and the broader Mediterranean. The second section of this chapter assesses ch",
+        "url": "https://doi.org/10.1093/oso/9780198867432.003.0002",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Fairs",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1163/2213-2139_emp_sim_00145",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Fairs",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1163/9789004181298_emp_sim_00145",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Understanding international exhibitions, trade fairs and industrial events",
+        "summary": "N/A",
+        "url": "https://doi.org/10.4324/9781315415291-1",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Guilds: provincial towns",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1163/2213-2139_emdt_sim_001004",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Guilds: provincial towns",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1163/9789004124356_emdt_sim_001004",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Guilds, Gender Policies and Economic Opportunities for Women in Early Modern Dutch Towns",
+        "summary": "N/A",
+        "url": "https://doi.org/10.4324/9780203110522-19",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Patterns of urbanization in pre—industrial Europe, 1500–1800",
+        "summary": "N/A",
+        "url": "https://doi.org/10.4324/9781351183703-4",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Regulating the Wine Trade",
+        "summary": "N/A",
+        "url": "https://doi.org/10.5040/9781472599285.ch-003",
+        "source": "CrossRef"
+      }
+    ]
+  },
+  {
+    "topic": "Identity construction in postcolonial literature",
+    "domain": "humanities",
+    "papers": [
+      {
+        "title": "Understanding Factors that Shape Children's Long Term Engagement with an In-Home Learning Companion Robot",
+        "summary": "Social robots are emerging as learning companions for children, and research shows that they facilitate the development of interest and learning even through brief interactions. However, little is known about how such technologies might support these goals in authentic environments over long-term periods of use and interaction. We designed a learning companion robot capable of supporting children reading popular-science books by expressing social and informational commentaries. We deployed the r",
+        "url": "http://arxiv.org/abs/2205.09052v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Exploring Children's Preferences for Taking Care of a Social Robot",
+        "summary": "Research in child-robot interactions suggests that engaging in \"care-taking\" of a social robot, such as tucking the robot in at night, can strengthen relationships formed between children and robots. In this work, we aim to better understand and explore the design space of caretaking activities with 10 children, aged 8--12 from eight families, involving an exploratory design session followed by a preliminary feasibility testing of robot caretaking activities. The design sessions provided insight",
+        "url": "http://arxiv.org/abs/2205.09055v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Egocentric Visitors Localization in Cultural Sites",
+        "summary": "We consider the problem of localizing visitors in a cultural site from egocentric (first person) images. Localization information can be useful both to assist the user during his visit (e.g., by suggesting where to go and what to see next) and to provide behavioral information to the manager of the cultural site (e.g., how much time has been spent by visitors at a given location? What has been liked most?). To tackle the problem, we collected a large dataset of egocentric videos using two camera",
+        "url": "http://arxiv.org/abs/1904.05264v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Female citation impact superiority 1996-2018 in six out of seven English-speaking nations",
+        "summary": "Efforts to combat continuing gender inequalities in academia need to be informed by evidence about where differences occur. Citations are relevant as potential evidence in appointment and promotion decisions, but it is unclear whether there have been historical gender differences in average citation impact that might explain the current shortfall of senior female academics. This study investigates the evolution of gender differences in citation impact 1996-2018 for six million articles from seve",
+        "url": "http://arxiv.org/abs/1904.12919v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "In-Hand Gravitational Pivoting Using Tactile Sensing",
+        "summary": "We study gravitational pivoting, a constrained version of in-hand manipulation, where we aim to control the rotation of an object around the grip point of a parallel gripper. To achieve this, instead of controlling the gripper to avoid slip, we embrace slip to allow the object to rotate in-hand. We collect two real-world datasets, a static tracking dataset and a controller-in-the loop dataset, both annotated with object angle and angular velocity labels. Both datasets contain force-based tactile",
+        "url": "http://arxiv.org/abs/2210.05068v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Deep Learning Approaches to Grasp Synthesis: A Review",
+        "summary": "Grasping is the process of picking up an object by applying forces and torques at a set of contacts. Recent advances in deep-learning methods have allowed rapid progress in robotic object grasping. In this systematic review, we surveyed the publications over the last decade, with a particular interest in grasping an object using all 6 degrees of freedom of the end-effector pose. Our review found four common methodologies for robotic grasping: sampling-based approaches, direct regression, reinfor",
+        "url": "http://arxiv.org/abs/2207.02556v3",
+        "source": "arXiv"
+      },
+      {
+        "title": "Massively Parallel Cross-Lingual Learning in Low-Resource Target Language Translation",
+        "summary": "We work on translation from rich-resource languages to low-resource languages. The main challenges we identify are the lack of low-resource language data, effective methods for cross-lingual transfer, and the variable-binding problem that is common in neural systems. We build a translation system that addresses these challenges using eight European language families as our test ground. Firstly, we add the source and the target family labels and study intra-family and inter-family influences for ",
+        "url": "http://arxiv.org/abs/1804.07878v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Word-based Domain Adaptation for Neural Machine Translation",
+        "summary": "In this paper, we empirically investigate applying word-level weights to adapt neural machine translation to e-commerce domains, where small e-commerce datasets and large out-of-domain datasets are available. In order to mine in-domain like words in the out-of-domain datasets, we compute word weights by using a domain-specific and a non-domain-specific language model followed by smoothing and binary quantization. The baseline model is trained on mixed in-domain and out-of-domain datasets. Experi",
+        "url": "http://arxiv.org/abs/1906.03129v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Misgendering and Assuming Gender in Machine Translation when Working with Low-Resource Languages",
+        "summary": "This chapter focuses on gender-related errors in machine translation (MT) in the context of low-resource languages. We begin by explaining what low-resource languages are, examining the inseparable social and computational factors that create such linguistic hierarchies. We demonstrate through a case study of our mother tongue Bengali, a global language spoken by almost 300 million people but still classified as low-resource, how gender is assumed and inferred in translations to and from the hig",
+        "url": "http://arxiv.org/abs/2401.13165v3",
+        "source": "arXiv"
+      },
+      {
+        "title": "How do the Global South Diasporas Mobilize for Transnational Political Change?",
+        "summary": "This paper examines how non-resident Bangladeshis mobilized during the 2024 quota-reform turned pro-democracy movement, leveraging social platforms and remittance flows to challenge state authority. Drawing on semi-structured interviews, we identify four phases of their collective action: technology-mediated shifts to active engagement, rapid transnational network building, strategic execution of remittance boycott, reframing economic dependence as political leverage, and adaptive responses to g",
+        "url": "http://arxiv.org/abs/2601.12705v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "AI Fiction in the Wild",
+        "summary": "Some professional authors are beginning to use AI tools to help produce their fiction writing. Are readers using AI to generate fiction, too? Drawing on over 500,000 anonymized, English-language ChatGPT-user conversations (arXiv:2405.01470), we find that more than one third of the conversations involve some form of fiction generation -- including original stories, roleplay, fanfiction, and erotica. This AI-generated fiction is notably dominated by power users. We identify common fiction generati",
+        "url": "http://arxiv.org/abs/2606.22748v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "The AI Fiction Paradox",
+        "summary": "AI development has a fiction dependency problem. Developers have treated large corpora of modern books, including fiction, as valuable enough to accept substantial cost and legal risk, yet current models still struggle to generate compelling long-form fiction. I term this the \"AI-Fiction Paradox,\" and it is particularly startling because training data strongly shapes model output. This paper offers a theoretically precise account of why fiction resists AI generation by identifying three distinct",
+        "url": "http://arxiv.org/abs/2603.13545v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Linguistic Hybridity and Cultural Fragmentation in Salman Rushdie's Midnight's Children and Arundhati Roy's the God of Small Things: A Stylistic Analysis",
+        "summary": "N/A",
+        "url": "https://doi.org/10.2139/ssrn.5234932",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Linguistic Hybridity and Cultural Fragmentation in Salman Rushdie's Midnight's Children and Arundhati Roy's the God of Small Things: A Stylistic Analysis",
+        "summary": "N/A",
+        "url": "https://doi.org/10.2139/ssrn.5245314",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Chimamanda Ngozi Adichie's Americanah",
+        "summary": "N/A",
+        "url": "https://doi.org/10.4324/9781003787471-6",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Mothers, Daughters and Madness in Works by Four Women Writers: Bessie Head, Jean Rhys, Tsitsi Dangarembga and Ama Ata Aidoo/ ﺍﻷﻣﻬﺎﺕ ﻭﺍﻟﺒﻨﺎﺕ ﻭﺍﻟﺠﻨﻮﻥ ﻓﻲ ﺃﻋﻤﺎﻝ ﺃﺭﺑﻊ ﺭﻭﺍﺋﻴﺎﺕ",
+        "summary": "N/A",
+        "url": "https://doi.org/10.2307/521769",
+        "source": "CrossRef"
+      },
+      {
+        "title": "“I like to fill gaps,” an Interview with Tsitsi Dangarembga",
+        "summary": "N/A",
+        "url": "https://doi.org/10.4000/16677",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Mothers, Daughters and Madness in Works by Four Women Writers: Bessie Head, Jean Rhys, Tsitsi Dangarembga and Arna Ata Aidoo",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1163/3050760x-01401008",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Cultural Displacement and Identity Formation in Postcolonial Literature",
+        "summary": "<jats:p>This research article explores the intricate relationship between cultural displacement and identity formation as represented in postcolonial literature. It argues that postcolonial narratives function not merely as testimonies of colonial trauma but as dynamic sites where new, hybrid identities are forged in the crucible of displacement. The study employs a qualitative, comparative textual analysis of three seminal postcolonial novels: Chinua Achebe’s Things Fall Apart (1958), Salman Ru",
+        "url": "https://doi.org/10.37547/ijll/volume06issue03-29",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Postcolonial Narratives and Identity Formation in Contemporary Literature",
+        "summary": "N/A",
+        "url": "https://doi.org/10.70729/se26718204839",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Translation, World Literature, Postcolonial Identity",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1007/978-3-319-75753-7_25",
+        "source": "CrossRef"
+      },
+      {
+        "title": "1 ‘DIASPORA, BORDER AND TRANSNATIONAL IDENTITIES’",
+        "summary": "N/A",
+        "url": "https://doi.org/10.4324/9780203825235-40",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Diaspora as Transnational Social Construction",
+        "summary": "N/A",
+        "url": "https://doi.org/10.4324/9780203055359-7",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Transnational Punk(s): On the Transnational Character of the Latin/o Rock Diaspora",
+        "summary": "N/A",
+        "url": "https://doi.org/10.5040/9781628928297.ch-005",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Language as a means of survival and disintegration of identity in works of migration themes",
+        "summary": "The purpose of the study was to identify the features of the functioning of language as a marker of identity and a means of hybridisation in the literature representing the experience of migration. In the course of the research, methods of qualitative content analysis of literary texts with a focus on the language strategies of characters and discursive analysis were used, which allowed for identifying narrative mechanisms of identity formation. The study was conducted in an interdisciplinary pa",
+        "url": "https://www.semanticscholar.org/paper/7221597b95f62858e24ba07101cd204ca7b56277",
+        "source": "Semantic Scholar"
+      },
+      {
+        "title": "TRANSLATION IN UKRAINE (24 August 1991 – 24 February 2022)",
+        "summary": "The present volume is the first attempt to systematically examine Ukrainian\ntranslation from the time of Ukraine’s independence to the beginning of the full-scale\nwar as a significant discursive phenomenon and a major “national project” that acted\nas a kind of catalyst for the disintegration of the Soviet Zeitgeist in Ukraine. It is argued\nthat this was achieved through the introduction of a whole range of new themes, ideas,\nand concepts, filling numerous gaps, opening up new associative fields ",
+        "url": "https://www.semanticscholar.org/paper/5a0caa233f2f34c3db8237d04951a1e912422fa2",
+        "source": "Semantic Scholar"
+      },
+      {
+        "title": "Translation as reparation : writing and translation in postcolonial Africa",
+        "summary": "N/A",
+        "url": "https://www.semanticscholar.org/paper/8f185765e58bc6da72b2999ba703c6ef03530e37",
+        "source": "Semantic Scholar"
+      }
+    ]
+  },
+  {
+    "topic": "Social media use and adolescent mental health",
+    "domain": "interdisciplinary",
+    "papers": [
+      {
+        "title": "Multitask learning for recognizing stress and depression in social media",
+        "summary": "Stress and depression are prevalent nowadays across people of all ages due to the quick paces of life. People use social media to express their feelings. Thus, social media constitute a valuable form of information for the early detection of stress and depression. Although many research works have been introduced targeting the early recognition of stress and depression, there are still limitations. There have been proposed multi-task learning settings, which use depression and emotion (or figura",
+        "url": "http://arxiv.org/abs/2305.18907v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Topic Shifts as a Proxy for Assessing Politicization in Social Media",
+        "summary": "Politicization is a social phenomenon studied by political science characterized by the extent to which ideas and facts are given a political tone. A range of topics, such as climate change, religion and vaccines has been subject to increasing politicization in the media and social media platforms. In this work, we propose a computational method for assessing politicization in online conversations based on topic shifts, i.e., the degree to which people switch topics in online conversations. The ",
+        "url": "http://arxiv.org/abs/2312.11326v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Coordinated Behavior on Social Media in 2019 UK General Election",
+        "summary": "Coordinated online behaviors are an essential part of information and influence operations, as they allow a more effective disinformation's spread. Most studies on coordinated behaviors involved manual investigations, and the few existing computational approaches make bold assumptions or oversimplify the problem to make it tractable. Here, we propose a new network-based framework for uncovering and studying coordinated behaviors on social media. Our research extends existing systems and goes bey",
+        "url": "http://arxiv.org/abs/2008.08370v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Creative beyond TikToks: Investigating Adolescents' Social Privacy Management on TikTok",
+        "summary": "TikTok has been criticized for its low privacy standards, but little is known about how its adolescent users protect their privacy. Based on interviews with 54 adolescents in Switzerland, this study provides a comprehensive understanding of young TikTok users' privacy management practices related to the creation of videos. The data were explored using the COM-B model, an established behavioral analysis framework adapted for sociotechnical privacy research. Our overall findings are in line with p",
+        "url": "http://arxiv.org/abs/2301.11600v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Multidimensional Social Network in the Social Recommender System",
+        "summary": "All online sharing systems gather data that reflects users' collective behaviour and their shared activities. This data can be used to extract different kinds of relationships, which can be grouped into layers, and which are basic components of the multidimensional social network proposed in the paper. The layers are created on the basis of two types of relations between humans, i.e. direct and object-based ones which respectively correspond to either social or semantic links between individuals",
+        "url": "http://arxiv.org/abs/1303.0093v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Anti-establishment sentiment on TikTok: Implications for understanding influence(rs) and expertise on social media",
+        "summary": "Distrust of public serving institutions and anti-establishment views are on the rise (especially in the U.S.). As people turn to social media for information, it is imperative to understand whether and how social media environments may be contributing to distrust of institutions. In social media, content creators, influencers, and other opinion leaders often position themselves as having expertise and authority on a range of topics from health to politics, and in many cases devalue and dismiss i",
+        "url": "http://arxiv.org/abs/2508.16453v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "On the State of Social Media Data for Mental Health Research",
+        "summary": "Data-driven methods for mental health treatment and surveillance have become a major focus in computational science research in the last decade. However, progress in the domain, in terms of both medical understanding and system performance, remains bounded by the availability of adequate data. Prior systematic reviews have not necessarily made it possible to measure the degree to which data-related challenges have affected research progress. In this paper, we offer an analysis specifically on th",
+        "url": "http://arxiv.org/abs/2011.05233v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "A Machine Learning Approach for Detection of Mental Health Conditions and Cyberbullying from Social Media",
+        "summary": "Mental health challenges and cyberbullying are increasingly prevalent in digital spaces, necessitating scalable and interpretable detection systems. This paper introduces a unified multiclass classification framework for detecting ten distinct mental health and cyberbullying categories from social media data. We curate datasets from Twitter and Reddit, implementing a rigorous \"split-then-balance\" pipeline to train on balanced data while evaluating on a realistic, held-out imbalanced test set. We",
+        "url": "http://arxiv.org/abs/2511.20001v4",
+        "source": "arXiv"
+      },
+      {
+        "title": "Technology in Association With Mental Health: Meta-ethnography",
+        "summary": "This research paper presents a meta-analysis of the multifaceted role of technology in mental health. The pervasive influence of technology on daily lives necessitates a deep understanding of its impact on mental health services. This study synthesizes literature covering Behavioral Intervention Technologies (BITs), digital mental health interventions during COVID-19, young men's attitudes toward mental health technologies, technology-based interventions for university students, and the applicab",
+        "url": "http://arxiv.org/abs/2307.10513v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Understanding Musical Diversity via Online Social Media",
+        "summary": "Musicologists and sociologists have long been interested in patterns of music consumption and their relation to socioeconomic status. In particular, the Omnivore Thesis examines the relationship between these variables and the diversity of music a person consumes. Using data from social media users of Last.fm and Twitter, we design and evaluate a measure that reasonably captures diversity of musical tastes. We use that measure to explore associations between musical diversity and variables that ",
+        "url": "http://arxiv.org/abs/1604.02522v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Information Consumption and Boundary Spanning in Decentralized Online Social Networks: the case of Mastodon Users",
+        "summary": "Decentralized Online Social Networks (DOSNs) represent a growing trend in the social media landscape, as opposed to the well-known centralized peers, which are often in the spotlight due to privacy concerns and a vision typically focused on monetization through user relationships. By exploiting open-source software, DOSNs allow users to create their own servers, or instances, thus favoring the proliferation of platforms that are independent yet interconnected with each other in a transparent way",
+        "url": "http://arxiv.org/abs/2203.15752v3",
+        "source": "arXiv"
+      },
+      {
+        "title": "Digital Wellbeing Redefined: Toward User-Centric Approach for Positive Social Media Engagement",
+        "summary": "The prevalence of social media and its escalating impact on mental health has highlighted the need for effective digital wellbeing strategies. Current digital wellbeing interventions have primarily focused on reducing screen time and social media use, often neglecting the potential benefits of these platforms. This paper introduces a new perspective centered around empowering positive social media experiences, instead of limiting users with restrictive rules. In line with this perspective, we la",
+        "url": "http://arxiv.org/abs/2403.05723v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Cross-Sectional and Longitudinal Associations of Screen Time with Depression and Anxiety and the Influence of Maladaptive Social Media Use and Gender",
+        "summary": "N/A",
+        "url": "https://doi.org/10.2139/ssrn.4872339",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Social Media and Teen Mental Health: Analyzing the Role of Screen Time in Anxiety and Depression",
+        "summary": "<jats:p>Background: Studies focusing on impact of screen time on depression and anxiety related disorders among school going teenagers in TIER II and III cities are limited. This study examines how screen time is giving rise to anxiety and depressive symptoms. Methods: The research work utilizes primary data. The primary data related to screen time, anxiety and depression were collected through self-reporting structure. The questionnaire for screen time were self-structure while the anxiety and ",
+        "url": "https://doi.org/10.62823/ijarcmss/9.1(ii).8593",
+        "source": "CrossRef"
+      },
+      {
+        "title": "The Impact of Social Media on Adolescent Anxiety and Depression",
+        "summary": "<jats:p>Social media is widely used among teenagers, especially in 2022, the number of users soared. Mental health is crucial to adlescence, because 50% of mental problems occur around this period, but there is a lack of systematic clarification of the specific impact of social media on adolescent anxiety and depression. This study defines social media as an online platform for information media interaction. The mental health of adolescents involves emotional stability, including the ability to ",
+        "url": "https://doi.org/10.54097/4yeshr16",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Associations of Instagram and TikTok Use with Appearance-Based Social Comparison, Body Satisfaction, and Self-Esteem: A Daily Diary Study",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1080/15213269.2026.2626701",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Relationship Between Self Esteem and Self Presentation in Adolescent Users of Instagram Social Media",
+        "summary": "N/A",
+        "url": "https://doi.org/10.21070/ups.2784",
+        "source": "CrossRef"
+      },
+      {
+        "title": "XGBoost Prediction of Eating Disorder Symptom Severity among Adolescent Girls Using Body Dissatisfaction, Social Comparison, Self-Esteem, and Instagram Use Patterns",
+        "summary": "<jats:p>Objective: The present study aimed to examine the relative contributions of body dissatisfaction, social comparison, self-esteem, and Instagram use patterns in predicting eating disorder symptom severity among adolescent girls using the Extreme Gradient Boosting (XGBoost) machine learning algorithm. Methods and Materials: This cross-sectional predictive study was conducted among 1,284 adolescent girls aged 13–18 years recruited from secondary schools across Canada. Participants completed",
+        "url": "https://doi.org/10.61838/kman.jayps.5440",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Social Media's Impact on Mental Health: Investigating the Effects on Adolescent Mental Health and Self-Esteem",
+        "summary": "N/A",
+        "url": "https://doi.org/10.56726/irjmets81479",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Cyberbullying, adolescent mental health, and the role of digital interventions",
+        "summary": "N/A",
+        "url": "https://doi.org/10.24869/psyd.2025.523",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Beyond likes and follows understanding social media's grip on adolescent mental health",
+        "summary": "<jats:p>This study aims to examine the psychological effects of social media use on adolescents, with particular attention to how patterns of digital interaction influence symptoms of anxiety, depression, and self-esteem. It seeks to understand not only the extent of these effects but also the underlying mechanisms—especially the role of social comparison and the pursuit of online validation within the broader context of the attention economy. Adopting a mixed-methods approach, this research int",
+        "url": "https://doi.org/10.31763/ijcs.v7i1.1935",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Social Media and Adolescent Wellbeing: Rethinking Psychological Impact and Digital Strategies",
+        "summary": "N/A",
+        "url": "https://doi.org/10.5220/0013995700004916",
+        "source": "CrossRef"
+      },
+      {
+        "title": "#ConnectedTeens: Social media use and adolescent wellbeing",
+        "summary": "N/A",
+        "url": "https://doi.org/10.33540/1272",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Social media interventions to improve wellbeing",
+        "summary": "<p>Concerns about the negative impact of social media on wellbeing have surged, particularly for adolescents who may have heightened susceptibility to social media’s adverse effects. In response, there is a growing interest in developing social media interventions, which aim to change users’ interactions with social media to improve wellbeing. Despite the potential for interventions to advance causal knowledge of social media’s effects and mitigate potential wellbeing harms, academic research on",
+        "url": "https://doi.org/10.31234/osf.io/u9wqc_v2",
+        "source": "CrossRef"
+      },
+      {
+        "title": "The Impact of Parental Mediation and Social Media Use Frequency on Adolescent Mental Health in China",
+        "summary": "<jats:p>With the development of the new media era, people have begun to use social media, and teenagers are no exception. The complex and diverse information and content online pique their curiosity, leading them to become immersed in the online world for extended periods, unable to extricate themselves. Furthermore, inappropriate parenting styles have led to an increasing number of adolescents experiencing a range of mental health issues due to social media usage. Therefore, this study aims to ",
+        "url": "https://doi.org/10.61173/x4fq3003",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Social media use frequency and adolescent mental health: context-dependent associations by school connectedness and parental monitoring in the 2023 YRBS",
+        "summary": "<title>Abstract</title>\n                <p>Objective\n To examine associations between social media use frequency and poor mental health among U.S. adolescents and to assess whether these associations vary by school connectedness and parental monitoring.\nMethods\n We analyzed data from the 2023 National Youth Risk Behavior Survey, a nationally representative survey of U.S. students in grades 9–12 (n = 10,340). Social media use frequency was modeled as an ordered exposure, and poor mental health wa",
+        "url": "https://doi.org/10.21203/rs.3.rs-9007537/v1",
+        "source": "CrossRef"
+      },
+      {
+        "title": "216. Media And Mental Health: The Role of Parental Media Monitoring On Adolescents' Mental Health Via Reductions In Media Use",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1016/j.jadohealth.2018.10.233",
+        "source": "CrossRef"
+      }
+    ]
+  },
+  {
+    "topic": "The concept of autonomy in Kantian ethics",
+    "domain": "humanities",
+    "papers": [
+      {
+        "title": "A Formalization of Kant's Second Formulation of the Categorical Imperative",
+        "summary": "We present a formalization and computational implementation of the second formulation of Kant's categorical imperative. This ethical principle requires an agent to never treat someone merely as a means but always also as an end. Here we interpret this principle in terms of how persons are causally affected by actions. We introduce Kantian causal agency models in which moral patients, actions, goals, and causal influence are represented, and we show how to formalize several readings of Kant's cat",
+        "url": "http://arxiv.org/abs/1801.03160v3",
+        "source": "arXiv"
+      },
+      {
+        "title": "LLMs grasp morality in concept",
+        "summary": "Work in AI ethics and fairness has made much progress in regulating LLMs to reflect certain values, such as fairness, truth, and diversity. However, it has taken the problem of how LLMs might 'mean' anything at all for granted. Without addressing this, it is not clear what imbuing LLMs with such values even means. In response, we provide a general theory of meaning that extends beyond humans. We use this theory to explicate the precise nature of LLMs as meaning-agents. We suggest that the LLM, b",
+        "url": "http://arxiv.org/abs/2311.02294v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "A categorical construction for the computational definition of vector spaces",
+        "summary": "Lambda-S is an extension to first-order lambda calculus unifying two approaches of non-cloning in quantum lambda-calculi. One is to forbid duplication of variables, while the other is to consider all lambda-terms as algebraic linear functions. The type system of Lambda-S has a constructor S such that a type A is considered as the base of a vector space while S(A) is its span. Lambda-S can also be seen as a language for the computational manipulation of vector spaces: The vector spaces axioms are",
+        "url": "http://arxiv.org/abs/1905.01305v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Philosophy Enters the Optics Laboratory: Bell's Theorem and its First Experimental Tests (1965-1982)",
+        "summary": "  This paper deals with the ways that the issue of completing quantum mechanics was brought into laboratories and became a topic in mainstream quantum optics. It focuses on the period between 1965, when Bell published what now we call Bell's theorem, and 1982, when Aspect published the results of his experiments. I argue that what was considered good physics after Aspect's experiments was once considered by many a philosophical matter instead of a scientific one, and that the path from philosoph",
+        "url": "http://arxiv.org/abs/physics/0508180v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Foundational Moral Values for AI Alignment",
+        "summary": "Solving the AI alignment problem requires having clear, defensible values towards which AI systems can align. Currently, targets for alignment remain underspecified and do not seem to be built from a philosophically robust structure. We begin the discussion of this problem by presenting five core, foundational values, drawn from moral philosophy and built on the requisites for human existence: survival, sustainable intergenerational existence, society, education, and truth. We show that these va",
+        "url": "http://arxiv.org/abs/2311.17017v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Reference-Point Dependence in Multiplicative Kantian Optimization",
+        "summary": "This note shows that multiplicative Kantian optimization is reference-point dependent. In the standard formulation, the Multiplicative Kantian Equilibrium (MKE) test is applied to absolute contributions, and Nash optimizers may free-ride on Kantians. We compare this with a formulation in which Kantians apply the same multiplicative test to contributions above the individually rational Nash level. With the reference point at the Nash contribution, the Nasher's action is zero in the auxiliary scal",
+        "url": "http://arxiv.org/abs/2605.00692v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "The Ethics of Biosurveillance",
+        "summary": "Governments must keep agricultural systems free of pests that threaten agricultural production and international trade. Biosecurity surveillance already makes use of a wide range of technologies, such as insect traps and lures, geographic information systems, and diagnostic biochemical tests. The rise of cheap and usable surveillance technologies such as remotely piloted aircraft systems (RPAS) presents value conflicts not addressed in international biosurveillance guidelines. The costs of keepi",
+        "url": "http://arxiv.org/abs/2111.11712v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "A Hippocratic Oath for mathematicians? Mapping the landscape of ethics in mathematics",
+        "summary": "While the consequences of mathematically-based software, algorithms and strategies have become ever wider and better appreciated, ethical reflection on mathematics has remained primitive. We review the somewhat disconnected suggestions of commentators in recent decades with a view to piecing together a coherent approach to ethics in mathematics. Calls for a Hippocratic Oath for mathematicians are examined and it is concluded that while lessons can be learned from the medical profession, the rela",
+        "url": "http://arxiv.org/abs/2112.07025v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Consent as a Foundation for Responsible Autonomy",
+        "summary": "This paper focuses on a dynamic aspect of responsible autonomy, namely, to make intelligent agents be responsible at run time. That is, it considers settings where decision making by agents impinges upon the outcomes perceived by other agents. For an agent to act responsibly, it must accommodate the desires and other attitudes of its users and, through other agents, of their users.\n  The contribution of this paper is twofold. First, it provides a conceptual analysis of consent, its benefits and ",
+        "url": "http://arxiv.org/abs/2203.11420v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Kantian-Utilitarian XAI: Meta-Explained",
+        "summary": "We present a gamified explainable AI (XAI) system for ethically aware consumer decision-making in the coffee domain. Each session comprises six rounds with three options per round. Two symbolic engines provide real-time reasons: a Kantian module flags rule violations (e.g., child labor, deforestation risk without shade certification, opaque supply chains, unsafe decaf), and a utilitarian module scores options via multi-criteria aggregation over normalized attributes (price, carbon, water, transp",
+        "url": "http://arxiv.org/abs/2510.03892v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "The Categorical Imperative and Kant's Conception of Practical Rationality",
+        "summary": "<jats:title>Abstract</jats:title>\n                  <jats:p>This chapter outlines an explanation of how Kant grounds morality in reason. It argues that all rational choice is guided by normative considerations (reasons with normative force for the agent). In moral choice, the reasons from which the agent acts are in fact sufficient to justify the action to anyone. Such a view underlies Kant's derivation of the Categorical Imperative, and offers the best understanding of the connection that he dr",
+        "url": "https://doi.org/10.1093/0199288836.003.0004",
+        "source": "CrossRef"
+      },
+      {
+        "title": "The Categorical Imperative",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1017/cbo9780511621116.012",
+        "source": "CrossRef"
+      },
+      {
+        "title": "The Moral Law, the Categorical Imperative, and the Reciprocity Thesis",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1093/acprof:oso/9780199691531.003.0011",
+        "source": "CrossRef"
+      },
+      {
+        "title": "What Emerged",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1017/9781316863435.011",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Hedonism, Heteronomy, and Kant's Principle of Happiness",
+        "summary": "<jats:title>Abstract</jats:title>\n                  <jats:p>This chapter addresses the issue of whether Kant was a psychological hedonist about natural desires and the actions for which they are the motives. It calls this interpretation into question, and argues that Kant did not adopt a simple hedonistic psychology of non-moral choice, and that nothing in his moral theory, in particular the central distinction between autonomy and heteronomy, depends on such a psychology. The chapter is organiz",
+        "url": "https://doi.org/10.1093/0199288836.003.0003",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Moral agency, autonomy, and heteronomy in early Confucian philosophy",
+        "summary": "<jats:title>Abstract</jats:title>\n                  <jats:p>This paper discusses Confucian notions of moral autonomy and moral agency that do not follow strict and ideal notions of autonomy that one can find in many Western theories of moral philosophy. In Kantian deontology, for example, one's autonomy, specifically one's rational will to follow universal moral rules, is a necessary condition of moral agency and moral responsibility. In Confucian moral philosophy, however, this type of strict m",
+        "url": "https://doi.org/10.1111/phc3.12460",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Reevaluating Freedom and Autonomy: Kantian Ethics in the Modern World",
+        "summary": "N/A",
+        "url": "https://doi.org/10.51245/ijaethics.v10i1.2024.64",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Kantian Ethics, Economics, and Decision-Making",
+        "summary": "N/A",
+        "url": "https://doi.org/10.11126/stanford/9780804768948.003.0002",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Kantian Ethics, Economics, and Decision-Making",
+        "summary": "N/A",
+        "url": "https://doi.org/10.2307/j.ctvqr1cq9.5",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Kantian autonomy and contemporary ideas of autonomy",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1017/cbo9780511792489.003",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Personal Autonomy: New Essays on Personal Autonomy and its Role in Contemporary Moral Philosophy",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1163/174552408x329037",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Alternative Possibilities, Personal Autonomy, and Moral Responsibility",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1017/cbo9780511614194.011",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Lack of Autonomy",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1017/9781108649247.003",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Impfungen in der Pädiatrie  und der „informed consent”– Balanceakt zwischen Sozialpaternalismus und Autonomie",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1007/s00481-002-0179-0",
+        "source": "CrossRef"
+      },
+      {
+        "title": "THE LIMITS OF MEDICAL PATERNALISM Autonomy, consent and professional",
+        "summary": "N/A",
+        "url": "https://doi.org/10.4324/9780203161050-9",
+        "source": "CrossRef"
+      }
+    ]
+  },
+  {
+    "topic": "Electoral system design and political polarization",
+    "domain": "humanities",
+    "papers": [
+      {
+        "title": "Multi-Group Proportional Representation in Retrieval",
+        "summary": "Image search and retrieval tasks can perpetuate harmful stereotypes, erase cultural identities, and amplify social disparities. Current approaches to mitigate these representational harms balance the number of retrieved items across population groups defined by a small number of (often binary) attributes. However, most existing methods overlook intersectional groups determined by combinations of group attributes, such as gender, race, and ethnicity. We introduce Multi-Group Proportional Represen",
+        "url": "http://arxiv.org/abs/2407.08571v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Polynomial representations and categorifications of Fock Space",
+        "summary": "The rings of symmetric polynomials form an inverse system whose limit, the ring of symmetric functions, is the model for the bosonic Fock space representation of the affine Lie algebra. We categorify this construction by considering an inverse limit of categories of polynomial representation of general linear groups. We show that this limit naturally carries an action of the affine Lie algebra (in the sense of Rouquier), thereby obtaining a famiy of categorifications of the bosonic Fock space re",
+        "url": "http://arxiv.org/abs/1101.2456v3",
+        "source": "arXiv"
+      },
+      {
+        "title": "An analysis of a fair division protocol for drawing legislative districts",
+        "summary": "Landau, Reid, and Yershov [A Fair Division Solution to the Problem of Redistricting, \\textit{Social Choice and Welfare}, 2008] propose a protocol for drawing legislative districts based on a two player fair division process, where each player is entitled to draw the districts for a portion of the state. We call this the \\textit{LRY protocol}. Landau and Su [Fair Division and Redistricting, arXiv:1402.0862, 2014] propose a measure of the fairness of a state's districts called the \\textit{geometri",
+        "url": "http://arxiv.org/abs/1811.05705v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Tracking the 2024 US Presidential Election Chatter on Tiktok: A Public Multimodal Dataset",
+        "summary": "This paper documents our release of a large-scale data collection of TikTok posts related to the upcoming 2024 U.S. Presidential Election. Our current data comprises 1.8 million videos published between November 1, 2023, and May 26, 2024. Its exploratory analysis identifies the most common keywords, hashtags, and bigrams in both Spanish and English posts, focusing on the election and the two main Presidential candidates, President Joe Biden and Donald Trump.\n  We utilized the TikTok Research API",
+        "url": "http://arxiv.org/abs/2407.01471v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Electt: running auditable and verifiable elections in untrusted environments",
+        "summary": "We present a system for running auditable and verifiable elections in untrusted environments. Votes are anonymous since the order of candidates on a ballot sheet is random. Tellers see only the position of the candidate. Voters can check their vote. An election is auditable using blockchain log. Threshold-encryption, which is used to implement the quorum, prevents a deadlock from occurring if a minority of candidates or observers tries to sabotage the election. Candidates and observers can indic",
+        "url": "http://arxiv.org/abs/2011.10902v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "A coercion-resistant protocol for conducting elections by telephone",
+        "summary": "We present a protocol that allows voters to phone in their votes. Our protocol makes it expensive for a candidate and a voter to cooperate to prove to the candidate who the voter voted for. When the electoral pool is large enough, the cost to the candidate of manipulating sufficiently many votes to have an influence on the election results becomes impossibly expensive. Hence, the protocol provides candidates no incentive to attempt inducement or coercion of voters, resulting in free and fair ele",
+        "url": "http://arxiv.org/abs/1305.5359v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Analyzing and visualizing polarization and balance with signed networks: the U.S. Congress case study",
+        "summary": "Signed networks and balance theory provide a natural setting for real-world scenarios that show polarization dynamics, positive/negative relationships, and political partisanship. For example, they have been proven effective in studying the increasing polarization of the votes in the two chambers of the U.S. Congress from World War II on.\n  To provide further insights into this particular case study, we propose the application of a pipeline to analyze and visualize a signed graph's configuration",
+        "url": "http://arxiv.org/abs/2209.00676v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition",
+        "summary": "Congressional district lines in many U.S. states are drawn by partisan actors, raising concerns about gerrymandering. To separate the partisan effects of redistricting from the effects of other factors including geography and redistricting rules, we compare possible party compositions of the U.S. House under the enacted plan to those under a set of alternative simulated plans that serve as a non-partisan baseline. We find that partisan gerrymandering is widespread in the 2020 redistricting cycle",
+        "url": "http://arxiv.org/abs/2208.06968v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Partisan gerrymandering with geographically compact districts",
+        "summary": "Bizarrely shaped voting districts are frequently lambasted as likely instances of gerrymandering. In order to systematically identify such instances, researchers have devised several tests for so-called geographic compactness (i.e., shape niceness). We demonstrate that under certain conditions, a party can gerrymander a competitive state into geographically compact districts to win an average of over 70% of the districts. Our results suggest that geometric features alone may fail to adequately c",
+        "url": "http://arxiv.org/abs/1712.05390v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "How Many Political Parties Should Brazil Have? A Data-driven Method to Assess and Reduce Fragmentation in Multi-Party Political Systems",
+        "summary": "In June 2013, Brazil faced the largest and most significant mass protests in a generation. These were exacerbated by the population's disenchantment towards its highly fragmented party system, which is composed by a very large number of political parties. Under these circumstances, presidents are constrained by informal coalition governments, bringing very harmful consequences to the country. In this work I propose ARRANGE, a dAta dRiven method foR Assessing and reduciNG party fragmEntation in a",
+        "url": "http://arxiv.org/abs/1509.08465v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Measuring Political Preferences in AI Systems: An Integrative Approach",
+        "summary": "Political biases in Large Language Model (LLM)-based artificial intelligence (AI) systems, such as OpenAI's ChatGPT or Google's Gemini, have been previously reported. While several prior studies have attempted to quantify these biases using political orientation tests, such approaches are limited by potential tests' calibration biases and constrained response formats that do not reflect real-world human-AI interactions. This study employs a multi-method approach to assess political bias in leadi",
+        "url": "http://arxiv.org/abs/2503.10649v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Proportional Ranking in Primary Elections: A Case Study",
+        "summary": "Many democratic political parties hold primary elections, which nicely reflects their democratic nature and promote, among other things, the democratic value of inclusiveness. However, the methods currently used for holding such primary elections may not be the most suitable, especially if some form of proportional ranking is desired. In this paper, we compare different algorithmic methods for holding primaries (i.e., different aggregation methods for voters' ballots), by evaluating the degree o",
+        "url": "http://arxiv.org/abs/2201.07305v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Ballot Design and Electoral Outcomes: The Role of Candidate Order and Party Affiliation",
+        "summary": "We develop a causal inference model to study how designing ballots with and without party designations impacts electoral outcomes when partisan voters rely on party-order cues to infer candidate affiliation in races without designations. If the party orders of candidates in races with and without party designations differ, these voters might cast their votes incorrectly. We identify a quasi-randomized natural experiment with contest-level treatment assignment pertaining to North Carolina judicia",
+        "url": "http://arxiv.org/abs/2507.16722v2",
+        "source": "arXiv"
+      },
+      {
+        "title": "Far-right party influence on polarization dynamics in electoral campaign",
+        "summary": "Political polarization has attracted increasing attention in recent years, driven by the rise of social media and the global emergence of far-right populist movements. This study investigates the dynamics of structural polarization during electoral campaigns in multi-party systems, with a particular focus on the presence of far-right actors and their influence on polarization patterns and hate speech. Using retweet networks as a measure of structural polarization, we analyze two case studies in ",
+        "url": "http://arxiv.org/abs/2410.23177v1",
+        "source": "arXiv"
+      },
+      {
+        "title": "Skew RSK and the switching on ballot tableau pairs",
+        "summary": "In arXiv:1808.06095 we have introduced the Knuth class of the word recording a sequence of locations for repeated internal insertion operations in the Sagan-Stanley skew RSK correspondence, with no prescribed external insertion of new cells, to be a preserver for the $P$-tableau. As a consequence the Benkart-Sottile-Stroomer switching involution on ballot tableau pairs allows a realization as a recursive internal insertion procedure. This amounts to explain the various presentations of Littlewoo",
+        "url": "http://arxiv.org/abs/1808.06095v5",
+        "source": "arXiv"
+      },
+      {
+        "title": "Legislative Effects of Single-Member Vs. Multi-Member Districts",
+        "summary": "N/A",
+        "url": "https://doi.org/10.2307/2111697",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Single Member District Proportional Representation (SMDPR)",
+        "summary": "<jats:p>Developed in and for Canada, single member district proportional representation (SMDPR) is suitable for any country, especially a federation. SMDPR is a local party-list electoral system similar to both Canada’s current single member plurality (SMP) and Sweden’s party-list electoral systems; it preserves current Canadian district structure and political function, single member representation as the only form of representation, and can work with Canada’s SMP ballot. It promises to measura",
+        "url": "https://doi.org/10.33774/apsa-2023-pglpl",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Proportional Representation",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1057/9781137295354.0017",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Election Results and Democratic Discontent: Expectations, Extremism, and Democratic Values in Post-Election Brazil",
+        "summary": "N/A",
+        "url": "https://doi.org/10.2139/ssrn.5022634",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Candidate Image: When Tweets Trump Tradition",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1007/978-3-319-68981-4_4",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Election: Direct Primary Law: Ineligibility of Candidate Receiving Highest Vote",
+        "summary": "N/A",
+        "url": "https://doi.org/10.2307/3474372",
+        "source": "CrossRef"
+      },
+      {
+        "title": "A Congress of Strangers:",
+        "summary": "N/A",
+        "url": "https://doi.org/10.2307/j.ctt1gk086k.10",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Gerrymandering Causes Partisan Polarization: A Need for a New Policy",
+        "summary": "N/A",
+        "url": "https://doi.org/10.4236/jss.2023.113024",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Drawing the Lines",
+        "summary": "<p>Radical redistricting plans, such as that pushed through by Texas governor Rick Perry in 2003, are frequently used for partisan purposes. Perry's plan sent twenty-one Republicans (and only eleven Democrats) to Congress in the 2004 elections. Such heavy-handed tactics strike many as contrary to basic democratic principles. This book uses a combination of political science methods and legal studies insights to investigate the effects of redistricting on U.S. House elections. It concludes that p",
+        "url": "https://doi.org/10.7591/cornell/9781501705311.001.0001",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Differentiating Mixed-Member Electoral Systems",
+        "summary": "<jats:p>The increasing use of mixed-member electoral systems has led to an explosion of research attempting to specify their effects. Yet there has been no work on the economic policy effects of such systems, even though this has been a significant subject of debate for scholars analyzing other electoral systems. An analysis of mixed-member system policy effects is problematic, given the wide variation in institutional rules among different systems. This article attempts to determine whether the",
+        "url": "https://doi.org/10.1177/0010414005282383",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Mixed-member electoral systems: mixed-member proportional",
+        "summary": "N/A",
+        "url": "https://doi.org/10.4337/9781035324828.00113",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Campaign spending in mixed member proportional systems: How political and institutional context shapes party strategy",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1016/j.electstud.2025.103027",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Two in one: Party competition in the Italian single ballot mixed system",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1016/j.electstud.2005.05.003",
+        "source": "CrossRef"
+      },
+      {
+        "title": "2 Ballot Structures",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1515/9781962551632-003",
+        "source": "CrossRef"
+      },
+      {
+        "title": "Party system polarization and the effective number of parties",
+        "summary": "N/A",
+        "url": "https://doi.org/10.1016/j.electstud.2022.102459",
+        "source": "CrossRef"
+      }
+    ]
+  }
+]

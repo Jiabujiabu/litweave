@@ -55,6 +55,7 @@ def main():
     initial_state = {
         "topic": topic,
         "iteration_count": 0,
+        "citation_retry_count": 0,
         "language": lang,
     }
 

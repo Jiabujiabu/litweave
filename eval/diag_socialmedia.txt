@@ -1,0 +1,73 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Analyzing topic and classifying research domain...
+Searching arXiv...
+  -> [arXiv] direction 1/5: longitudinal cohort study social media adolescent depression
+  -> [arXiv] direction 2/5: digital wellbeing intervention screen time randomized controlled trial
+  -> [arXiv] direction 3/5: passive social media use envy self-esteem adolescents
+  -> [arXiv] direction 4/5: neuroimaging social media reward sensitivity adolescents
+  -> [arXiv] direction 5/5: social comparison theory Instagram adolescent mental health
+  found 30 paper(s) on arXiv
+Searching CrossRef...
+  -> [CrossRef] direction 1/5: longitudinal cohort study social media adolescent depression
+  -> [CrossRef] direction 2/5: digital wellbeing intervention screen time randomized controlled trial
+  -> [CrossRef] direction 3/5: passive social media use envy self-esteem adolescents
+  -> [CrossRef] direction 4/5: neuroimaging social media reward sensitivity adolescents
+  -> [CrossRef] direction 5/5: social comparison theory Instagram adolescent mental health
+  found 29 paper(s) on CrossRef
+Deduplicating and ranking retrieved papers by relevance...
+  deduplicated 59 -> 48 papers
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10368.27it/s]
+  kept the 10 most relevant papers for summarization
+Generating literature summary...
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  found 4 unverifiable citation(s), regenerating report (attempt 1)
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  found 5 unverifiable citation(s), regenerating report (attempt 2)
+Generating final report (this can take 10-20s)...
+Verifying citations against retrieved papers...
+  still 2 unverifiable citation(s) after max retries -- flagging in the report instead
+domain: interdisciplinary
+research_directions: ['longitudinal cohort study social media adolescent depression', 'digital wellbeing intervention screen time randomized controlled trial', 'passive social media use envy self-esteem adolescents', 'neuroimaging social media reward sensitivity adolescents', 'social comparison theory Instagram adolescent mental health']
+
+[y] CrossRef         The Relationship Between Instagram Social Media Use and Mental Health 
+      reason: Directly examines Instagram use and adolescent female mental health.
+      abstract: <jats:p>Adolescents experience a number of social, emotional, and physical changes that can affect their mental health. Everyone, especially adolescen
+
+[y] CrossRef         Youth’s Social Media Use, Depression, and Socioeconomic Inequalities  
+      reason: Investigates social media use and depression in adolescents longitudinally.
+      abstract: <p>Numerous studies have investigated the relationship between social media use and adolescent mental health yielding inconclusive findings. We aimed 
+
+[n] CrossRef         The Effects of Social Media on Anxiety, Reward Sensitivity, and Risk-T
+      reason: Focuses on emerging adults, not adolescents specifically.
+      abstract: <jats:p xml:lang="en">The increasing popularity of social media has led to 3.80 billion social media users worldwide (Kemp, 2020). The conception of s
+
+[y] CrossRef         Social media usage and its relationship to self-esteem among female ad
+      reason: Relates social media usage to self-esteem among female adolescents.
+      abstract: <jats:p>Adolescents, much like the adult population in the 21st century, use and perhaps overuse technology. Beyond required access for classwork and 
+
+[y] CrossRef         Impact of Social Media Use, Social Comparison &amp; Self-Esteem Among 
+      reason: Examines social media use, comparison, and self-esteem in adolescents.
+      abstract: <jats:p>The present research examined how social media, social comparison, and self-esteem affect adolescents. After an extensive literature review, t
+
+[n] CrossRef         Social Media Reward Sensitivity and Depressive Symptoms Over Time
+      reason: Studies young adults, not adolescents, and uses Twitter data.
+      abstract: <p>Social media platforms are designed to sustain user engagement by leveraging human reward systems. Given established links between reward processin
+
+[n] arXiv            Exploring Mental Health Communications among Instagram Coaches
+      reason: Focuses on mental health coaches, not adolescent mental health outcomes.
+      abstract: There has been a significant expansion in the use of online social networks (OSNs) to support people experiencing mental health issues. This paper stu
+
+[n] CrossRef         THE RELATIONSHIP BETWEEN SELF-ESTEEM AND INTIMATE FRIENDSHIP WITH SELF
+      reason: Studies self-disclosure, not mental health outcomes in adolescents.
+      abstract: <jats:p>Objective: This study aimed to investigate the relationship between Instagram use and self-disclosure among adolescents, focusing on how self-
+
+[n] arXiv            Multitask learning for recognizing stress and depression in social med
+      reason: Technical NLP task for stress detection, not a mental health review.
+      abstract: Stress and depression are prevalent nowadays across people of all ages due to the quick paces of life. People use social media to express their feelin
+
+[y] CrossRef         Children’s Social Media Use, Depression, and Socioeconomic Inequalitie
+      reason: Longitudinal study on social media use and depression in children.
+      abstract: <p>This study investigated the moderating roles of socioeconomic status (SES) and social media use (SMU) in predicting changes in children’s depressiv
+

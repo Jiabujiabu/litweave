@@ -2,7 +2,10 @@ langgraph
 langchain-openai
 langchain-core
 openai
+anthropic
 arxiv
 requests
 python-dotenv
 streamlit
+sentence-transformers
+numpy

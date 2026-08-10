@@ -1,0 +1,32 @@
+Translating topics...
+Translating 276 paper titles/abstracts/reasons to Chinese...
+  translated 10/276 papers
+  translated 20/276 papers
+  translated 30/276 papers
+  translated 40/276 papers
+  translated 50/276 papers
+  translated 60/276 papers
+  translated 70/276 papers
+  translated 80/276 papers
+  translated 90/276 papers
+  translated 100/276 papers
+  translated 110/276 papers
+  translated 120/276 papers
+  translated 130/276 papers
+  translated 140/276 papers
+  translated 150/276 papers
+  translated 160/276 papers
+  translated 170/276 papers
+  translated 180/276 papers
+  translated 190/276 papers
+  translated 200/276 papers
+  translated 210/276 papers
+  translated 220/276 papers
+  translated 230/276 papers
+  translated 240/276 papers
+  translated 250/276 papers
+  translated 260/276 papers
+  translated 270/276 papers
+  translated 276/276 papers
+
+Written to C:\PythonClass\__pycache__\academic_research_agent\eval\candidates_to_label_zh.xlsx

@@ -1,0 +1,167 @@
+[
+  {
+    "topic": "Retrieval-augmented generation for reducing LLM hallucination",
+    "domain_hint": "cs",
+    "relevant_papers": [
+      {
+        "title": "Reducing hallucination in structured outputs via Retrieval-Augmented Generation",
+        "url": "",
+        "note": "Bechard & Ayala, 2024, NAACL"
+      },
+      {
+        "title": "CAR-RAG: Category-Aware Hybrid Retrieval-Augmented Generation for Hallucination Mitigation",
+        "url": "",
+        "note": "Petrova, Koriakov & State, 2025, IEEE BigData"
+      },
+      {
+        "title": "ReRag: A New Architecture for Reducing the Hallucination by Retrieval-Augmented Generation",
+        "url": "",
+        "note": "Koc, Gurkan & Yarman Vural, 2024, UBMK"
+      }
+    ]
+  },
+  {
+    "topic": "Parameter-efficient fine-tuning of large language models (LoRA and variants)",
+    "domain_hint": "cs",
+    "relevant_papers": [
+      {
+        "title": "Energy- and Memory-Efficient PEFT Methods for Personalized On-Device SLMs on Consumer GPUs",
+        "url": "https://arxiv.org/abs/2608.04488",
+        "note": "Akhmetzhanov & Park, 2026"
+      },
+      {
+        "title": "Evolution of meta's llama models and parameter-efficient fine-tuning of large language models: a survey",
+        "url": "https://arxiv.org/abs/2510.12178",
+        "note": "Abdullah et al., 2025"
+      }
+    ]
+  },
+  {
+    "topic": "Reinforcement learning from human feedback for LLM alignment",
+    "domain_hint": "cs",
+    "relevant_papers": [
+      {
+        "title": "Reinforcement Learning from Human Feedback (RLHF) and Multimodal LLM Alignment: A Comprehensive Review",
+        "url": "",
+        "note": "Shastry, 2026, IJCATR"
+      },
+      {
+        "title": "Reliability-Aware LLM Alignment from Inconsistent Human Feedback",
+        "url": "https://arxiv.org/abs/2607.20515",
+        "note": "Huang, Zong, Feng, Ma, Shang & Zhang, 2026"
+      }
+    ]
+  },
+  {
+    "topic": "Adversarial robustness of deep neural networks",
+    "domain_hint": "cs",
+    "relevant_papers": [
+      {
+        "title": "Understanding Fault Tolerance of Adversarially Robust Pruned Models",
+        "url": "https://arxiv.org/abs/2608.04173",
+        "note": "Dangarikar & Merkel, 2026"
+      },
+      {
+        "title": "Adversarial Robustness of Deep Neural Networks: A Survey from a Formal Verification Perspective",
+        "url": "https://arxiv.org/abs/2206.12227",
+        "note": "Meng et al., 2022"
+      }
+    ]
+  },
+  {
+    "topic": "Federated learning for privacy-preserving machine learning",
+    "domain_hint": "cs",
+    "relevant_papers": [
+      {
+        "title": "An Exploration of Federated Learning for Privacy-Preserving Machine Learning",
+        "url": "",
+        "note": "Kumar et al., 2024, ICITIIT"
+      },
+      {
+        "title": "From Siloed Algorithms to Compliance-First Agentic Platforms: A Multi-Layered Architecture for Hospital AI Systems",
+        "url": "https://doi.org/10.38124/ijisrt/26May1651",
+        "note": "Dhar, Singh & Manikonda, 2026"
+      }
+    ]
+  },
+  {
+    "topic": "Medieval European trade networks and urbanization",
+    "domain_hint": "humanities",
+    "relevant_papers": [
+      {
+        "title": "From Local Supply to Long-Distance Trade Networks: Fingerprinting Early Medieval Silver",
+        "url": "https://doi.org/10.1093/oso/9780198827986.003.0011",
+        "note": "Sarah & Guillaume, 2018"
+      },
+      {
+        "title": "Human-animal entanglements in the early medieval European slave trade: re-reading the Raffelstetten customs regulations",
+        "url": "",
+        "note": "Christensen, 2024, Early Medieval Europe"
+      }
+    ]
+  },
+  {
+    "topic": "Identity construction in postcolonial literature",
+    "domain_hint": "humanities",
+    "relevant_papers": [
+      {
+        "title": "Preface",
+        "url": "https://doi.org/10.7591/9781501724541-001",
+        "note": "Postcolonial Representations, 2019 -- generic chapter title, weak match signal"
+      },
+      {
+        "title": "Identity Crisis in Postcolonial Literature: A Critical Analysis of Cultural Hybridity and Colonial Influence",
+        "url": "",
+        "note": "Amanat, Sikandar & Amanat, 2026, Journal of Humanities and Social Thought"
+      }
+    ]
+  },
+  {
+    "topic": "Social media use and adolescent mental health",
+    "domain_hint": "humanities",
+    "relevant_papers": [
+      {
+        "title": "Investigating the Impact of Social Media Use on Adolescent Mental Health",
+        "url": "https://doi.org/10.31234/osf.io/fbr84",
+        "note": "Mohamed, 2024"
+      },
+      {
+        "title": "The Only Place I Feel Understood: A Mixed Methods Survey of Adolescent and Caregiver Perspectives on Social Media and Parental Controls",
+        "url": "",
+        "note": "Ramos, Wiemann & Bretz, 2026, Clinical Child Psychology and Psychiatry"
+      }
+    ]
+  },
+  {
+    "topic": "The concept of autonomy in Kantian ethics",
+    "domain_hint": "humanities",
+    "relevant_papers": [
+      {
+        "title": "Kantian Ethics, Economics, and Decision-Making",
+        "url": "https://doi.org/10.11126/stanford/9780804768948.003.0002",
+        "note": "2011, in Kantian Ethics and Economics"
+      },
+      {
+        "title": "The Concept of Autonomy and Its Role in Kantian Ethics",
+        "url": "",
+        "note": "Brassington, 2012, Cambridge Quarterly of Healthcare Ethics"
+      }
+    ]
+  },
+  {
+    "topic": "Electoral system design and political polarization",
+    "domain_hint": "humanities",
+    "relevant_papers": [
+      {
+        "title": "Electoral Volatility and Party System Polarization in Latin America, 1992-2018",
+        "url": "https://doi.org/10.1177/00323217251367642",
+        "note": "Gastev, 2025, Political Studies"
+      },
+      {
+        "title": "Far-Left Populists in Power: The Legacy of Podemos on Spanish Local Governments",
+        "url": "",
+        "note": "Mari, R."
+      }
+    ]
+  }
+]

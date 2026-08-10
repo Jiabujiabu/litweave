@@ -1,9 +1,9 @@
 import os
 import json
+import re
 import time
 import arxiv
 import requests
-from openai import OpenAI
 from dotenv import load_dotenv
 from langgraph.types import interrupt
 
@@ -12,13 +12,55 @@ from i18n import t
 
 load_dotenv()
 
-_API_KEY = os.getenv("DEEPSEEK_API_KEY", "")
+# ---------------------------------------------------------------------------
+# LLM provider selection — bring your own key.
+#
+# This project never ships with a working API key. LLM_PROVIDER picks which
+# provider's key to read; the matching *_API_KEY must be supplied by whoever
+# runs the project (see .env.example). No key for the selected provider ->
+# MOCK_MODE, same offline fallback as before, so the graph/UI still runs.
+# ---------------------------------------------------------------------------
+
+LLM_PROVIDER = os.getenv("LLM_PROVIDER", "deepseek").strip().lower()
+
+_PROVIDERS = {
+    "deepseek": {
+        "key_env": "DEEPSEEK_API_KEY",
+        "model_env": "DEEPSEEK_MODEL",
+        "default_model": "deepseek-chat",
+        "base_url": "https://api.deepseek.com",
+    },
+    "openai": {
+        "key_env": "OPENAI_API_KEY",
+        "model_env": "OPENAI_MODEL",
+        "default_model": "gpt-4o-mini",
+        "base_url": None,  # official OpenAI endpoint
+    },
+    "anthropic": {
+        "key_env": "ANTHROPIC_API_KEY",
+        "model_env": "ANTHROPIC_MODEL",
+        "default_model": "claude-opus-5",
+        "base_url": None,
+    },
+}
+
+if LLM_PROVIDER not in _PROVIDERS:
+    print(f"[nodes] Unknown LLM_PROVIDER '{LLM_PROVIDER}', falling back to 'deepseek'.")
+    LLM_PROVIDER = "deepseek"
+
+_provider_cfg = _PROVIDERS[LLM_PROVIDER]
+_API_KEY = os.getenv(_provider_cfg["key_env"], "")
+_MODEL = os.getenv(_provider_cfg["model_env"], _provider_cfg["default_model"])
 MOCK_MODE = (not _API_KEY) or _API_KEY == "your_key_here"
 
-client = OpenAI(
-    api_key=_API_KEY or "mock",
-    base_url="https://api.deepseek.com"
-)
+client = None
+if not MOCK_MODE:
+    if LLM_PROVIDER == "anthropic":
+        import anthropic
+        client = anthropic.Anthropic(api_key=_API_KEY)
+    else:
+        from openai import OpenAI
+        client = OpenAI(api_key=_API_KEY, base_url=_provider_cfg["base_url"])
 
 
 # ---------------------------------------------------------------------------
@@ -26,8 +68,9 @@ client = OpenAI(
 # ---------------------------------------------------------------------------
 
 def _mock_llm(task: str, language: str, **ctx) -> str:
-    """Demo/offline fallback used when DEEPSEEK_API_KEY isn't configured.
-    Returns structurally-correct placeholder content in the requested language."""
+    """Demo/offline fallback used when no API key is configured for the
+    selected LLM_PROVIDER. Returns structurally-correct placeholder content
+    in the requested language."""
 
     if task == "decompose":
         topic = ctx["topic"]
@@ -80,15 +123,15 @@ def _mock_llm(task: str, language: str, **ctx) -> str:
         if language == "zh":
             return (
                 "## 引言\n\n（本部分为 MOCK 模式生成的占位报告，用于演示 LangGraph 流程是否能端到端跑通，"
-                "配置真实 DEEPSEEK_API_KEY 后将由大模型生成正式内容。）\n\n"
+                "在 .env 中配置任意一个受支持的 LLM 提供商的真实 API Key 后将由大模型生成正式内容。）\n\n"
                 "## 各研究方向分析\n\n各子方向均已检索到相应文献，详见下方参考文献列表。\n\n"
                 "## 综合讨论\n\n不同方向之间存在方法上的互补性，但评价体系尚不统一。\n\n"
                 "## 结论\n\n该主题具备进一步深入研究的价值，建议后续补充真实文献总结与引用分析。\n"
             )
         return (
             "## Introduction\n\n(This section is MOCK placeholder content used to demonstrate that "
-            "the LangGraph pipeline runs end to end. Configure a real DEEPSEEK_API_KEY to get an "
-            "actual generated report.)\n\n"
+            "the LangGraph pipeline runs end to end. Configure a real API key for any supported "
+            "LLM_PROVIDER in .env to get an actual generated report.)\n\n"
             "## Analysis by Research Direction\n\nRelevant literature has been retrieved for each "
             "sub-direction; see the reference list below.\n\n"
             "## Discussion\n\nThe directions are complementary in method, though evaluation "
@@ -101,12 +144,37 @@ def _mock_llm(task: str, language: str, **ctx) -> str:
 
 
 def call_llm(messages: list[dict], *, task: str, language: str, **ctx) -> str:
-    """调用 DeepSeek，返回 content 字符串。未配置 API Key 时自动降级为 MOCK 模式。"""
+    """调用配置好的 LLM 提供商（DeepSeek / OpenAI / Anthropic，见 LLM_PROVIDER），
+    返回 content 字符串。未配置对应 API Key 时自动降级为 MOCK 模式。"""
     if MOCK_MODE:
         return _mock_llm(task, language, **ctx)
+    # decompose_directions feeds every downstream search call -- run-to-run
+    # wording drift there (at the API's default temperature) was observed to
+    # swing a single topic's measured precision by 60 points between two
+    # otherwise-identical eval runs. Lower temperature trades a little
+    # direction diversity for much more reproducible retrieval quality.
+    temperature = 0.3 if task in ("decompose", "filter", "translate") else 1.0
+
+    if LLM_PROVIDER == "anthropic":
+        # Anthropic takes the system prompt as its own top-level parameter,
+        # not a "system"-role message, and current Claude models reject
+        # temperature/top_p/top_k entirely -- omit it rather than send one.
+        system_msg = next((m["content"] for m in messages if m["role"] == "system"), None)
+        turns = [{"role": m["role"], "content": m["content"]} for m in messages if m["role"] != "system"]
+        response = client.messages.create(
+            model=_MODEL,
+            max_tokens=4096,
+            system=system_msg,
+            messages=turns,
+        )
+        # Claude Opus 5 thinks by default, so content[0] may be a thinking
+        # block rather than text -- find the text block explicitly.
+        return next((block.text for block in response.content if block.type == "text"), "")
+
     response = client.chat.completions.create(
-        model="deepseek-chat",
-        messages=messages
+        model=_MODEL,
+        messages=messages,
+        temperature=temperature,
     )
     return response.choices[0].message.content
 
@@ -136,7 +204,15 @@ domain 判断标准：
 - humanities：历史、文学、哲学、艺术、社会学、政治学、法学等人文社科
 - interdisciplinary：明显跨越理工科和人文社科的主题（例如：AI 伦理、科技与社会）
 
-directions 要求：分解出 3-5 个具体、可检索的研究子方向，不要泛泛而谈。directions 的内容请用中文书写。"""
+directions 要求：分解出 3-5 个方向，每个方向写成简短、具体的检索关键词短语（大致 5-10 个词），
+围绕主题相关的具体方法、技术、理论或实体名词展开——就像你会直接输入进论文搜索引擎的短语，
+不要写成"……及其对……的影响/意义"这类描述性的综述句子。
+重要：每个方向都必须保留主题本身的核心限定词（比如主题指定的人群、学科对象等），
+不能因为加了具体方法/理论词就把核心限定词换掉或冲淡。例如主题是关于"青少年（adolescents）"的，
+每个方向的短语里都要保留"adolescents"，不能因为某个具体方法在"年轻成年人（young adults）"
+群体的文献里更常见，就把人群换成 young adults。
+directions 的内容请用英文书写（arXiv/CrossRef/Semantic Scholar 的语料以英文为主，
+用英文关键词检索命中率明显更高）。"""
         system_msg = "你是学术研究助手，只返回 JSON，不返回任何其他文字。"
     else:
         prompt = f"""You are an academic research assistant. Analyze the research topic below and
@@ -155,7 +231,18 @@ Domain criteria:
 - humanities: history, literature, philosophy, art, sociology, political science, law, etc.
 - interdisciplinary: topics that clearly span both STEM and humanities/social science (e.g. AI ethics, technology & society)
 
-directions requirement: break the topic into 3-5 concrete, searchable sub-directions — avoid vague generalities. Write the directions in English."""
+directions requirement: break the topic into 3-5 directions, each phrased as a SHORT, SPECIFIC
+search-engine-style query (roughly 5-10 words) built around a concrete named method, technique,
+theory, or entity relevant to the topic. Avoid descriptive survey framing like "X and its
+implications for Y" or "the role of X in Y" -- name the specific method/concept/entity directly,
+the way you'd actually type it into a literature search box.
+IMPORTANT: every direction must still keep the topic's core subject anchor (e.g. its named
+population, discipline, or object of study) explicit in the query -- do not let an added
+method/theory keyword replace or drift away from that anchor. For example, if the topic is about
+"adolescents", every direction should still say "adolescents" rather than switching to a
+methodologically-related but different population like "young adults" or "emerging adults" just
+because that population is more common in a given sub-method's literature.
+Write the directions in English."""
         system_msg = "You are an academic research assistant. Return ONLY JSON, no other text."
 
     content = call_llm(
@@ -184,6 +271,32 @@ directions requirement: break the topic into 3-5 concrete, searchable sub-direct
 # Node 2: search_arxiv
 # ---------------------------------------------------------------------------
 
+def _arxiv_search_with_backoff(client: "arxiv.Client", query: str, max_results: int = 3, max_retries: int = 3) -> list:
+    """arxiv.Client already retries transient HTTP errors internally (default
+    3 attempts, 3s apart) before giving up and raising arxiv.HTTPError -- but
+    search_arxiv previously let that exception propagate uncaught, crashing
+    the whole node (and the graph run) on a single rate-limited request. This
+    adds an outer retry with a longer cooldown, and degrades to an empty
+    result for this direction instead of taking down the run."""
+    for attempt in range(max_retries):
+        try:
+            search = arxiv.Search(query=query, max_results=max_results)
+            return list(client.results(search))
+        except (arxiv.HTTPError, requests.exceptions.RequestException) as e:
+            # arxiv.HTTPError covers bad-status responses (429/503/...);
+            # RequestException covers failures before any response exists
+            # (DNS resolution, connection reset, timeout) -- both are
+            # transient and should degrade to "no results", not crash.
+            if attempt < max_retries - 1:
+                wait = 15 * (attempt + 1)
+                print(f"  [arXiv] request failed ({e}), retrying in {wait}s...")
+                time.sleep(wait)
+                continue
+            print(f"  [arXiv] giving up after {max_retries} attempts: {e}")
+            return []
+    return []
+
+
 def search_arxiv(state: ResearchState) -> dict:
     directions = state["research_directions"]
     lang = state.get("language", "en")
@@ -194,15 +307,14 @@ def search_arxiv(state: ResearchState) -> dict:
 
     for i, direction in enumerate(directions, start=1):
         print(t(lang, "searching_direction", source="arXiv", i=i, n=len(directions), direction=direction))
-        search = arxiv.Search(query=direction, max_results=3)
-        for result in arxiv_client.results(search):
+        for result in _arxiv_search_with_backoff(arxiv_client, direction, max_results=6):
             papers.append({
                 "title": result.title,
                 "summary": result.summary[:500],
                 "url": result.entry_id,
                 "source": "arXiv"
             })
-        time.sleep(3)
+        time.sleep(5)
 
     print(t(lang, "found_papers", source="arXiv", count=len(papers)))
     return {"collected_papers": papers}
@@ -211,6 +323,46 @@ def search_arxiv(state: ResearchState) -> dict:
 # ---------------------------------------------------------------------------
 # Node 3: search_crossref
 # ---------------------------------------------------------------------------
+
+def _crossref_search(query: str, rows: int = 3, max_retries: int = 3) -> list[dict]:
+    """Same defensive pattern as _semantic_scholar_search/_arxiv_search_with_backoff:
+    check the status code and back off on 429/5xx instead of assuming any
+    response body is a valid 200 result (CrossRef hasn't been observed to
+    rate-limit this app yet, but arXiv and Semantic Scholar both did within
+    the same afternoon of testing, so treating this one as exempt would just
+    be the next silent failure waiting to happen)."""
+    for attempt in range(max_retries):
+        try:
+            response = requests.get(
+                "https://api.crossref.org/works",
+                params={
+                    "query": query,
+                    "rows": rows,
+                    "select": "title,abstract,URL,author,published-print"
+                },
+                headers={"User-Agent": "AcademicResearchAgent/1.0"},
+                timeout=15,
+            )
+        except requests.exceptions.RequestException as e:
+            if attempt < max_retries - 1:
+                wait = 15 * (attempt + 1)
+                print(f"  [CrossRef] network error ({e}), retrying in {wait}s...")
+                time.sleep(wait)
+                continue
+            print(f"  [CrossRef] giving up after {max_retries} attempts: {e}")
+            return []
+
+        if response.status_code == 200:
+            return response.json().get("message", {}).get("items", [])
+        if response.status_code in (429, 503) and attempt < max_retries - 1:
+            wait = int(response.headers.get("Retry-After", 15))
+            print(f"  [CrossRef] HTTP {response.status_code}, retrying in {wait}s...")
+            time.sleep(wait)
+            continue
+        print(f"  [CrossRef] request failed: HTTP {response.status_code} - {response.text[:200]}")
+        return []
+    return []
+
 
 def search_crossref(state: ResearchState) -> dict:
     directions = state["research_directions"]
@@ -222,16 +374,7 @@ def search_crossref(state: ResearchState) -> dict:
 
     for i, direction in enumerate(directions, start=1):
         print(t(lang, "searching_direction", source="CrossRef", i=i, n=len(directions), direction=direction))
-        response = requests.get(
-            "https://api.crossref.org/works",
-            params={
-                "query": direction,
-                "rows": 3,
-                "select": "title,abstract,URL,author,published-print"
-            },
-            headers={"User-Agent": "AcademicResearchAgent/1.0"}
-        )
-        items = response.json().get("message", {}).get("items", [])
+        items = _crossref_search(direction, rows=6)
         for item in items:
             title = item.get("title", [""])[0]
             abstract = item.get("abstract", "N/A")[:500]
@@ -247,15 +390,66 @@ def search_crossref(state: ResearchState) -> dict:
 
     print(t(lang, "found_papers", source="CrossRef", count=len(papers)))
 
-    if domain == "interdisciplinary":
-        return {"collected_papers": state["collected_papers"] + papers}
-    else:
+    if domain == "humanities":
+        # humanities routes straight here without ever calling search_arxiv,
+        # so there's nothing to append to yet.
         return {"collected_papers": papers}
+    else:
+        # cs and interdisciplinary both arrive here after search_arxiv already
+        # ran -- combine rather than discard those results (eval data showed
+        # CrossRef contributes real hits for cs topics too, not just
+        # interdisciplinary ones).
+        return {"collected_papers": state["collected_papers"] + papers}
 
 
 # ---------------------------------------------------------------------------
 # Node 4: search_semantic_scholar
 # ---------------------------------------------------------------------------
+
+def _semantic_scholar_search(query: str, limit: int = 3, max_retries: int = 3) -> list[dict]:
+    """GET with 429 backoff. Semantic Scholar's unauthenticated tier is
+    aggressively rate-limited (observed: a handful of rapid requests is
+    enough to trigger it); the previous version of this function read
+    `response.json().get("data", [])` unconditionally, which silently turned
+    a 429 error body into "0 papers found" -- indistinguishable from a
+    genuine empty result. That masked every rate-limit hit as a retrieval
+    quality problem. This version checks the status code, honors
+    Retry-After on 429, and logs a real failure instead of guessing zero."""
+    headers = {}
+    api_key = os.getenv("SEMANTIC_SCHOLAR_API_KEY", "")
+    if api_key:
+        headers["x-api-key"] = api_key
+
+    for attempt in range(max_retries):
+        try:
+            response = requests.get(
+                "https://api.semanticscholar.org/graph/v1/paper/search",
+                params={"query": query, "limit": limit, "fields": "title,abstract,url,year"},
+                headers=headers,
+                timeout=15,
+            )
+        except requests.exceptions.RequestException as e:
+            # Network-level failure (DNS, connection reset, timeout) --
+            # never reached the point of getting a status code at all.
+            if attempt < max_retries - 1:
+                wait = 15 * (attempt + 1)
+                print(f"  [Semantic Scholar] network error ({e}), retrying in {wait}s...")
+                time.sleep(wait)
+                continue
+            print(f"  [Semantic Scholar] giving up after {max_retries} attempts: {e}")
+            return []
+
+        if response.status_code == 200:
+            return response.json().get("data", [])
+        if response.status_code == 429 and attempt < max_retries - 1:
+            wait = int(response.headers.get("Retry-After", 15))
+            print(f"  [Semantic Scholar] rate limited (429), retrying in {wait}s...")
+            time.sleep(wait)
+            continue
+        print(f"  [Semantic Scholar] request failed: HTTP {response.status_code} - {response.text[:200]}")
+        return []
+    return []
+
 
 def search_semantic_scholar(state: ResearchState) -> dict:
     directions = state["research_directions"]
@@ -266,15 +460,7 @@ def search_semantic_scholar(state: ResearchState) -> dict:
 
     for i, direction in enumerate(directions, start=1):
         print(t(lang, "searching_direction", source="Semantic Scholar", i=i, n=len(directions), direction=direction))
-        response = requests.get(
-            "https://api.semanticscholar.org/graph/v1/paper/search",
-            params={
-                "query": direction,
-                "limit": 3,
-                "fields": "title,abstract,url,year"
-            }
-        )
-        data = response.json().get("data", [])
+        data = _semantic_scholar_search(direction, limit=6)
         for item in data:
             papers.append({
                 "title": item.get("title", ""),
@@ -282,10 +468,157 @@ def search_semantic_scholar(state: ResearchState) -> dict:
                 "url": item.get("url", ""),
                 "source": "Semantic Scholar"
             })
-        time.sleep(2)
+        time.sleep(5)
 
     print(t(lang, "found_papers", source="Semantic Scholar", count=len(papers)))
     return {"collected_papers": state["collected_papers"] + papers}
+
+
+# ---------------------------------------------------------------------------
+# Node (new): process_papers — dedupe by URL, shortlist by embedding
+# similarity (cheap, offline, no API key), then have the LLM directly judge
+# relevance on that shortlist before truncating to the final TOP_K_PAPERS.
+#
+# Embedding cosine similarity alone plateaued at ~65% delivered precision in
+# eval/ (three different retrieval-side fixes all landed on the same number,
+# which is the signature of a ranking-method ceiling, not a query-wording
+# problem) -- it's a fast, free coarse filter but not a fine one. The LLM
+# judge was separately validated at 100% agreement with human relevance
+# labels (see eval/check_agreement.py), so this reuses that same judgment
+# call in production instead of only in offline evaluation. Trade-off: every
+# real run now costs 1-3 extra LLM calls and a few seconds of latency.
+# ---------------------------------------------------------------------------
+
+TOP_K_PAPERS = 10
+MIN_PAPERS = 5  # floor below which we backfill from the embedding shortlist rather than ship a thin report
+EMBEDDING_SHORTLIST_SIZE = 20  # keeps the LLM filter's input (and cost) bounded
+_EMBEDDER = None
+
+
+def _get_embedder():
+    global _EMBEDDER
+    if _EMBEDDER is None:
+        from sentence_transformers import SentenceTransformer
+        # Multilingual: topics/directions can be Chinese while abstracts from
+        # arXiv/CrossRef/Semantic Scholar are almost always English.
+        _EMBEDDER = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
+    return _EMBEDDER
+
+
+def _embedding_shortlist(topic: str, papers: list[dict], k: int) -> list[dict]:
+    if len(papers) <= k:
+        return papers
+
+    import numpy as np
+
+    embedder = _get_embedder()
+    topic_vec = embedder.encode([topic])[0]
+    paper_vecs = embedder.encode([p["summary"] for p in papers])
+
+    def cosine(a, b):
+        return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b) + 1e-8)
+
+    scored = sorted(
+        zip(paper_vecs, papers),
+        key=lambda pair: cosine(topic_vec, pair[0]),
+        reverse=True,
+    )
+    return [p for _, p in scored[:k]]
+
+
+def _llm_filter_relevant(topic: str, papers: list[dict], lang: str) -> list[dict]:
+    """Judges each shortlisted paper's relevance directly with the LLM,
+    keeping only the ones a literature review on this exact topic would
+    actually cite. Falls back to returning the shortlist unfiltered in MOCK
+    mode (there's no real model to ask) or if a batch's response can't be
+    parsed (fail open rather than silently dropping good papers)."""
+    if MOCK_MODE:
+        return papers
+
+    relevant = []
+    chunk_size = 10
+    for start in range(0, len(papers), chunk_size):
+        chunk = papers[start:start + chunk_size]
+        numbered = "\n".join(
+            f"{i}. Title: {p['title']}\n   Abstract: {p.get('summary', '') or '(no abstract)'}"
+            for i, p in enumerate(chunk)
+        )
+        if lang == "zh":
+            prompt = f"""主题：{topic}
+
+请判断下面每篇论文是否是研究该主题时真正会引用的直接相关文献（不是仅有关键词表面重合）。
+只返回一个 JSON 数组，每个元素形如 {{"index": <int>, "relevant": "y" 或 "n"}}，
+顺序与原文一致，不要有其他文字。
+
+{numbered}"""
+            system_msg = "你是学术文献筛选助手，只返回 JSON 数组。"
+        else:
+            prompt = f"""Topic: {topic}
+
+For each paper below, judge whether it is literature a researcher writing on this exact topic
+would actually cite as directly relevant (not just superficially related by a shared keyword).
+Return ONLY a JSON array, each item shaped like {{"index": <int>, "relevant": "y" or "n"}},
+in the same order, with no other text.
+
+{numbered}"""
+            system_msg = "You are an academic literature screening assistant. Return ONLY a JSON array."
+
+        try:
+            content = call_llm(
+                [{"role": "system", "content": system_msg}, {"role": "user", "content": prompt}],
+                task="filter", language=lang,
+            )
+            judgments = json.loads(content.strip().strip("```json").strip("```").strip())
+        except (json.JSONDecodeError, TypeError):
+            print(f"  [process_papers] LLM filter batch failed to parse, keeping it unfiltered")
+            relevant.extend(chunk)
+            continue
+
+        for j in judgments:
+            idx = j.get("index")
+            if idx is not None and 0 <= idx < len(chunk) and j.get("relevant") == "y":
+                relevant.append(chunk[idx])
+
+    return relevant
+
+
+def process_papers(state: ResearchState) -> dict:
+    papers = state["collected_papers"]
+    topic = state["topic"]
+    lang = state.get("language", "en")
+    print(t(lang, "node_process_papers"))
+
+    seen_urls = set()
+    deduped = []
+    for p in papers:
+        url = p.get("url", "")
+        if url and url in seen_urls:
+            continue
+        seen_urls.add(url)
+        deduped.append(p)
+
+    print(t(lang, "dedup_result", before=len(papers), after=len(deduped)))
+
+    shortlist = _embedding_shortlist(topic, deduped, EMBEDDING_SHORTLIST_SIZE)
+    print(t(lang, "rerank_result", count=len(shortlist)))
+
+    filtered = _llm_filter_relevant(topic, shortlist, lang)
+    print(t(lang, "filter_result", kept=len(filtered), shortlisted=len(shortlist)))
+
+    if len(filtered) < MIN_PAPERS:
+        # A strict LLM filter can leave a topic with too few citations for a
+        # substantive report (seen in eval: one topic dropped to 2). Backfill
+        # from the embedding shortlist -- still similarity-ranked, just not
+        # LLM-confirmed -- rather than shipping a thin report.
+        needed = MIN_PAPERS - len(filtered)
+        filtered_urls = {p["url"] for p in filtered}
+        backfill = [p for p in shortlist if p["url"] not in filtered_urls][:needed]
+        if backfill:
+            print(t(lang, "backfill_result", count=len(backfill)))
+        filtered = filtered + backfill
+
+    final = filtered[:TOP_K_PAPERS]
+    return {"collected_papers": final}
 
 
 # ---------------------------------------------------------------------------
@@ -449,3 +782,43 @@ References (for citation):
     )
 
     return {"final_report": content}
+
+
+# ---------------------------------------------------------------------------
+# Node (new): verify_citations — catches citations to papers that were never
+# retrieved (LLM hallucination). Loops back to generate_report on failure,
+# up to MAX_CITATION_RETRY times, then falls back to flagging the report
+# instead of looping forever.
+# ---------------------------------------------------------------------------
+
+MAX_CITATION_RETRY = 2
+
+
+def verify_citations(state: ResearchState) -> dict:
+    report = state["final_report"]
+    papers = state["collected_papers"]
+    lang = state.get("language", "en")
+    print(t(lang, "node_verify_citations"))
+
+    retry_count = state.get("citation_retry_count", 0)
+    valid_titles = {p["title"] for p in papers}
+    # Only treat reasonably long bracketed spans as citation candidates, to
+    # avoid false positives on short emphasis-style [brackets] in the prose.
+    cited = [c for c in re.findall(r"\[([^\]]+)\]", report) if len(c) > 8]
+    invalid = [c for c in cited if c not in valid_titles]
+
+    if not invalid:
+        print(t(lang, "citation_check_passed"))
+        return {"citation_check": "passed", "citation_retry_count": retry_count}
+
+    if retry_count >= MAX_CITATION_RETRY:
+        print(t(lang, "citation_check_forced", count=len(invalid)))
+        warning = t(lang, "citation_warning_suffix", titles="; ".join(invalid))
+        return {
+            "final_report": report + warning,
+            "citation_check": "passed",
+            "citation_retry_count": retry_count,
+        }
+
+    print(t(lang, "citation_check_retry", count=len(invalid), attempt=retry_count + 1))
+    return {"citation_check": "failed", "citation_retry_count": retry_count + 1}

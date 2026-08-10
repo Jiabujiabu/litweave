@@ -67,8 +67,10 @@ NODE_LABEL_KEYS = {
     "search_arxiv": "node_search_arxiv",
     "search_crossref": "node_search_crossref",
     "search_semantic_scholar": "node_search_semantic_scholar",
+    "process_papers": "node_process_papers",
     "summarize_literature": "node_summarize_literature",
     "generate_report": "node_generate_report",
+    "verify_citations": "node_verify_citations",
 }
 
 DOMAIN_LABEL_KEYS = {
@@ -130,6 +132,7 @@ if st.session_state.phase == "idle":
             st.session_state.pending_payload = {
                 "topic": st.session_state.topic,
                 "iteration_count": 0,
+                "citation_retry_count": 0,
                 "language": lang,
             }
             st.rerun()
