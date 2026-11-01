@@ -1,62 +1,48 @@
-"""End-to-end precision measurement: runs the ACTUAL graph (post-fix: cs also
-queries CrossRef, tighter direction prompts, 6 results/direction instead of
-3) for every test topic, takes the real final collected_papers (after
-process_papers' dedup+rerank+truncate -- exactly what ships in the report),
-and judges relevance with the LLM-as-judge that was already validated at
-100% agreement against human labels earlier in this eval. No manual
-labeling needed for this round.
-
-Usage:
-    python eval/measure_final_precision.py
+"""Selected-paper model relevance, separate from actual report citations and support.
+Historical values are not report factual accuracy or human validation.
+Run only after explicitly authorizing ALLOW_PAID_EVAL=1 and RESEARCH_* budgets.
 """
-
 import os
 import sys
-
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-
-from run_eval import load_test_set, run_case  # noqa: E402
-from llm_judge import judge_chunk  # noqa: E402
+from run_eval import load_test_set, run_case
+from llm_judge import judge_chunk
+from evaluation import relevance_metrics, report_metrics, save_run
 
 
 def main():
-    test_set = load_test_set()
-    total_relevant = 0
-    total_count = 0
-    per_topic = []
-
-    for case in test_set:
-        topic = case["topic"]
-        print(f"\n=== {topic} ===")
-        final_state = run_case(case)
-        papers = final_state["collected_papers"]
-        domain = final_state.get("domain")
-        citation_retries = final_state.get("citation_retry_count", 0)
-
-        rows = [{"title": p["title"], "summary": p.get("summary", "")} for p in papers]
+    from nodes import MOCK_MODE
+    if MOCK_MODE or os.getenv("ALLOW_PAID_EVAL") != "1":
+        raise RuntimeError("Real evaluation disabled: configure a real provider, explicit ALLOW_PAID_EVAL=1 and local budgets")
+    rows = []
+    snapshots = []
+    cases = load_test_set()
+    for case in cases:
         try:
-            judgments = judge_chunk(topic, rows)
+            state = run_case(case)
+        except Exception as error:
+            rows.append({"topic":case["topic"],"run_error":type(error).__name__,"selected_papers":None,"actual_citations":None})
+            continue
+        snapshots.append({"topic":case["topic"], **{k:state.get(k) for k in ("collected_papers","chunks","evidence","report_draft","claim_checks","settings","telemetry")}})
+        papers = state["collected_papers"]
+        labels, error = [], None
+        try:
+            judgments = judge_chunk(case["topic"], papers) if papers else []
+            labels = [{"paper_id":papers[j["index"]]["paper_id"], "label":"direct" if j["relevant"] == "y" else "irrelevant", "source":"model"} for j in judgments]
         except Exception as e:
-            print(f"  judge failed ({e}), skipping this topic's precision")
-            judgments = []
-
-        relevant = sum(1 for j in judgments if j.get("relevant") == "y")
-        total_relevant += relevant
-        total_count += len(papers)
-        per_topic.append((topic, domain, citation_retries, relevant, len(papers)))
-        print(f"  domain={domain}  papers={len(papers)}  relevant={relevant}/{len(papers)}  "
-              f"citation_retries={citation_retries}")
-
-    print("\n" + "=" * 78)
-    print(f"{'topic':<50} {'domain':<16} {'precision':>10}")
-    print("=" * 78)
-    for topic, domain, retries, relevant, n in per_topic:
-        p = relevant / n if n else 0
-        print(f"{topic[:49]:<50} {domain:<16} {p:>9.2f}  ({relevant}/{n})")
-
-    print("=" * 78)
-    print(f"Overall final-report precision: {total_relevant}/{total_count} = {total_relevant/total_count:.2%}")
-    print("=" * 78)
+            error = type(e).__name__
+            labels = [{"paper_id":p["paper_id"], "label":"error", "source":"none"} for p in papers]
+        metrics = relevance_metrics([p["paper_id"] for p in papers],labels,source="model")
+        report = report_metrics(state["report_draft"],state["evidence"],papers,state["claim_checks"])
+        # Actual-citation relevance is computed on the used subset, never the whole selected list.
+        used = report["actual_cited_paper_ids"]
+        used_labels = [j for j in labels if j["paper_id"] in used]
+        rows.append({"topic":case["topic"], "selected_papers":metrics, "actual_citations":relevance_metrics(used,used_labels,source="model"),
+                     "report":report, "judge_error":error, "telemetry":state.get("telemetry")})
+    from nodes import _MODEL, LLM_PROVIDER
+    path = save_run({"harness":"selected_and_cited_model_relevance", "human_validation":"pending", "model":_MODEL,
+                     "provider":LLM_PROVIDER,"judge_independence":"same configured provider; not independent"},snapshots,rows,mode="real_network")
+    print(path)
 
 
 if __name__ == "__main__":

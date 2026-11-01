@@ -55,7 +55,7 @@ STRINGS = {
         "domain_interdisciplinary": "Interdisciplinary",
 
         "web_title": "Academic Research Agent",
-        "web_subtitle": "LangGraph-powered literature research assistant",
+        "web_subtitle": "Confirm papers, trace evidence, and build an academic review outline",
         "web_language_label": "Language",
         "web_topic_label": "Research topic",
         "web_run_button": "Start research",
@@ -67,7 +67,7 @@ STRINGS = {
         "web_choice_redo_directions": "Redo direction breakdown",
         "web_feedback_label": "Additional comments (optional)",
         "web_continue_button": "Continue",
-        "web_report_header": "Final report",
+        "web_report_header": "Literature review outline",
         "web_download_button": "Download report (.md)",
         "web_papers_header": "Collected papers",
         "web_new_research_button": "Start a new topic",
@@ -123,7 +123,7 @@ STRINGS = {
         "domain_interdisciplinary": "跨学科",
 
         "web_title": "学术研究智能体",
-        "web_subtitle": "基于 LangGraph 的文献调研助手",
+        "web_subtitle": "确认文献 → 提取可追溯证据 → 构建学术综述大纲",
         "web_language_label": "语言",
         "web_topic_label": "研究主题",
         "web_run_button": "开始研究",
@@ -135,7 +135,7 @@ STRINGS = {
         "web_choice_redo_directions": "重新分解研究方向",
         "web_feedback_label": "补充说明（可选）",
         "web_continue_button": "继续",
-        "web_report_header": "最终报告",
+        "web_report_header": "学术文献综述大纲",
         "web_download_button": "下载报告 (.md)",
         "web_papers_header": "已收集的论文",
         "web_new_research_button": "开始新的研究",
@@ -143,6 +143,108 @@ STRINGS = {
     },
 }
 
+
+STRINGS["en"].update({
+    "web_mock_mode_warning": "MOCK / DEMO: synthetic offline data; no network or paid model calls.",
+    "node_prepare_evidence": "Preparing fulltext or abstract evidence...",
+    "node_prepare_report_evidence": "Refreshing approved evidence...",
+    "node_supplementary_search": "Searching for remaining evidence gaps...",
+    "node_prepare_feedback": "Applying feedback and clearing previous results...",
+    "accept_partial": "Accept the explicitly limited partial result",
+    "end_research": "End without approval",
+    "rewrite_only": "Change writing style only; reuse evidence",
+    "review_limit": "Review limit reached. Accept a marked partial result or end the run.",
+    "run_status": "Candidates: {candidates}; qualified: {papers}; retrieval: {status}; report: {report}",
+    "local_pdf": "Optional local PDF for this paper",
+    "pdf_mapping": "Optional local PDFs (paper_id=path; paper_id=path), or Enter to skip: ",
+    "source_failures": "Search source events",
+    "export_evidence": "Download evidence and checks (.json)",
+    "not_checked_notice": "Citation identity and claim support are separate checks. Unchecked does not mean passed.",
+    "max_iterations_warning": "Review limit reached; explicit user choice is required.",
+    "citation_check_forced": "Citation issues remain after bounded revisions; report needs review.",
+})
+STRINGS["zh"].update({
+    "web_mock_mode_warning": "MOCK / 演示模式：使用离线合成数据，不发起网络或付费模型调用。",
+    "node_prepare_evidence": "正在解析全文或准备完整摘要证据……",
+    "node_prepare_report_evidence": "正在更新已审核文献的证据……",
+    "node_supplementary_search": "正在针对证据缺口补充检索……",
+    "node_prepare_feedback": "正在应用反馈并清理上一轮结果……",
+    "accept_partial": "接受已明确标注局限的部分结果",
+    "end_research": "结束，不批准报告",
+    "rewrite_only": "仅调整写作风格，复用当前证据",
+    "review_limit": "已达审核轮次上限，请明确接受带局限的部分结果或结束。",
+    "run_status": "候选：{candidates}；合格：{papers}；检索状态：{status}；报告状态：{report}",
+    "local_pdf": "可选：上传该论文的本地 PDF",
+    "pdf_mapping": "可选本地 PDF（paper_id=路径；多项用英文分号分隔），回车跳过：",
+    "source_failures": "各检索来源的状态",
+    "export_evidence": "下载证据与检查结果 (.json)",
+    "not_checked_notice": "引用来源有效与结论得到支持是两层检查；未检查不代表通过。",
+    "max_iterations_warning": "已达审核上限，必须由用户明确选择。",
+    "citation_check_forced": "达到修订上限后仍有引用问题，报告保留待审核状态。",
+})
+
+STRINGS["en"].update({
+    "byok_title": "Use your own model account",
+    "byok_demo": "Offline demo (no API calls)",
+    "byok_provider": "Provider",
+    "byok_model": "Model ID",
+    "byok_key": "Your API key",
+    "byok_required": "Enter your API key and model in the sidebar, or select the offline demo.",
+    "byok_notice": "Your key is used in this session by the app backend and selected provider. Clear it when finished.",
+    "byok_clear": "Clear key and end this session's research",
+})
+STRINGS["zh"].update({
+    "byok_title": "使用你自己的模型账户",
+    "byok_demo": "离线演示（不调用 API）",
+    "byok_provider": "模型服务商",
+    "byok_model": "模型 ID",
+    "byok_key": "你自己的 API Key",
+    "byok_required": "请在侧边栏填写 API Key 和模型，或选择离线演示。",
+    "byok_notice": "Key 供当前会话的后端和所选服务商使用，完成后可清除。",
+    "byok_clear": "清除 Key 并结束当前会话的研究",
+})
+
+STRINGS["en"].update({
+    "byok_retired": "deepseek-chat / deepseek-reasoner are retired model names. Select the current model before starting.",
+    "byok_update_model": "Use deepseek-flash",
+    "byok_check": "Check connection and model",
+    "byok_check_ok": "Connection verified; selected model is listed. Generation can still be subject to balance, permissions or limits.",
+    "byok_model_not_listed": "Connected, but the selected model is not listed. Check the model ID.",
+    "byok_models": "Available models: {models}",
+})
+STRINGS["zh"].update({
+    "byok_retired": "deepseek-chat / deepseek-reasoner 是已停用的旧模型名，请先选择当前模型。",
+    "byok_update_model": "改用 deepseek-flash",
+    "byok_check": "检查连接与模型",
+    "byok_check_ok": "连接正常，已选模型可见；生成仍可能受余额、权限或限流影响。",
+    "byok_model_not_listed": "连接正常，但模型列表不含已选模型，请核对模型 ID。",
+    "byok_models": "可用模型：{models}",
+})
+
+STRINGS["en"].update({
+    "byok_model_choice":"Model",
+    "custom_model_id":"Custom model API ID",
+    "refresh_models":"Refresh model list",
+    "test_connection":"Test connection",
+    "validation_fee_notice":"Test connection sends ONE real generation request with at most 64 output tokens and may incur a small API charge. It runs only when you click.",
+    "generation_verified":"Real generation passed for this configuration.",
+    "list_loaded_not_verified":"Model list loaded. This does not verify generation. Your selection has not changed.",
+    "list_failure_nonblocking":"You can still test the configured model even if the list cannot be loaded.",
+    "api_diagnostic":"Request diagnostic (redacted)",
+    "validation_reply":"Test reply: {reply}",
+})
+STRINGS["zh"].update({
+    "byok_model_choice":"选择模型",
+    "custom_model_id":"自定义模型 API ID",
+    "refresh_models":"刷新模型列表",
+    "test_connection":"测试连接",
+    "validation_fee_notice":"点击测试将发送一次最多64输出token的真实生成请求，可能产生少量API费用；仅在你点击后调用。",
+    "generation_verified":"当前配置的真实生成验证已通过。",
+    "list_loaded_not_verified":"模型列表已加载，不代表生成已验证；当前选择未更改。",
+    "list_failure_nonblocking":"列表获取失败不影响继续测试已配置的模型。",
+    "api_diagnostic":"请求诊断（已脱敏）",
+    "validation_reply":"测试回复：{reply}",
+})
 
 def t(lang: str, key: str, **kwargs) -> str:
     table = STRINGS.get(lang, STRINGS["en"])

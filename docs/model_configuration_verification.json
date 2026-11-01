@@ -1,0 +1,103 @@
+{
+  "date_local": "2026-10-31",
+  "timezone": "America/Chicago",
+  "offline_tests": 55,
+  "offline_status": "passed",
+  "compileall": "passed",
+  "git_diff_check": "passed",
+  "real_generation_requests": 1,
+  "real_verifications": [
+    {
+      "provider": "deepseek",
+      "model_id": "deepseek-flash",
+      "display_name": "DeepSeek Flash",
+      "status": "passed",
+      "scope": "bounded plain-text generation only",
+      "record": {
+        "status": "passed",
+        "generation_verified": true,
+        "response_preview": "OK",
+        "output_limit": 32,
+        "diagnostic": {
+          "event_id": "cbec74204fee4ae899e0376c72ecff25",
+          "time_utc": "2026-11-01T02:00:38.263699+00:00",
+          "operation": "api_validation",
+          "provider": "deepseek",
+          "base_url": "https://api.deepseek.com",
+          "model_id": "deepseek-flash",
+          "model_display_name": "DeepSeek Flash",
+          "http_status": 200,
+          "category": null,
+          "error_message": "",
+          "provider_error_code": null,
+          "parameter": null,
+          "seconds": 3.379,
+          "usage": {
+            "input_tokens": 9,
+            "output_tokens": 1,
+            "total_tokens": 10
+          },
+          "request_parameters": {
+            "max_tokens": 32,
+            "temperature": 0.3,
+            "extra_body": {
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "timeout": 60
+          }
+        },
+        "verified_at_utc": "2026-11-01T02:00:38.266123+00:00",
+        "credential_source": "explicit_local_operator_environment"
+      }
+    }
+  ],
+  "not_verified": [
+    {
+      "provider": "deepseek",
+      "model_id": "deepseek-v4-pro",
+      "reason": "not_run_this_round"
+    },
+    {
+      "provider": "openai",
+      "model_id": "gpt-4o-mini",
+      "reason": "no_key"
+    },
+    {
+      "provider": "openai",
+      "model_id": "gpt-5-mini",
+      "reason": "no_key"
+    },
+    {
+      "provider": "anthropic",
+      "model_id": "claude-sonnet-5-5",
+      "reason": "no_key"
+    },
+    {
+      "provider": "anthropic",
+      "model_id": "claude-haiku-5-5",
+      "reason": "no_key"
+    },
+    {
+      "provider": "anthropic",
+      "model_id": "claude-opus-5-5",
+      "reason": "no_key"
+    }
+  ],
+  "historical_failure": {
+    "provider": "deepseek",
+    "model_id": "deepseek-chat",
+    "http_status": null,
+    "conclusion": "prior response not retained; no retrospective cause inferred"
+  },
+  "public_model_choices": [
+    "openai",
+    "anthropic",
+    "deepseek"
+  ],
+  "google": "not_implemented_not_shown",
+  "end_to_end_research_quality": "not_evaluated_this_round",
+  "deployed": false,
+  "pushed": false
+}

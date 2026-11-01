@@ -1,0 +1,2 @@
+# Preserve PDF byte offsets and hashes across Windows and Unix checkouts.
+*.pdf binary

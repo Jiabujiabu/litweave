@@ -1,0 +1,17 @@
+{
+  "commit": "631f4690be80b624dc4ca6f3d0d9aa1b0628a61f",
+  "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+  "dependencies": {
+    "langgraph": "1.2.10",
+    "requests": "2.32.5",
+    "sentence-transformers": "5.7.0",
+    "streamlit": "1.51.0",
+    "numpy": "2.3.5"
+  },
+  "mode": "offline_static_and_pure_functions",
+  "raw_20_route": "process_papers",
+  "small_shortlist_keeps_input_order": true,
+  "no_citations_status": "passed",
+  "exhausted_invalid_citation_status": "passed",
+  "review_count_3_status": "approved"
+}

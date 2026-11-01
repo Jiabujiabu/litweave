@@ -1,0 +1,6 @@
+[
+  {"source":"arXiv","title":"Synthetic retrieval experiment","authors":["Fixture Author"],"year":2024,"doi":"10.9999/fixture-a","abstract":"This original synthetic fixture describes retrieval of evidence from documents. Dense vectors retrieve semantic paraphrases. Hybrid retrieval combines lexical matching with semantic ranking using reciprocal rank fusion. This is test data, not a real scientific finding.","url":"https://example.org/synthetic-a","open_access_url":null},
+  {"source":"CrossRef","title":"Synthetic retrieval experiment","author":[{"given":"Fixture","family":"Author"}],"year":2024,"DOI":"https://doi.org/10.9999/FIXTURE-A","abstract":"<jats:p>This is an original synthetic abstract.</jats:p><jats:p>It tests source normalization.</jats:p>","URL":"https://doi.org/10.9999/fixture-a"},
+  {"source":"Semantic Scholar","title":"Synthetic missing abstract record","authors":[{"name":"Other Author"}],"year":2023,"abstract":null,"url":"https://example.org/missing"},
+  {"source":"CrossRef","title":"Synthetic retrieval experiment","authors":["Different Author"],"year":2024,"doi":"10.9999/fixture-b","abstract":"This different-author fixture must not merge with the other paper merely because the title is identical.","url":"https://example.org/different"}
+]

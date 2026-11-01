@@ -31,13 +31,15 @@ TOPIC_CHUNK_SIZE = 20  # topics are short phrases -- fine to batch more per call
 
 
 def _chat_json(prompt: str, system: str):
-    content = call_llm(
-        [
-            {"role": "system", "content": system},
-            {"role": "user", "content": prompt},
-        ],
-        task="translate", language="zh",
-    )
+    from model_access import local_model_session
+    with local_model_session():
+        content = call_llm(
+            [
+                {"role": "system", "content": system},
+                {"role": "user", "content": prompt},
+            ],
+            task="translate", language="zh",
+        )
     content = content.strip().strip("```json").strip("```").strip()
     return json.loads(content)
 

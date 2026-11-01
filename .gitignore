@@ -1,3 +1,13 @@
 __pycache__/
 .env
+.env.*
+!.env.example
+.streamlit/secrets.toml
 *_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]_[0-9][0-9][0-9][0-9][0-9][0-9].md
+.research_cache/
+.research_runs/
+.dev_deps/
+.venv/
+local_pdfs/
+*.pdf
+!tests/fixtures/*.pdf

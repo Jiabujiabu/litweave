@@ -1,0 +1,55 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 2 /Kids [4 0 R 6 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 358 >>
+stream
+BT /F1 11 Tf 50 750 Td 16 TL
+(1 Introduction) Tj T*
+(This original synthetic fixture tests page-addressable evidence retrieval.) Tj T*
+(Dense vectors retrieve semantic paraphrases from documents.) Tj T*
+(Hybrid retrieval combines lexical matching and semantic ranking.) Tj T*
+(Reciprocal rank fusion combines ranked lists without adding raw scores.) Tj T*
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 317 >>
+stream
+BT /F1 11 Tf 50 750 Td 16 TL
+(2 Results) Tj T*
+(The fixture includes two pages of original text for parser regression checks.) Tj T*
+(These statements are synthetic test data and are not scientific findings.) Tj T*
+(3 References) Tj T*
+(Fixture Author. Original synthetic reference, not scientific evidence.) Tj T*
+ET
+endstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000000317 00000 n 
+0000000726 00000 n 
+0000000852 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+1220
+%%EOF

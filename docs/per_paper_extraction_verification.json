@@ -1,0 +1,23 @@
+{
+  "date_local": "2026-11-01",
+  "timezone": "America/Chicago",
+  "offline_tests": 137,
+  "targeted_tests": 17,
+  "status": "passed",
+  "compileall": "passed",
+  "git_diff_check": "passed",
+  "legacy_first_paper_only_reproduced_offline": true,
+  "fair_allocation_paper_counts": [5, 10],
+  "fake_sdk_ten_paper_extraction": "10 independent paper calls within existing 100000 reservation ceiling, including 30000 already reserved",
+  "retry_surfaces": ["outline review", "completed result", "CLI option 7"],
+  "budget_reset_on_retry": false,
+  "search_or_download_on_retry": false,
+  "new_model_requests_initiated_over_network": 0,
+  "new_public_search_requests": 0,
+  "live_end_to_end_verified": false,
+  "exact_user_session_replayed": false,
+  "historical_user_log_observation": "One recorded card request after the latest plan; no saved project snapshot found for exact replay",
+  "standalone_fixture_log_correction": {"events_relocated_to_offline_archive":12,"other_application_log_bytes_verified_unchanged":true,"backup_created":true},
+  "committed": false,
+  "deployed": false
+}

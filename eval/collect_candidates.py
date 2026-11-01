@@ -32,34 +32,18 @@ def collect_for_topic(topic: str) -> tuple[str, list[dict]]:
     (domain forced to 'cs' when calling search_crossref/search_semantic_scholar
     so their internal branching always returns a clean list -- see their
     domain-conditional overwrite/append logic in nodes.py)."""
-    base_state = {"topic": topic, "language": "en"}
-    decomposed = decompose_directions(base_state)
-    directions = decomposed["research_directions"]
-    domain = decomposed["domain"]
-
-    query_state = {
-        "research_directions": directions,
-        "domain": "cs",  # forces overwrite/no-append branches in search_crossref/search_semantic_scholar
-        "collected_papers": [],
-        "language": "en",
-    }
-
-    arxiv_papers = search_arxiv(query_state)["collected_papers"]
-    crossref_papers = search_crossref(query_state)["collected_papers"]
-    semantic_papers = search_semantic_scholar(query_state)["collected_papers"]
-
-    pooled = arxiv_papers + crossref_papers + semantic_papers
-
-    seen_urls = set()
-    deduped = []
-    for p in pooled:
-        url = normalize_url(p.get("url", "")) or p.get("url", "")
-        if url and url in seen_urls:
-            continue
-        seen_urls.add(url)
-        deduped.append(p)
-
-    return domain, deduped
+    from nodes import MOCK_MODE
+    from papers import deduplicate
+    if MOCK_MODE or os.getenv("ALLOW_PAID_EVAL") != "1":
+        raise RuntimeError("Candidate collection requires explicit ALLOW_PAID_EVAL=1; offline demos are not real candidates")
+    from model_access import local_model_session
+    with local_model_session():
+        state = {"topic": topic, "language": "en"}
+        state.update(decompose_directions(state))
+        domain = state["domain"]
+        for fn in (search_arxiv, search_crossref, search_semantic_scholar):
+            state.update(fn(state))
+    return domain, deduplicate(state["candidate_papers"])
 
 
 def main():
@@ -81,17 +65,20 @@ def main():
                 "domain": domain,
                 "source": p.get("source", ""),
                 "title": p.get("title", ""),
-                "summary": (p.get("summary", "") or "")[:400],
+                "summary": (p.get("abstract", "") or ""),
                 "url": p.get("url", ""),
                 "relevant": "",  # fill in y/n (or accept the llm_suggestion column, once populated)
             })
 
-    cache_path = os.path.join(os.path.dirname(__file__), "candidates_raw_cache.json")
+    from evaluation import save_run, blind_export
+    directory = save_run({"harness":"candidate_collection"}, raw_cache, [], mode="real_network")
+    blind_export(raw_cache, directory)
+    cache_path = directory / "candidates_raw_cache.json"
     with open(cache_path, "w", encoding="utf-8") as f:
         json.dump(raw_cache, f, ensure_ascii=False, indent=2)
     print(f"\nRaw results (with full abstracts) cached to {cache_path}")
 
-    out_path = os.path.join(os.path.dirname(__file__), "candidates_to_label.csv")
+    out_path = directory / "candidates_to_label.csv"
     with open(out_path, "w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=["topic", "domain", "source", "title", "summary", "url", "relevant"])
         writer.writeheader()

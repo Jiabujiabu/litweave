@@ -1,15 +1,94 @@
-from typing import TypedDict, Literal
+from typing import TypedDict, Any
 
-class ResearchState(TypedDict):
+
+class ResearchState(TypedDict, total=False):
     topic: str
-    language: Literal["en", "zh"]
-    domain: Literal["cs", "humanities", "interdisciplinary"]
+    language: str
+    domain: str
     research_directions: list[str]
+    research_plan: dict
+    candidate_papers: list[dict]
     collected_papers: list[dict]
+    paper_decisions: list[dict]
+    candidate_count: int
+    ranking_method: str
+    ranking_error: str | None
+    coverage_gaps: list[str]
+    sufficiency_reason: str
+    retrieval_status: str
+    search_round: int
+    attempted_queries: list
+    search_events: list[dict]
     literature_summary: str
     human_feedback: str
-    approval_status: Literal["approved", "redo_search", "redo_directions"]
+    approval_status: str
     final_report: str
     iteration_count: int
     citation_retry_count: int
-    citation_check: Literal["passed", "failed"]
+    citation_check: str
+    citation_issues: list
+    chunks: list[dict]
+    evidence: list[dict]
+    evidence_gaps: list[str]
+    document_events: list[dict]
+    retrieval_trace: list[dict]
+    report_draft: dict
+    claim_checks: list[dict]
+    report_error: str
+    revision_counts: dict
+    run_id: str
+    run_history: list[dict]
+    settings: dict
+    telemetry: dict
+    demo_mode: bool
+    local_pdfs: dict[str, str]
+    local_pdf_hashes: dict[str, str]
+    restored_project: bool
+    human_decisions: dict
+    review_action: str
+    review_error: str
+    approved_paper_ids: list[str]
+    corpus_version: str
+    corpus_input_version: str
+    corpus_signatures: dict
+    corpus_history: list[dict]
+    document_cache: dict
+    card_cache: dict
+    evidence_cards: list[dict]
+    card_evidence: list[dict]
+    card_allocation: list[dict]
+    card_processing: list[dict]
+    card_retry_count: int
+    outline: dict
+    pending_outline: dict
+    outline_version: int
+    outline_history: list[dict]
+    outline_checks: dict
+    outline_error: str
+    outline_error_category: str
+    outline_action: str
+    outline_acceptance: str
+    outline_review_count: int
+    support_cache: dict
+    gap_list: list[dict]
+    embedding_fallback: bool
+    project_phase: str
+    resume_stage: str
+    results_shown: bool
+    direction_options: list[dict]
+    direction_evidence: list[dict]
+    direction_source_version: str
+    direction_status: str
+    direction_model: dict
+    direction_prompt_version: str
+    direction_error: str
+    direction_error_category: str
+    direction_validation: dict
+    direction_material_stats: dict
+    direction_history: list[dict]
+    direction_action: str
+    direction_retries: int
+    selected_direction_ids: list[str]
+    selected_directions: list[dict]
+    selected_scope_version: str
+    outline_scope_version: str

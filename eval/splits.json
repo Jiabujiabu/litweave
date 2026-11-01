@@ -1,0 +1,170 @@
+{
+  "version": "2026-10-31-initial",
+  "status": "frozen_before_tuning; human benchmark validation pending",
+  "development": [
+    {
+      "id": "d01",
+      "cluster": "rag",
+      "topic": "Evidence retrieval for reducing language model hallucination"
+    },
+    {
+      "id": "d02",
+      "cluster": "peft",
+      "topic": "Low rank adaptation for language models"
+    },
+    {
+      "id": "d03",
+      "cluster": "alignment",
+      "topic": "Preference learning for language model alignment"
+    },
+    {
+      "id": "d04",
+      "cluster": "robustness",
+      "topic": "Adversarial robustness of neural classifiers"
+    },
+    {
+      "id": "d05",
+      "cluster": "federated",
+      "topic": "Privacy risks in federated model updates"
+    },
+    {
+      "id": "d06",
+      "cluster": "graph_learning",
+      "topic": "Oversmoothing in graph neural networks"
+    },
+    {
+      "id": "d07",
+      "cluster": "calibration",
+      "topic": "Calibration of neural network confidence"
+    },
+    {
+      "id": "d08",
+      "cluster": "compression",
+      "topic": "Neural network pruning for inference efficiency"
+    },
+    {
+      "id": "d09",
+      "cluster": "knowledge_graph",
+      "topic": "Link prediction with knowledge graphs"
+    },
+    {
+      "id": "d10",
+      "cluster": "semantic_search",
+      "topic": "Dense passage retrieval and lexical fusion"
+    }
+  ],
+  "heldout": [
+    {
+      "id": "t01",
+      "cluster": "program_synthesis",
+      "topic": "Constraint guided program synthesis"
+    },
+    {
+      "id": "t02",
+      "cluster": "model_checking",
+      "topic": "Scalable symbolic model checking"
+    },
+    {
+      "id": "t03",
+      "cluster": "db_concurrency",
+      "topic": "Serializable database concurrency control"
+    },
+    {
+      "id": "t04",
+      "cluster": "query_optimization",
+      "topic": "Cost estimation for database query optimization"
+    },
+    {
+      "id": "t05",
+      "cluster": "congestion",
+      "topic": "Congestion control in datacenter networks"
+    },
+    {
+      "id": "t06",
+      "cluster": "consensus",
+      "topic": "Byzantine fault tolerant distributed consensus"
+    },
+    {
+      "id": "t07",
+      "cluster": "secure_computation",
+      "topic": "Communication efficient secure multiparty computation"
+    },
+    {
+      "id": "t08",
+      "cluster": "types",
+      "topic": "Gradual typing soundness and performance"
+    },
+    {
+      "id": "t09",
+      "cluster": "realtime",
+      "topic": "Scheduling mixed criticality real time systems"
+    },
+    {
+      "id": "t10",
+      "cluster": "flash_storage",
+      "topic": "Wear leveling in flash storage systems"
+    },
+    {
+      "id": "t11",
+      "cluster": "causal",
+      "topic": "Causal effect estimation with unobserved confounding"
+    },
+    {
+      "id": "t12",
+      "cluster": "path_planning",
+      "topic": "Multi robot path planning with collision constraints"
+    },
+    {
+      "id": "t13",
+      "cluster": "speech",
+      "topic": "Low resource speech recognition"
+    },
+    {
+      "id": "t14",
+      "cluster": "segmentation",
+      "topic": "Weakly supervised image segmentation"
+    },
+    {
+      "id": "t15",
+      "cluster": "tracking",
+      "topic": "Multi object tracking under occlusion"
+    },
+    {
+      "id": "t16",
+      "cluster": "audio",
+      "topic": "Single channel audio source separation"
+    },
+    {
+      "id": "t17",
+      "cluster": "recommenders",
+      "topic": "Exposure bias in recommendation evaluation"
+    },
+    {
+      "id": "t18",
+      "cluster": "compilers",
+      "topic": "Register allocation in optimizing compilers"
+    },
+    {
+      "id": "t19",
+      "cluster": "localization",
+      "topic": "Visual inertial localization for mobile robots"
+    },
+    {
+      "id": "t20",
+      "cluster": "dp_queries",
+      "topic": "Differentially private statistical query answering"
+    }
+  ],
+  "historical_development_topics": [
+    "Retrieval-augmented generation for reducing LLM hallucination",
+    "Parameter-efficient fine-tuning of large language models (LoRA and variants)",
+    "Reinforcement learning from human feedback for LLM alignment",
+    "Adversarial robustness of deep neural networks",
+    "Federated learning for privacy-preserving machine learning",
+    "Medieval European trade networks and urbanization",
+    "Identity construction in postcolonial literature",
+    "Social media use and adolescent mental health",
+    "The concept of autonomy in Kantian ethics",
+    "Electoral system design and political polarization"
+  ]
+}

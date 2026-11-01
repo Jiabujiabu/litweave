@@ -1,0 +1,22 @@
+{
+  "date_local": "2026-10-31",
+  "timezone": "America/Chicago",
+  "scope": "specific source-backed section material and human-readable comparison support",
+  "offline_tests": 120,
+  "new_material_tests": 21,
+  "offline_status": "passed",
+  "frontend": "Streamlit AppTest; not a manual visual browser test",
+  "compileall": "passed",
+  "git_diff_check": "passed",
+  "model_requests_initiated_by_agent_this_round": 0,
+  "public_search_requests_initiated_by_agent_this_round": 0,
+  "embedding_downloads_this_round": 0,
+  "extraction_fields": ["research_question", "object_conditions", "method", "data", "evaluation_metrics", "findings", "limitations", "topic_relationship"],
+  "verified_behaviors": ["specific scope and source material", "filled comparison cells", "actual abstract/PDF locations", "uploaded PDF not linked to different remote PDF pagination", "missing versus unchecked", "no generic homework", "no automatic personal stance", "budget fallback retains source material", "invalid field isolation", "legacy six-field compatibility", "same-paper citation whitelist", "duplicate support-check reuse", "no check/JSON editor panels", "identical table reuse", "unsupported content not presented as a supported author finding", "source update invalidates material", "project restore"],
+  "historical_diagnostic_observation": {"operations_since_last_recorded_plan": {"research:plan":1,"research:screen":4,"research:directions":1,"research:card":2}, "recorded_http_status":200, "outline_request_recorded":false, "original_failure_cause":"not_confirmed"},
+  "live_end_to_end_quality_verified": false,
+  "scientific_accuracy_benchmark": "not_measured",
+  "latency_benchmark": "not_measured",
+  "committed": false,
+  "deployed": false
+}

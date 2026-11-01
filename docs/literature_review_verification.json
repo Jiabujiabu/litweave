@@ -1,0 +1,31 @@
+{
+  "date_local": "2026-10-31",
+  "timezone": "America/Chicago",
+  "scope": "human-selected academic literature review outline workflow",
+  "offline_tests": 80,
+  "new_workflow_tests": 25,
+  "offline_status": "passed",
+  "compileall": "passed",
+  "git_diff_check": "passed",
+  "ui_validation": "Streamlit AppTest, not manual visual browser validation",
+  "cli_validation": "scripted numbered human decisions and exports",
+  "real_generation_requests_this_round": 0,
+  "public_search_requests_this_round": 0,
+  "embedding_weight_downloads_this_round": 0,
+  "demos": {
+    "fulltext": {"citation_check":"needs_review", "retrieval_status":"sufficient"},
+    "abstract": {"citation_check":"needs_review", "retrieval_status":"sufficient"},
+    "insufficient": {"citation_check":"not_applicable", "retrieval_status":"insufficient_evidence"}
+  },
+  "previous_live_validation": {
+    "provider":"deepseek",
+    "model_id":"deepseek-flash",
+    "scope":"bounded connection generation only, not this full workflow",
+    "record":"docs/model_configuration_verification.json"
+  },
+  "not_live_verified": ["new card extraction and outline workflow", "OpenAI (no key)", "Anthropic (no key)"],
+  "not_measured": ["real-paper relevance", "extraction accuracy", "outline scientific quality", "end-to-end speed improvement"],
+  "remaining_limits": ["explicit project save required", "no OCR/figure/table understanding", "no automatic scientific completeness/coherence validation", "no multi-user production deployment"],
+  "git_commit_created": false,
+  "deployed": false
+}

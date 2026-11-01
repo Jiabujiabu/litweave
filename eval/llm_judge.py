@@ -35,6 +35,8 @@ def load_rows():
 
 
 def judge_chunk(topic: str, chunk: list[dict]) -> list[dict]:
+    if MOCK_MODE or os.getenv("ALLOW_PAID_EVAL") != "1":
+        raise RuntimeError("Real judge requires explicit ALLOW_PAID_EVAL=1 and configured budgets; mock is not an evaluation result")
     papers_text = "\n".join(
         f"{i}. Title: {r['title']}\n   Abstract: {r['summary'] or '(no abstract available)'}"
         for i, r in enumerate(chunk)
@@ -50,15 +52,25 @@ one object per paper, in the same order, each shaped like:
 Papers:
 {papers_text}"""
 
-    content = call_llm(
-        [
-            {"role": "system", "content": "You are a research librarian judging topical relevance. Return ONLY a JSON array, no other text."},
-            {"role": "user", "content": prompt},
-        ],
-        task="filter", language="en",
-    )
+    from model_access import local_model_session
+    with local_model_session():
+        content = call_llm(
+            [
+                {"role": "system", "content": "You are a research librarian judging topical relevance. Return ONLY a JSON array, no other text."},
+                {"role": "user", "content": prompt},
+            ],
+            task="filter", language="en",
+        )
     content = content.strip().strip("```json").strip("```").strip()
-    return json.loads(content)
+    results = json.loads(content)
+    if not isinstance(results, list) or len(results) != len(chunk) or not all(isinstance(j, dict) for j in results):
+        raise ValueError("incomplete judge response")
+    indices = [j.get("index") for j in results]
+    if any(type(i) is not int for i in indices) or set(indices) != set(range(len(chunk))) or len(set(indices)) != len(indices):
+        raise ValueError("unknown, duplicate or missing judge indices")
+    if any(j.get("relevant") not in ("y", "n") or not isinstance(j.get("reason"), str) for j in results):
+        raise ValueError("invalid judge labels")
+    return sorted(results, key=lambda j:j["index"])
 
 
 def main():
@@ -97,13 +109,16 @@ def main():
         r["llm_reason"] = reason
 
     fieldnames = ["topic", "domain", "source", "title", "summary", "url", "relevant", "llm_suggestion", "llm_reason"]
-    with open(CSV_PATH, "w", encoding="utf-8-sig", newline="") as f:
+    from evaluation import save_run
+    directory = save_run({"harness":"legacy_model_judge"}, rows, [], mode="real_network")
+    output_path = directory / "model_suggestions.csv"
+    with open(output_path, "w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(rows)
 
     filled = sum(1 for idx in range(len(rows)) if idx in suggestions)
-    print(f"\n{filled}/{len(rows)} rows got an LLM suggestion, written back to {CSV_PATH}")
+    print(f"\n{filled}/{len(rows)} rows got an LLM suggestion, written to {output_path}")
     print("Review llm_suggestion/llm_reason and fill in 'relevant' for each row (agree or override).")
 
 

@@ -1,0 +1,20 @@
+{
+  "date_local": "2026-10-31",
+  "timezone": "America/Chicago",
+  "offline_tests": 26,
+  "test_status": "passed",
+  "cli_and_streamlit_apptest": "passed",
+  "fixture_variants": 5,
+  "fixture_errors": 0,
+  "development_blind_rows": 276,
+  "replay_run": "20261101T002824Z_b980a3af",
+  "real_provider_calls": 0,
+  "public_paper_search_calls": 0,
+  "embedding_downloads": 0,
+  "human_labels": "pending",
+  "quality_improvement": "not_measured",
+  "git_diff_check": "passed",
+  "compileall": "passed",
+  "committed": false,
+  "pushed": false
+}

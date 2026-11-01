@@ -1,101 +1,69 @@
 from langgraph.graph import StateGraph, START, END
 from langgraph.checkpoint.memory import MemorySaver
 from state import ResearchState
-from nodes import (
-    decompose_directions, search_arxiv, search_crossref,
-    search_semantic_scholar, process_papers, summarize_literature,
-    human_approval, generate_report, verify_citations
-)
+from workflow import (decompose_directions, search_arxiv, search_crossref, process_papers,
+                      summarize_literature, supplementary_search, prepare_feedback)
+from review_workflow import (review_papers, freeze_corpus, prepare_approved_evidence,
+                             extract_evidence_cards, generate_outline, check_outline, review_outline,retry_card_extraction)
+from directions import suggest_directions, select_directions
+from settings import Settings
 
-SUFFICIENT_THRESHOLD = 6  # 至少 6 篇论文视为充足
 
-def route_by_domain(state: ResearchState) -> str:
-    """decompose_directions 之后，根据领域选择首要搜索库"""
-    domain = state["domain"]
-    if domain == "humanities":
-        return "search_crossref"
-    else:  # cs 或 interdisciplinary 都先搜 arXiv
-        return "search_arxiv"
+def route_by_domain(state):
+    return "search_crossref" if state.get("domain") == "humanities" else "search_arxiv"
 
-def is_sufficient(state: ResearchState) -> str:
-    """search_crossref 之后：判断是否充足（humanities 和 interdisciplinary 共用）"""
-    if len(state["collected_papers"]) >= SUFFICIENT_THRESHOLD:
-        return "process_papers"
-    return "search_semantic_scholar"
 
-def route_after_citation_check(state: ResearchState) -> str:
-    """verify_citations 之后：校验失败则回 generate_report 重试，通过则结束"""
-    return "generate_report" if state["citation_check"] == "failed" else END
+def is_sufficient(state):
+    cfg = Settings.load(state.get('settings'))
+    if not state.get('results_shown') and state.get('retrieval_status')!='sufficient' and state.get('search_round',0)<min(cfg.initial_supplement_rounds,cfg.max_search_rounds):
+        return 'supplementary_search'
+    return "summarize_literature"
 
-def route_after_approval(state: ResearchState) -> str:
-    """human_approval 之后：三条出路"""
-    status = state["approval_status"]
-    if status == "approved":
-        return "generate_report"
-    elif status == "redo_directions":
-        return "decompose_directions"
-    else:  # redo_search：根据 domain 回到对应的首要搜索节点
-        domain = state["domain"]
-        if domain == "humanities":
-            return "search_crossref"
-        else:
-            return "search_arxiv"
+
+def start_at(state):
+    return {"papers":"review_papers", "directions":"select_directions", "outline":"review_outline", "done":END,'retry_cards':'retry_card_extraction'}.get(state.get("resume_stage"), "decompose_directions")
+
+
+def route_papers(state):
+    return {"confirm":"freeze_corpus", "search":"supplementary_search", "rescope":"prepare_feedback", "review":"review_papers"}.get(state.get("review_action"), END)
+
+
+def route_outline(state):
+    return {"search":"supplementary_search", "papers":"review_papers", "directions":"select_directions", "check":"check_outline", "review":"review_outline",'retry_cards':'retry_card_extraction'}.get(state.get("outline_action"), END)
+
+
+def route_directions(state):
+    return {'generate':'prepare_approved_evidence', 'papers':'review_papers', 'search':'supplementary_search',
+            'retry':'suggest_directions', 'review':'select_directions'}.get(state.get('direction_action'), END)
 
 
 def build_graph():
     graph = StateGraph(ResearchState)
-
-    graph.add_node("decompose_directions", decompose_directions)
-    graph.add_node("search_arxiv", search_arxiv)
-    graph.add_node("search_crossref", search_crossref)
-    graph.add_node("search_semantic_scholar", search_semantic_scholar)
-    graph.add_node("process_papers", process_papers)
-    graph.add_node("summarize_literature", summarize_literature)
-    graph.add_node("human_approval", human_approval)
-    graph.add_node("generate_report", generate_report)
-    graph.add_node("verify_citations", verify_citations)
-
-    graph.add_edge(START, "decompose_directions")
+    for fn in (decompose_directions, search_arxiv, search_crossref, process_papers,
+               supplementary_search, summarize_literature, review_papers, freeze_corpus,
+               prepare_approved_evidence, extract_evidence_cards, generate_outline, check_outline,
+               review_outline, prepare_feedback, suggest_directions, select_directions,retry_card_extraction):
+        graph.add_node(fn.__name__, fn)
+    graph.add_conditional_edges(START, start_at)
+    graph.add_conditional_edges("decompose_directions", route_by_domain)
     graph.add_edge("search_arxiv", "search_crossref")
-    graph.add_edge("search_semantic_scholar", "process_papers")
-    graph.add_edge("process_papers", "summarize_literature")
-    graph.add_edge("summarize_literature", "human_approval")
-    graph.add_edge("generate_report", "verify_citations")
-
-    graph.add_conditional_edges(
-        "decompose_directions",
-        route_by_domain,
-        {"search_arxiv": "search_arxiv", "search_crossref": "search_crossref"}
-    )
-
-    graph.add_conditional_edges(
-        "search_crossref",
-        is_sufficient,
-        {
-            "process_papers": "process_papers",
-            "search_semantic_scholar": "search_semantic_scholar"
-        }
-    )
-
-    graph.add_conditional_edges(
-        "human_approval",
-        route_after_approval,
-        {
-            "generate_report": "generate_report",
-            "decompose_directions": "decompose_directions",
-            "search_arxiv": "search_arxiv",
-            "search_crossref": "search_crossref"
-        }
-    )
-
-    graph.add_conditional_edges(
-        "verify_citations",
-        route_after_citation_check,
-        {"generate_report": "generate_report", END: END}
-    )
-
-    # Checkpointer is required for interrupt()/Command(resume=...) in human_approval:
-    # it persists state between the pause and the resume call, keyed by thread_id.
+    graph.add_edge("search_crossref", "process_papers")
+    graph.add_edge("supplementary_search", "process_papers")
+    graph.add_conditional_edges("process_papers", is_sufficient)
+    graph.add_edge("summarize_literature", "review_papers")
+    graph.add_conditional_edges("review_papers", route_papers)
+    graph.add_edge("prepare_feedback", "decompose_directions")
+    graph.add_edge('freeze_corpus', 'suggest_directions')
+    graph.add_edge('suggest_directions', 'select_directions')
+    graph.add_edge('retry_card_extraction','generate_outline')
+    graph.add_conditional_edges('select_directions', route_directions)
+    for source, target in (
+                          ("prepare_approved_evidence", "extract_evidence_cards"),
+                          ("extract_evidence_cards", "generate_outline"),
+                          ("generate_outline", "check_outline"), ("check_outline", "review_outline")):
+        graph.add_edge(source, target)
+    graph.add_conditional_edges("review_outline", route_outline)
     return graph.compile(checkpointer=MemorySaver())
+
 
 app = build_graph()
