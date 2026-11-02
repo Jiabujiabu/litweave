@@ -1,4 +1,4 @@
-# Academic Research Agent · 学术研究助手
+# LitWeave · 文献证据综述助手
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
@@ -50,8 +50,8 @@ flowchart TD
 ### Windows / PowerShell
 
 ```powershell
-git clone https://github.com/Jiabujiabu/academic-research-agent.git
-cd academic-research-agent
+git clone https://github.com/Jiabujiabu/litweave.git
+cd litweave
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
@@ -63,8 +63,8 @@ python -m streamlit run streamlit_app.py
 ### macOS / Linux
 
 ```bash
-git clone https://github.com/Jiabujiabu/academic-research-agent.git
-cd academic-research-agent
+git clone https://github.com/Jiabujiabu/litweave.git
+cd litweave
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt

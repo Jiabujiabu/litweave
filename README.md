@@ -1,4 +1,4 @@
-# Academic Research Agent
+# LitWeave · Evidence-Grounded Literature Review Agent
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
@@ -59,8 +59,8 @@ listed in [requirements.txt](requirements.txt), rather than a fully resolved loc
 ### Windows / PowerShell
 
 ```powershell
-git clone https://github.com/Jiabujiabu/academic-research-agent.git
-cd academic-research-agent
+git clone https://github.com/Jiabujiabu/litweave.git
+cd litweave
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
@@ -72,8 +72,8 @@ python -m streamlit run streamlit_app.py
 ### macOS / Linux
 
 ```bash
-git clone https://github.com/Jiabujiabu/academic-research-agent.git
-cd academic-research-agent
+git clone https://github.com/Jiabujiabu/litweave.git
+cd litweave
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt

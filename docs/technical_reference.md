@@ -1,6 +1,6 @@
 > Detailed implementation reference. Start with the [English README](../README.md) or [中文说明](../README.zh-CN.md).
 
-# Academic Research Agent / 学术调研助手
+# LitWeave / 文献证据综述助手
 
 A personal research assistant built with Python and LangGraph. CLI and Streamlit
 share the same graph, concise related-paper results, direction multi-select and outline checks.
